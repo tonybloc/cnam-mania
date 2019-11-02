@@ -21,7 +21,7 @@ namespace cnam_mania.Model.Episodes
         /// <summary>
         /// List of available episodes. 
         /// </summary>
-        private List<Episode> Episodes { get; set; }
+        private List<Episode> Episodes { get; } = new List<Episode>();
 
         /// <summary>
         /// Class constructor
@@ -34,6 +34,11 @@ namespace cnam_mania.Model.Episodes
             CurrentEpisode = currentEpisode;
             NextEpisode = nextEpisode;
             Episodes = episodes;
+        }
+
+        public void SwitchEpisode()
+        {
+
         }
     }
 }
