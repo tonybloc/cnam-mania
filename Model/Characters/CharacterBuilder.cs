@@ -17,7 +17,11 @@ namespace cnam_mania.Model.Characters
         /// </summary>
         public CharacterBuilder()
         {
-            this.Character = null;
+            this.Character = new Character();
+            SetFoodAttribute();
+            SetPopularityAttribute();
+            SetIntelligenceAttribute();
+            SetMoneyAttribute();
         }
 
 
@@ -25,23 +29,19 @@ namespace cnam_mania.Model.Characters
         /// <summary>
         /// Update the food attribute of character
         /// </summary>
-        /// <param name="value"></param>
-        public abstract void SetFoodAttribute(int value);
+        public abstract void SetFoodAttribute();
         /// <summary>
         /// Update the popularity attribute of character
         /// </summary>
-        /// <param name="value">value to set</param>
-        public abstract void SetPopularity(int value);
+        public abstract void SetPopularityAttribute();
         /// <summary>
         /// Update the money attribute of character
         /// </summary>
-        /// <param name="value">value to set</param>
-        public abstract void SetMoney(int value);
+        public abstract void SetMoneyAttribute();
         /// <summary>
         /// Update the intelligence attribute of character
         /// </summary>
-        /// <param name="value">value to set</param>
-        public abstract void SetIntelligence(int value);
+        public abstract void SetIntelligenceAttribute();
         #endregion
 
     }
