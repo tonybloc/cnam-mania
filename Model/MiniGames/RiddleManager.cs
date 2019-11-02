@@ -11,5 +11,7 @@ namespace cnam_mania.Model.MiniGames
     }
     public void Play()
  {
+
  }
+ 
 }

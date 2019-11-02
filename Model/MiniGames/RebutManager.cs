@@ -14,4 +14,5 @@ namespace cnam_mania.Model.MiniGames
  {
 
  }
+ 
 }
