@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cnam_mania.Model.Episodes
 {
-    class Story
+    public class Story
     {
         /// <summary>
         /// Current choice made.

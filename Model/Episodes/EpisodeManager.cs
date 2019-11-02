@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cnam_mania.Model.Episodes
 {
-    class EpisodeManager
+    public class EpisodeManager
     {
         /// <summary>
         /// Current Episode id.
