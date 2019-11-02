@@ -16,7 +16,7 @@ namespace cnam_mania.Model.Episodes
         /// <summary>
         /// Choices available for a story.
         /// </summary>
-        private List<Choice> Choices { get; set; }
+        private List<Choice> Choices { get; } = new List<Choice>(;)
 
         /// <summary>
         /// Defines if a story is crucial or not.
