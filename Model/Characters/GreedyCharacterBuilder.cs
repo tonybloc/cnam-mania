@@ -8,24 +8,29 @@ namespace cnam_mania.Model.Characters
 {
     public class GreedyCharacterBuilder : CharacterBuilder
     {
-        public override void SetFoodAttribute(int value)
+        /// <summary>
+        /// Create new instance of GreedyCharacterBuilder
+        /// </summary>
+        public GreedyCharacterBuilder() : base() {}
+
+        public override void SetFoodAttribute()
         {
-            this.Caracter
+            this.Character.Food = 70;
         }
 
-        public override void SetIntelligence(int value)
+        public override void SetIntelligenceAttribute()
         {
-            throw new NotImplementedException();
+            this.Character.Intellect = 60;
         }
 
-        public override void SetMoney(int value)
+        public override void SetMoneyAttribute()
         {
-            throw new NotImplementedException();
+            this.Character.Money = 40;
         }
 
-        public override void SetPopularity(int value)
+        public override void SetPopularityAttribute()
         {
-            throw new NotImplementedException();
+            this.Character.Popularity = 40;
         }
     }
 }
