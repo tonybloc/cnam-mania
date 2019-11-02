@@ -8,8 +8,20 @@ namespace cnam_mania.Model.MiniGames
 {
 public class MiniGamesFactory
     {
-        public AbsGameManeger createGamesManager(string game)
+        public AbsGameManager createGamesManager(string game)
         {
+            switch (game)
+            {
+                case "Rebut":
+                return new RebutManager();
+                break;
+                case "Riddle":
+                return new RiddleManager();
+                break;
+                case "VisualNovel":
+                return new VisualNovel();
+                break;
+            }
         }
     }
 }

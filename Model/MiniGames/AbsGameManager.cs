@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cnam_mania.Model.MiniGames
 {
-    // abstract class 'GeeksForGeeks' 
+
 public abstract class AbsGameManager { 
   
     private string name(); 
