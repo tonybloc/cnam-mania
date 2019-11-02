@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cnam_mania.Model.Episodes
 {
-    class Episode
+    class Story
     {
     }
 }

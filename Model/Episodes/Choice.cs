@@ -37,5 +37,24 @@ namespace cnam_mania.Model.Episodes
         /// Id of the next episode. 
         /// </summary>
         private int NextEpisodeId { get; set; }
+
+        /// <summary>
+        /// Class constructor
+        /// </summary>
+        /// <param name="smartPoints"></param>
+        /// <param name="popularityPoints"></param>
+        /// <param name="wealthyPoints"></param>
+        /// <param name="foodPoints"></param>
+        /// <param name="nextStoryCurrentEpisode"></param>
+        /// <param name="nextEpisodeId"></param>
+        public Choice(int smartPoints, int popularityPoints, int wealthyPoints, int foodPoints, bool nextStoryCurrentEpisode, int nextEpisodeId)
+        {
+            this.SmartPoints = smartPoints;
+            this.PopularityPoints = popularityPoints;
+            this.WealthyPoints = wealthyPoints;
+            this.FoodPoints = foodPoints;
+            this.NextStoryCurrentEpisode = nextStoryCurrentEpisode;
+            this.NextEpisodeId = nextEpisodeId;
+        }
     }
 }
