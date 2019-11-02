@@ -6,37 +6,37 @@ using System.Threading.Tasks;
 
 namespace cnam_mania.Model.Episodes
 {
-    class Choice
+    public class Choice
     {
         /// <summary>
         /// Smartness points. 
         /// </summary>
-        private int SmartPoints { get; set; }
+        public int SmartPoints { get; set; }
 
         /// <summary>
         /// Popularity points. 
         /// </summary>
-        private int PopularityPoints { get; set; }
+        public int PopularityPoints { get; set; }
 
         /// <summary>
         /// Money points. 
         /// </summary>
-        private int WealthyPoints { get; set; }
+        public int WealthyPoints { get; set; }
 
         /// <summary>
         /// Food points. 
         /// </summary>
-        private int FoodPoints { get; set; }
+        public int FoodPoints { get; set; }
 
         /// <summary>
         /// Defines if the episode will be continued or not.
         /// </summary>
-        private bool NextStoryCurrentEpisode { get; set;  }
+        public bool NextStoryCurrentEpisode { get; set;  }
 
         /// <summary>
         /// Id of the next episode. 
         /// </summary>
-        private int NextEpisodeId { get; set; }
+        public int NextEpisodeId { get; set; }
 
         /// <summary>
         /// Class constructor
