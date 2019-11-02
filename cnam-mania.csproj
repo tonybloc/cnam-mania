@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Characters\Character.cs" />
+    <Compile Include="Model\Characters\CharacterBuilder.cs" />
+    <Compile Include="Model\Characters\GreedyCharacterBuilder.cs" />
+    <Compile Include="Model\Characters\PopularCharacterBuilder.cs" />
+    <Compile Include="Model\Characters\RichCharacterBuilder.cs" />
+    <Compile Include="Model\Characters\SmartCharacterBuilder.cs" />
     <Compile Include="Service\Xml\XmlDataAccess.cs" />
     <Compile Include="Settings\Config.cs" />
     <Page Include="MainWindow.xaml">
@@ -97,7 +103,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="Resources\Pictures\" />
   </ItemGroup>
   <ItemGroup>
