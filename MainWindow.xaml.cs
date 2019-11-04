@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cnam_mania.Model.MiniGames;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace cnam_mania
     /// </summary>
     public partial class MainWindow : Window
     {
+        private VisualNovelManager _VisualNovelManager;
+
         public MainWindow()
         {
             InitializeComponent();
+            _VisualNovelManager = VisualNovelManager.Instance;
+
         }
     }
 }
