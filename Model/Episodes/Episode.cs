@@ -3,20 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace cnam_mania.Model.Episodes
 {
+    [Serializable]
+    [XmlRoot("Episode")]
     public class Episode
     {
         /// <summary>
         /// Identifie the episode.
         /// </summary>
-        private int EpisodeId { get; set; }
+        [XmlElement("Id")]
+        public int EpisodeId { get; set; }
 
         /// <summary>
         /// Current story of the episode.
         /// </summary>
-        private Story CurrentStory { get; set; }
+        public Story CurrentStory { get; set; }
+
+        /// <summary>
+        /// List of stories
+        /// </summary>
+        [XmlElement("Story")]
+        public List<Story> Stories { get; set; }
+
+        public Episode()
+        {
+            Stories = new List<Story>();
+        }
 
         /// <summary>
         /// Class constructor

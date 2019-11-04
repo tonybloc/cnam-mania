@@ -55,12 +55,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Manager\Characters\CharacterManager.cs" />
+    <Compile Include="Manager\Games\VisualNovelManager.cs" />
     <Compile Include="Model\Characters\Character.cs" />
     <Compile Include="Model\Characters\CharacterBuilder.cs" />
     <Compile Include="Model\Characters\GreedyCharacterBuilder.cs" />
     <Compile Include="Model\Characters\PopularCharacterBuilder.cs" />
     <Compile Include="Model\Characters\RichCharacterBuilder.cs" />
     <Compile Include="Model\Characters\SmartCharacterBuilder.cs" />
+    <Compile Include="Model\Episodes\Choice.cs" />
+    <Compile Include="Model\Episodes\Episode.cs" />
+    <Compile Include="Model\Episodes\EpisodeManager.cs" />
+    <Compile Include="Model\Episodes\Story.cs" />
+    <Compile Include="Model\Levels\ILevelStrategy.cs" />
+    <Compile Include="Model\Memento\Memento.cs" />
+    <Compile Include="Model\Serie.cs" />
     <Compile Include="Service\Xml\XmlDataAccess.cs" />
     <Compile Include="Settings\Config.cs" />
     <Page Include="MainWindow.xaml">

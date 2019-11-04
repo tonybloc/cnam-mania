@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -12,11 +9,11 @@ namespace Monopoly.Service.Xml
     public static class XmlDataAccess
     {
         /// <summary>
-        /// Déserialize un objet
+        /// Deserialize an object
         /// </summary>
-        /// <typeparam name="T">Type de l'objet</typeparam>
-        /// <param name="pFilePath">Chemin du fichier source (xml)</param>
-        /// <returns>un objet</returns>
+        /// <typeparam name="T">Object's type</typeparam>
+        /// <param name="pFilePath">Path of the XML file</param>
+        /// <returns>An object</returns>
         public static T XMLDeserializeObject<T>(string pFilePath)
         {
             T myObject = default(T);
@@ -51,18 +48,19 @@ namespace Monopoly.Service.Xml
                 Console.WriteLine(exp.Message);
             }
 
+            Console.WriteLine("\n========== Désérialisation effectuée avec succès ! ==========\n");
             return myObject;
         }
-        
+
         /// <summary>
-        /// Déserialise une liste d'object
+        /// Deserialize a list of objects
         /// </summary>
-        /// <typeparam name="T">Type d'object</typeparam>
-        /// <param name="pFilePath">chemin du ficher source (xml)</param>
-        /// <returns>List d'object</returns>
+        /// <typeparam name="T">Object's type</typeparam>
+        /// <param name="pFilePath">Path of the XML file</param>
+        /// <returns>List of objects</returns>
         public static List<T> XMLDeserializeListOf<T>(string pFilePath)
         {
-            List<T> ListOfObjects = new System.Collections.Generic.List<T>();
+            List<T> ListOfObjects = new List<T>();
 
             try
             {

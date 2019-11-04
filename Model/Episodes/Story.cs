@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace cnam_mania.Model.Episodes
 {
+    [Serializable]
+    [XmlRoot("Story")]
     public class Story
     {
+        /// <summary>
+        /// Identify the story
+        /// </summary>
+        [XmlElement("Id")]
+        public int Id { get; set; }
+
         /// <summary>
         /// Current choice made.
         /// </summary>
@@ -16,12 +25,28 @@ namespace cnam_mania.Model.Episodes
         /// <summary>
         /// Choices available for a story.
         /// </summary>
-        private List<Choice> Choices { get; } = new List<Choice>(); 
+        [XmlElement("Choice")]
+        public List<Choice> Choices { get; set; }
 
         /// <summary>
         /// Defines if a story is crucial or not.
         /// </summary>
-        private bool IsCrucial { get; set; }
+        [XmlElement("IsCrucial")]
+        public bool IsCrucial { get; set; }
+
+        /// <summary>
+        /// Title of the story
+        /// </summary>
+        [XmlElement("Title")]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Story()
+        {
+            Choices = new List<Choice>();
+        }
 
         /// <summary>
         /// Class constructor

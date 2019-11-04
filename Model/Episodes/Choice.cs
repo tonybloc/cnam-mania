@@ -3,40 +3,59 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace cnam_mania.Model.Episodes
 {
+    [Serializable]
+    [XmlRoot("Choice")]
     public class Choice
     {
+        [XmlElement("Description")]
+        public string Description { get; set; }
         /// <summary>
         /// Smartness points. 
         /// </summary>
+        [XmlElement("Smart")]
         public int SmartPoints { get; set; }
 
         /// <summary>
         /// Popularity points. 
         /// </summary>
+        [XmlElement("Popularity")]
         public int PopularityPoints { get; set; }
 
         /// <summary>
         /// Money points. 
         /// </summary>
+        [XmlElement("Money")]
         public int WealthyPoints { get; set; }
 
         /// <summary>
         /// Food points. 
         /// </summary>
+        [XmlElement("Food")]
         public int FoodPoints { get; set; }
 
         /// <summary>
         /// Defines if the episode will be continued or not.
         /// </summary>
-        public bool NextStoryCurrentEpisode { get; set;  }
+        [XmlElement("NextStoryCurrentEpisode")]
+        public bool NextStoryCurrentEpisode { get; set; }
 
         /// <summary>
         /// Id of the next episode. 
         /// </summary>
+        [XmlElement("NextEpisodeId")]
         public int NextEpisodeId { get; set; }
+
+        /// <summary>
+        /// Class constructor
+        /// </summary>
+        public Choice()
+        {
+
+        }
 
         /// <summary>
         /// Class constructor
