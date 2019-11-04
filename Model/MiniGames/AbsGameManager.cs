@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace cnam_mania.Model.MiniGames
 {
 
-public abstract class AbsGameManager { 
-  
-    private string name(); 
-      
-} 
-// Main Method 
-    public static void Play() 
-    { 
+    public abstract class AbsGameManager
+    {
+
+        private string name { get; set; }
+
+
+        // Main Method 
+        public abstract void Play();
 
     }
 }

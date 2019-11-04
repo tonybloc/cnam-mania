@@ -56,7 +56,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Manager\Characters\CharacterManager.cs" />
-    <Compile Include="Manager\Games\VisualNovelManager.cs" />
     <Compile Include="Model\Characters\Character.cs" />
     <Compile Include="Model\Characters\CharacterBuilder.cs" />
     <Compile Include="Model\Characters\GreedyCharacterBuilder.cs" />
@@ -67,8 +66,19 @@
     <Compile Include="Model\Episodes\Episode.cs" />
     <Compile Include="Model\Episodes\EpisodeManager.cs" />
     <Compile Include="Model\Episodes\Story.cs" />
+    <Compile Include="Model\Levels\EasyMode.cs" />
+    <Compile Include="Model\Levels\HardMode.cs" />
     <Compile Include="Model\Levels\ILevelStrategy.cs" />
-    <Compile Include="Model\Memento\Memento.cs" />
+    <Compile Include="Model\Levels\MediumMode.cs" />
+    <Compile Include="Model\Memento\IMemento.cs" />
+    <Compile Include="Model\Memento\IOriginator.cs" />
+    <Compile Include="Model\Memento\SavingPoint.cs" />
+    <Compile Include="Model\Memento\SavingPointMemento.cs" />
+    <Compile Include="Model\MiniGames\AbsGameManager.cs" />
+    <Compile Include="Model\MiniGames\MiniGamesFactory.cs" />
+    <Compile Include="Model\MiniGames\RebutManager.cs" />
+    <Compile Include="Model\MiniGames\RiddleManager.cs" />
+    <Compile Include="Model\MiniGames\VisualNovelManager.cs" />
     <Compile Include="Model\Serie.cs" />
     <Compile Include="Service\Xml\XmlDataAccess.cs" />
     <Compile Include="Settings\Config.cs" />

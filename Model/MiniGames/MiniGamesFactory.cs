@@ -6,22 +6,27 @@ using System.Threading.Tasks;
 
 namespace cnam_mania.Model.MiniGames
 {
-public class MiniGamesFactory
+    public static class MiniGamesFactory
     {
-        public AbsGameManager createGamesManager(string game)
+        public static AbsGameManager createGamesManager(string game)
         {
+            AbsGameManager manager;
             switch (game)
             {
                 case "Rebut":
-                return new RebutManager();
-                break;
+                    manager = new RebutManager();
+                    break;
                 case "Riddle":
-                return new RiddleManager();
-                break;
+                    manager = new RiddleManager();
+                    break;
                 case "VisualNovel":
-                return new VisualNovel();
-                break;
+                    manager = VisualNovelManager.Instance;
+                    break;
+                default:
+                    manager = VisualNovelManager.Instance;
+                    break;                   
             }
+            return manager;
         }
     }
 }

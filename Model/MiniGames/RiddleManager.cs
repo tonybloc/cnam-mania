@@ -8,10 +8,9 @@ namespace cnam_mania.Model.MiniGames
 {
     public class RiddleManager : AbsGameManager
     {
-    }
-    public void Play()
- {
+        public override void Play()
+        {
 
- }
- 
+        }
+    }
 }
