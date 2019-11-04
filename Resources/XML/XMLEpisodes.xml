@@ -1,599 +1,964 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
-<!--TODO : raccord entre ep 1 et ep 3 ?-->
-<Episode
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Serie>
+  <Episode
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <Id>1</Id>
     <Story>
-        <Id>0</Id>
-        <IsCrucial></IsCrucial>
-        <Title>Aujourd'hui, c'est la rentrée. C'est votre premier cours.</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Sêcher...</Description>
-                <NextEpisodeId>2</NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>C'est parti !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>0</Id>
+      <IsCrucial>true</IsCrucial>
+      <Title>Aujourd'hui, vous avez cours de "Tests et validations".</Title>
+
+      <Choice>
+        <Description>Sêcher...</Description>
+        <NextEpisodeId>2</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>-5</Smart>
+        <Popularity>-10</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>C'est parti !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>10</Smart>
+        <Popularity>-5</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>1</Id>
-        <Title>Il est l'heure de manger et vous n'avez pas de TUP !</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Go Asia Wook !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Go Lidl !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>1</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Il est l'heure de manger et vous n'avez pas de TUP !</Title>
+
+      <Choice>
+        <Description>Go Asia Wook !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>10</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>-10</Money>
+      </Choice>
+      <Choice>
+        <Description>Go Lidl !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>5</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>-5</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>2</Id>
-        <Title>Enfin la pause de 15h, après 2h avec M. Haessig </Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Pas de pause pour les meilleurs !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Hallélujah !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>2</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Enfin la pause de 15h, après 2h avec M. Haessig </Title>
+
+      <Choice>
+        <Description>Pas de pause pour les meilleurs !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>-5</Food>
+        <Smart>0</Smart>
+        <Popularity>-5</Popularity>
+        <Money>5</Money>
+      </Choice>
+      <Choice>
+        <Description>Hallélujah !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>5</Smart>
+        <Popularity>5</Popularity>
+        <Money>-5</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>3</Id>
-        <Title>C'est la fin de journée ! Comment vous sentez-vous ?</Title>
-        <Choice>
-            <Description>Rien suivi du cours, go Délirium !</Description>
-            <NextEpisodeId></NextEpisodeId>
-            <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-        </Choice>
-        <Choice>
-            <Description>Oh non... trop triste. Lol !</Description>
-            <NextEpisodeId></NextEpisodeId>
-            <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            <NextEpisodeId></NextEpisodeId>
-        </Choice>
+      <Id>3</Id>
+      <IsCrucial>true</IsCrucial>
+      <Title>C'est la fin de la journée ! Comment vous sentez-vous ?</Title>
+      <Choice>
+        <Description>Rien suivi du cours, go Délirium !</Description>
+        <NextEpisodeId>4</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>-10</Smart>
+        <Popularity>-5</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Oh non... j'ai encore du travail</Description>
+        <NextEpisodeId>3</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>5</Smart>
+        <Popularity>-5</Popularity>
+        <Money>0</Money>
+      </Choice>
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>2</Id>
     <Story>
-        <Id>0</Id>
-        <Title>Votre réveil sonne pour la 5ème fois</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Se réveiller</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Se rendormir</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Votre réveil sonne pour la 5ème fois</Title>
+
+      <Choice>
+        <Description>Se réveiller</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>10</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Se rendormir</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>-10</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>1</Id>
-        <Title>Il est trop tard pour aller en cours, voulez-vous jouer à Civilisation VI ?</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Non, j'y vais quand même</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Oh, oui !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>1</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Il est trop tard pour aller en cours, voulez-vous jouer à Civilisation VI ?</Title>
+
+      <Choice>
+        <Description>Non, j'y vais quand même</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>-10</Smart>
+        <Popularity>-5</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Oh, oui !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>5</Smart>
+        <Popularity>5</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>2</Id>
-        <Title>Votre voiture tombe en panne</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Go au garage. Je prends le tram.</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Je suis bricoleur ! Je répare ça moi-même :)</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>2</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Votre voiture tombe en panne</Title>
+
+      <Choice>
+        <Description>Go au garage. Je prends le tram.</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>5</Smart>
+        <Popularity>0</Popularity>
+        <Money>-10</Money>
+      </Choice>
+      <Choice>
+        <Description>Je suis bricoleur ! Je répare ça moi-même :)</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>-5</Smart>
+        <Popularity>0</Popularity>
+        <Money>5</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>3</Id>
-        <Title>Jo vous propose d'aller boire un verre.</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Oui, bien sûr !</Description>
-                <NextEpisodeId>4</NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Non ... </Description>
-                <NextEpisodeId>3</NextEpisodeId>
-                <!-- TODO juste ?-->
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>3</Id>
+      <IsCrucial>true</IsCrucial>
+      <Title>Jo vous propose d'aller boire un verre.</Title>
+
+      <Choice>
+        <Description>Oui, bien sûr !</Description>
+        <NextEpisodeId>4</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>5</Smart>
+        <Popularity>0</Popularity>
+        <Money>-5</Money>
+      </Choice>
+      <Choice>
+        <Description>Non ... merci ! </Description>
+        <NextEpisodeId>3</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>5</Smart>
+        <Popularity>-5</Popularity>
+        <Money>5</Money>
+      </Choice>
+
     </Story>
-</Episode>
-<Episode >
+  </Episode>
+  <Episode >
     <Id>3</Id>
     <Story>
-        <Id>0</Id>
-        <Title>Contrôle de maths</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Easy ! J'y vais au talent !</Description>
-                <NextEpisodeId>6</NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>J'ai révisé toute la nuit !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>0</Id>
+      <IsCrucial>true</IsCrucial>
+      <Title>Vous avez un contrôle de maths</Title>
+
+      <Choice>
+        <Description>J'espère que ça passe...</Description>
+        <NextEpisodeId>6</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>-10</Smart>
+        <Popularity>5</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>J'ai révisé de toute façon !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>10</Smart>
+        <Popularity>-5</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>1</Id>
-        <Title>Vous avez cours avec Jean-Marc.</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>J'écoute</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Je dors, de toutes les façons, il n'est pas là !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>1</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Vous avez cours avec Jean-Marc.</Title>
+
+      <Choice>
+        <Description>J'écoute</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>5</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Je dors, de toutes les façons, il n'est pas là !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>-5</Smart>
+        <Popularity>-10</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>2</Id>
-        <Title>Je vous lance un avion en papier</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Retour à l'envoyeur !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Je le brûle, hahahh !</Description>
-                <NextEpisodeId>99</NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>2</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Je vous lance un avion en papier</Title>
+
+      <Choice>
+        <Description>Retour à l'envoyeur !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>-5</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Je le brûle, hahahh !</Description>
+        <NextEpisodeId>99</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>3</Id>
-        <Title>Adrien raye une voiture</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Je prends un Snap</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Poukav</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>3</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Adrien raye une voiture</Title>
+
+      <Choice>
+        <Description>Je prends un Snap</Description>
+        <NextEpisodeId>7</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>5</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Poukav</Description>
+        <NextEpisodeId>7</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>-10</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>4</Id>
     <Story>
-        <Id>0</Id>
-        <Title>Vous êtes bouré</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Chef, un p'tit verre, on a soif !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Vomir...</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Vous êtes bourré</Title>
+
+      <Choice>
+        <Description>Chef, un p'tit verre, on a soif !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>-10</Money>
+      </Choice>
+      <Choice>
+        <Description>Vomir...</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>-5</Food>
+        <Smart>0</Smart>
+        <Popularity>-5</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>1</Id>
-        <Title>Rentrer chez soi</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>En voiture</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>A pieds</Description>
-                <NextEpisodeId>8</NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>1</Id>
+      <IsCrucial>true</IsCrucial>
+      <Title>Comment rentrer chez soi ?</Title>
+
+      <Choice>
+        <Description>En voiture</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>-10</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>A pieds</Description>
+        <NextEpisodeId>8</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>10</Smart>
+        <Popularity>-5</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>2</Id>
-        <Title>Une voiture vous fonce dessus</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Esquiver</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Oh, shit !</Description>
-                <NextEpisodeId>98</NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>2</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Une voiture vous fonce dessus</Title>
+
+      <Choice>
+        <Description>Esquiver</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>5</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Oh, shit !</Description>
+        <NextEpisodeId>98</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
-</Episode>
-<Episode>
-    <Id>5</Id> <!--TODO : redirection ep 5 vers 3 OK ? -->
+  </Episode>
+  <Episode>
+    <Id>5</Id>
+    <!--TODO : redirection ep 5 vers 3 OK ? -->
     <Story>
-        <Id>0</Id>
-        <Title></Title>
-        <Choice>
-            <Description></Description>
-            <NextEpisodeId>3</NextEpisodeId>
-            <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-        </Choice>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title></Title>
+      <Choice>
+        <Description></Description>
+        <NextEpisodeId>3</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>6</Id>
     <Story>
-        <Id>0</Id>
-        <Title>Vous venez de rater l'épreuve de Mathématiques. Que souhaitez-vous faire ?</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Je vais au rattrapage, pardi !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>No stress, Jean-Marc est là !</Description>
-                <NextEpisodeId>97</NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Vous venez de ratter l'épreuve de mathématiques. Que souhaitez-vous faire ?</Title>
+      <Choice>
+        <Description>Je vais au rattrapage, pardi !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>5</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>No stress, Jean-Marc est là !</Description>
+        <NextEpisodeId>97</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>-10</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
     </Story>
     <Story>
-        <Id>1</Id>
-        <Title>Le projet de MET05 arrive à grand pas !</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Je travaille déjà dessus.</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>C'est quand la deadline déjà ?</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
-    </Story>
-    <Story>
-        <Id>2</Id>
-        <Title>Le rendu du projet est le : 27 novembre. Quel status reflète le plus votre état d'avancement ?</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Je conceptualise l'UML</Description>
-                <NextEpisodeId>9</NextEpisodeId>
-                                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+      <Id>1</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Le projet de MET05 arrive à grand pas !</Title>
 
-            </Choice>
-            <Choice>
-                <Description>Je finalise le projet</Description>
-                <NextEpisodeId>9</NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
-        <!-- TODO Dev en h4 ?-->
-    </Story> 
-</Episode>
-<Episode>
+      <Choice>
+        <Description>Je travaille déjà dessus.</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>-5</Food>
+        <Smart>5</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>C'est quand la deadline déjà ?</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>-10</Food>
+        <Smart>-10</Smart>
+        <Popularity>0</Popularity>
+        <Money>-10</Money>
+      </Choice>
+
+    </Story>
+    <Story>
+      <Id>2</Id>
+      <IsCrucial>true</IsCrucial>
+      <Title>Le rendu du projet est le : 27 novembre. Quel status reflète le plus votre état d'avancement ?</Title>
+
+      <Choice>
+        <Description>Je conceptualise l'UML</Description>
+        <NextEpisodeId>9</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>-5</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+
+      </Choice>
+      <Choice>
+        <Description>Je finalise le projet</Description>
+        <NextEpisodeId>9</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>10</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+    </Story>
+  </Episode>
+  <Episode>
     <Id>7</Id>
     <Story>
-        <Id>0</Id>
-        <Title>Emmanuel MAURICE vous a donné un nouveau TP.</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Cool, j'adore le WEB.</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Je n'ai pas le temps pour ça !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Emmanuel MAURICE vous a donné un nouveau TP.</Title>
+
+      <Choice>
+        <Description>Cool, j'adore le WEB. Fait avant samedi!</Description>
+        <NextEpisodeId>89</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Je n'ai pas le temps pour ça ! On verra ce week-end ?</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>-10</Food>
+        <Smart>10</Smart>
+        <Popularity>-5</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>1</Id>
-        <Title>Pierre LEROY vous a donné un nouveau TP</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Tranquille, je le ferai à la fin. Comme tout les autres d'ailleurs ;)</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Mais... Je n'ai pas encore fini les précédents !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>1</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Pierre LEROY vous a donné un nouveau TP</Title>
+
+      <Choice>
+        <Description>Tranquille, je le ferai à la fin. Comme tout les autres d'ailleurs ;)</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>5</Food>
+        <Smart>10</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Mais... Je n'ai pas encore fini les précédents !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>-10</Food>
+        <Smart>-10</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>2</Id>
-        <Title>Le rendu du projet de MET est le : 27 novembre. Quel status reflète le plus votre état d'avancement ?</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Je n'ai pas encore fini le projet !</Description>
-                <NextEpisodeId>9</NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>J'ai déjà fini le projet !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>2</Id>
+      <IsCrucial>true</IsCrucial>
+      <Title>Le rendu du projet de MET est le : 27 novembre. Quel status reflète le plus votre état d'avancement ?</Title>
+
+      <Choice>
+        <Description>Je n'ai pas encore fini le projet !</Description>
+        <NextEpisodeId>9</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>-5</Food>
+        <Smart>-5</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>J'ai déjà fini le projet !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>3</Id>
-        <Title>Aujourd'hui vous avez cours avec François Croharé (cf : le prof de gestion de projet)</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Je sens que je vais dormir.</Description>
-                <NextEpisodeId>96</NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Encore une après-midi de perdue.</Description>
-                <NextEpisodeId>96</NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>3</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Aujourd'hui vous avez cours avec François Croharé (cf : le prof de gestion de projet)</Title>
+      <!--Dormir aussi en 96 ?-->
+      <Choice>
+        <Description>Je sens que je vais dormir.</Description>
+        <NextEpisodeId>96</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Encore une après-midi de perdue.</Description>
+        <NextEpisodeId>96</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>8</Id>
     <Story>
-        <Id>1</Id>
-        <Title>Vous tombez dans une flaque d'eau et apercevez un billet de loto !</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Je rammasse le billet.</Description>
-                <NextEpisodeId>94</NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Je le laisse... il est trop sale.</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>1</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>En marchant vers chez vous, vous tombez dans une flaque d'eau et apercevez un papier.</Title>
+
+      <Choice>
+        <Description>Je rammasse le papier, c'est un billet de loto.</Description>
+        <NextEpisodeId>94</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Je le laisse... </Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>-10</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>1</Id>
-        <Title>Vous croisez Coco déguisez en lapin, le suivez-vous ?</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Oui, avec joie !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Ça me semble louche... mais j'y vais</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>1</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Vous croisez Coco déguisé en lapin, le suivez-vous ?</Title>
+
+      <Choice>
+        <Description>Oui, avec joie !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>5</Food>
+        <Smart>-10</Smart>
+        <Popularity>0</Popularity>
+        <Money>-10</Money>
+      </Choice>
+      <Choice>
+        <Description>Ça me semble louche... mais j'y vais</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>5</Food>
+        <Smart>-5</Smart>
+        <Popularity>0</Popularity>
+        <Money>-5</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>2</Id>
-        <Title>Le dédale des rues de Strasbourg est interminable... mais le barathon se poursuit !</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Je continue à boire un verre...</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Je change de bar.</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>2</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Le dédale des rues de Strasbourg est interminable... mais le barathon se poursuit !</Title>
+
+      <Choice>
+        <Description>Je continue à boire un verre...</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>5</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>-5</Money>
+      </Choice>
+      <Choice>
+        <Description>Je change de bar.</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>-5</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>0</Id>
-        <Title>Vous avez trop bu... les murs tanguent...</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Vous rédigez un mail bizarre à votre manager. Vous êtes viré !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Vous vous effondrez...</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Vous avez trop bu... les murs tanguent...</Title>
+
+      <Choice>
+        <Description>Vous rédigez un mail bizarre à votre manager. Vous êtes viré !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>-10</Smart>
+        <Popularity>-10</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Vous vous effondrez...</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>5</Popularity>
+        <Money>-5</Money>
+      </Choice>
+
     </Story>
     <Story>
-        <Id>1</Id>
-        <Title>Titanium vous démarche, acceptez-vous la proposition ?</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Oui, tout à fait !</Description>
-                <NextEpisodeId>95</NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Non, sans façon, je connais l'histoire...</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>1</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Titanium vous démarche, acceptez-vous la proposition ?</Title>
+
+      <Choice>
+        <Description>Oui, tout à fait !</Description>
+        <NextEpisodeId>95</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Non, sans façon, je connais l'histoire...</Description>
+        <NextEpisodeId>7</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>10</Popularity>
+        <Money>0</Money>
+      </Choice>
+
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>9</Id>
     <Story>
-        <Id>0</Id>
-        <Title>Avez-vous accumulez du retard dans le projet MET ?</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Oui, malheureusement, le ciel m'est tombé sur la tête !</Description>
-                <NextEpisodeId>92</NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>C'est parti pour l'achat des cadeaux de Noël !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>0</Id>
+      <IsCrucial>true</IsCrucial>
+      <Title>Avez-vous accumulez du retard dans le projet MET ?</Title>
+      <Choice>
+        <Description>Oui, malheureusement, le ciel m'est tombé sur la tête !</Description>
+        <NextEpisodeId>10</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>-5</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Non... C'est parti pour l'achat des cadeaux de Noël !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>5</Smart>
+        <Popularity>-5</Popularity>
+        <Money>0</Money>
+      </Choice>
     </Story>
     <Story>
-        <Id>1</Id>
-        <Title>C'est Noël, vous achetez une caisse de vin pour Anthonin Kaklk</Title>
-        <ChoiceList>
-            <Choice>
-                <Description>Vous avez une très bonne note au contrôle ! Vous validez cette matière avec succès !</Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-            </Choice>
-            <Choice>
-                <Description>Dommage, il n'a pas été satisfait par votre projet... 0/3 </Description>
-                <NextEpisodeId></NextEpisodeId>
-                <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-            </Choice>
-        </ChoiceList>
+      <Id>1</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Estimez-vous avoir une bonne note au projet MET ?</Title>
+      <Choice>
+        <Description>Oui, j'ai géré ! 3/3 assuré !</Description>
+        <NextEpisodeId>89</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>10</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Je ne pense pas... flemme... </Description>
+        <NextEpisodeId>97</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>-5</Popularity>
+        <Money>0</Money>
+      </Choice>
     </Story>
-</Episode>
-<Episode>
+
+  </Episode>
+  <Episode>
+    <Id>10</Id>
+    <Story>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>C'est Noël, vous achetez une caisse de vin pour Antonin Kalk !</Title>
+      <Choice>
+        <Description>Vous avez une très bonne note au contrôle ! Vous validez cette matière avec succès !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>10</Popularity>
+        <Money>0</Money>
+      </Choice>
+      <Choice>
+        <Description>Dommage, il n'a pas été satisfait par votre projet... 0/3 </Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>-10</Popularity>
+        <Money>0</Money>
+      </Choice>
+    </Story>
+  </Episode>
+  <Episode>
     <Id>88</Id>
-    <Gauge type="Food">100</Gauge>
     <Story>
-        <Id>0</Id>
-        <Title>Vous mangez de trop, vous ne parvenez plus à venir au CFAI.</Title>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Vous mangez de trop, vous ne parvenez plus à venir au CFAI.</Title>
+      <Choice>
+        <Description>FIN !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>100</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>89</Id>
     <Story>
-        <Id>0</Id>
-        <Title>Félicitations !</Title>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Félicitations !</Title>
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>90</Id>
-    <Gauge type="Food">0</Gauge>
     <Story>
-        <Id>0</Id>
-        <Title>Vous n’avez plus de nourriture et la pluie battante vous empêche d’aller au BDE. Vous mangez un champignon pour tenir. Pas de chance. Il était vénéneux.</Title>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Vous n’avez plus de nourriture et la pluie battante vous empêche d’aller au BDE. Vous mangez un champignon pour tenir. Pas de chance. Il était vénéneux.</Title>
+      <Choice>
+        <Description>FIN !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>-100</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>91</Id>
-    <Gauge type="Popularity">0</Gauge>
     <Story>
-        <Id>0</Id>
-        <Title>Plus personne ne vous aime même Jean Marc. On vous jette par le fenêtre de la salle de cours. Vous y survivez mais vous vous dites qu’il vaudrait mieux partir !</Title>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Plus personne ne vous aime même Jean Marc. On vous jette par le fenêtre de la salle de cours. Vous y survivez mais vous vous dites qu’il vaudrait mieux partir !</Title>
+      <Choice>
+        <Description>FIN !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>-100</Popularity>
+        <Money>0</Money>
+      </Choice>
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>92</Id>
-    <Gauge type="Intelligence">100</Gauge>
     <Story>
-        <Id>0</Id>
-        <Title>Vous avez accumulé trop de retard pour les projets et n’arrivez plus à gérer la cadence avec le rendu des TPs. Vous partez en vacances à Darmstadt.
-</Title>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>
+        Vous avez accumulé trop de retard pour les projets et n’arrivez plus à gérer la cadence avec le rendu des TPs. Vous partez en vacances à Darmstadt.
+      </Title>
+      <Choice>
+        <Description>FIN !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>100</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>93</Id>
-    <Gauge type="Intelligence">0</Gauge>
     <Story>
-        <Id>0</Id>
-        <Title>Vous avez cours avec F.Croharé (le prof de gestion de projet), mais vous rendez l’âme au bout de la 100ème slide... Et c’est déjà un record !</Title>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Vous avez cours avec F.Croharé (le prof de gestion de projet), mais vous rendez l’âme au bout de la 100ème slide... Et c’est déjà un record !</Title>
+      <Choice>
+        <Description>FIN !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>-100</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>94</Id>
-    <Gauge type="Money">100</Gauge>
     <Story>
-        <Id>0</Id>
-        <Title>Vous gagnez au loto. Vous achetez le CFAI. Vous ne passerez plus une minute de plus en cours.</Title>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Vous gagnez au loto. Vous achetez le CFAI. Vous ne passerez plus une minute de plus en cours.</Title>
+      <Choice>
+        <Description>FIN !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>100</Money>
+      </Choice>
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>95</Id>
-    <Gauge type="Money">0</Gauge>
     <Story>
-        <Id>0</Id>
-        <Title>Pas de bol, vous êtes apprenti chez Titanium. Souhaitez-vous vraiment plus de détails ?</Title>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Pas de bol, vous êtes apprenti chez Titanium. Souhaitez-vous vraiment plus de détails ?</Title>
+      <Choice>
+        <Description>FIN !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>-100</Money>
+      </Choice>
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>96</Id>
     <Story>
-        <Id>0</Id>
-        <Title>Vous êtes en burning out.</Title>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Vous êtes en burning out.</Title>
+      <Choice>
+        <Description>FIN !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>100</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>97</Id>
     <Story>
-        <Id>0</Id>
-        <Title>Vous avez échoué au devoir. Jean-Marc n'a pas pu vous sauver.</Title>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Vous avez échoué au devoir. Jean-Marc n'a pas pu vous sauver.</Title>
+
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>98</Id>
     <Story>
-        <Id>0</Id>
-        <Title>Paix à votre âme, vous étiez si jeune...</Title>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Paix à votre âme, vous étiez si jeune...</Title>
+
     </Story>
-</Episode>
-<Episode>
+  </Episode>
+  <Episode>
     <Id>99</Id>
     <Story>
-        <Id>0</Id>
-        <Title>Vous êtes viré du CFAI pour faute grave !</Title>
+      <Id>0</Id>
+      <IsCrucial>false</IsCrucial>
+      <Title>Vous êtes viré du CFAI pour faute grave !</Title>
+
     </Story>
-</Episode>
+  </Episode>
+</Serie>
