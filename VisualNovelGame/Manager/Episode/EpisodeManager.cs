@@ -74,32 +74,35 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
             if( (this.CurrentEpisode != null) && (this.CurrentStory != null) )
             {
                 // Get index of currentEpisode.
-                int IndexCurrentEpisode = this.Serie.Episodes.FindIndex((item) => item.EpisodeId == CurrentEpisode.EpisodeId);
+                int IndexCurrentEpisode =  this.Serie.Episodes.FindIndex((item) => item.EpisodeId == CurrentEpisode.EpisodeId);
 
                 // Get index of currentStory.
                 int IndexCurrentStory = this.CurrentEpisode.Stories.FindIndex((item) => item.Id == CurrentStory.Id);
 
-
+                // Define if we can skip storys in episode
                 if (this.CurrentStory.IsCrucial)
                 {
-                    // Find next story in next episode                    
-                    this.CurrentEpisode = GetEpisode(choice.NextEpisodeId);
-                    this.CurrentStory = GetStory(choice.NextEpisodeId, 0);
+                    if(!choice.NextStoryCurrentEpisode)
+                    {
+                        // Find next story in next episode                    
+                        this.CurrentEpisode = GetEpisode(choice.NextEpisodeId);
+                        this.CurrentStory = GetStory(choice.NextEpisodeId, 0);
+                        return;
+                    }
+                }
+                
+                // If exist next story in episode - switch. Else next epsiode
+                if (HasNextStoryInEpsiode(this.CurrentEpisode.EpisodeId, this.CurrentStory.Id) )
+                {
+                    this.CurrentStory = this.CurrentEpisode.Stories[GetEpsiodeIndex(this.CurrentEpisode.EpisodeId, this.Serie.Episodes)+1];
+                    return;
                 }
                 else
                 {
-                    if (HasNextStoryInEpsiode(this.CurrentEpisode.EpisodeId, this.CurrentStory.Id) )
-                    {
-                        this.CurrentStory = this.CurrentEpisode.Stories[GetEpsiodeIndex(this.CurrentEpisode.EpisodeId, this.Serie.Episodes)+1];
-                    }
-                    else
-                    {
-                        // TODO
-                    }
-                    // Find next story in episode
-                    this.CurrentEpisode = GetEpisode(IndexCurrentEpisode);
-                    this.CurrentStory = GetStory(this.CurrentEpisode.EpisodeId, IndexCurrentStory + 1);
-                }
+                    this.CurrentEpisode = this.GetEpisode(choice.NextEpisodeId);
+                    this.CurrentStory = GetStory(choice.NextEpisodeId, 0);
+                    return;
+                }                
             }
         }
         
