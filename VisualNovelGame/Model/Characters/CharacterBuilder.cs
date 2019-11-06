@@ -9,23 +9,27 @@ namespace cnam_mania.VisualNovelGame.Model.Characters
     public abstract class CharacterBuilder
     {
         #region Attributes
-        public Character Character { get; private set; }
+        protected Character Character { get; private set; }
         #endregion
 
+        #region Methodes
         /// <summary>
-        /// Create new instance of "CharacterBuilder" class
+        /// Creates a new Character. 
         /// </summary>
-        public CharacterBuilder()
+        public void CreateCharacter()
         {
             this.Character = new Character();
-            SetFoodAttribute();
-            SetPopularityAttribute();
-            SetIntelligenceAttribute();
-            SetMoneyAttribute();
+        }
+        
+        /// <summary>
+        /// Retrieves the Character built.
+        /// </summary>
+        /// <returns></returns>
+        public Character GetCharacter()
+        {
+            return this.Character; 
         }
 
-
-        #region Methodes
         /// <summary>
         /// Update the food attribute of character
         /// </summary>

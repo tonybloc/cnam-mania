@@ -10,61 +10,53 @@ namespace cnam_mania.VisualNovelGame.Manager
     public class CharacterManager
     {
         // Unique instance of class.
-        private CharacterManager _instance = null;
+        public static CharacterManager _instance = null;
+
+        /// <summary>
+        /// Character builder.
+        /// </summary>
+        private CharacterBuilder CharacterBuilder;
 
         /// <summary>
         /// Create new instance of CharacterManager.
         /// </summary>
-        private CharacterManager() {}
+        public CharacterManager()
+        {
+        }
 
         /// <summary>
-        /// Get unique instance of CharacterManager
+        /// Instance of a CharacterManager
         /// </summary>
-        /// <returns>Unique instance of class</returns>
-        public CharacterManager GetInstance()
+        public static CharacterManager Instance
         {
-            if (this._instance == null)
+            get
             {
-                this._instance = new CharacterManager();
+                if (_instance == null)
+                {
+                    _instance = new CharacterManager();
+                }
+                return _instance;
             }
-
-            return this._instance;
         }
 
         /// <summary>
-        /// Create new SmartCharacter.
+        /// Determines the character builder choosen.
         /// </summary>
-        /// <returns>Smart Character</returns>
-        public Character CreateSmartCharacter()
+        /// <param name="characterBuilder"></param>
+        public void SetCharacterBuilder(CharacterBuilder characterBuilder)
         {
-            return new SmartCharacterBuilder().Character;
+            this.CharacterBuilder = characterBuilder; 
         }
-
+        
         /// <summary>
-        /// Create new RichCharacter.
+        /// Creates a character regarding of the builder choosen.
         /// </summary>
-        /// <returns>Rich Character</returns>
-        public Character CreateRichCharacter()
+        public void createCharacter()
         {
-            return new RichCharacterBuilder().Character;
-        }
-
-        /// <summary>
-        /// Create new PopularCharacter.
-        /// </summary>
-        /// <returns>Popular Character</returns>
-        public Character CreatePopularCharacter()
-        {
-            return new PopularCharacterBuilder().Character;
-        }
-
-        /// <summary>
-        /// Create new GreedyCharacter.
-        /// </summary>
-        /// <returns>Greedy Character</returns>
-        public Character CreateGreedyCharacter()
-        {
-            return new GreedyCharacterBuilder().Character;
+            this.CharacterBuilder.SetFoodAttribute();
+            this.CharacterBuilder.SetIntelligenceAttribute();
+            this.CharacterBuilder.SetMoneyAttribute();
+            this.CharacterBuilder.SetPopularityAttribute();
         }
     }
 }
