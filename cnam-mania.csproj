@@ -68,7 +68,7 @@
     <Compile Include="VisualNovelGame\Model\Episodes\Story.cs" />
     <Compile Include="VisualNovelGame\Model\Levels\EasyMode.cs" />
     <Compile Include="VisualNovelGame\Model\Levels\HardMode.cs" />
-    <Compile Include="VisualNovelGame\Model\Levels\ILevelStrategy.cs" />
+    <Compile Include="VisualNovelGame\Model\Levels\IModeStrategy.cs" />
     <Compile Include="VisualNovelGame\Model\Levels\MediumMode.cs" />
     <Compile Include="VisualNovelGame\Model\Memento\IMemento.cs" />
     <Compile Include="VisualNovelGame\Model\Memento\IOriginator.cs" />
