@@ -7,7 +7,7 @@ using cnam_mania.VisualNovelGame.Model.Characters;
 
 namespace cnam_mania.VisualNovelGame.Model.Episodes
 {
-    public class MediumMode : IlevelStrategy
+    public class MediumMode : IModeStrategy
     {
         // Define
         private static int coeff = 2;

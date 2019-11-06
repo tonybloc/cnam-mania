@@ -8,7 +8,7 @@ using cnam_mania.VisualNovelGame.Model.Episodes;
 
 namespace cnam_mania.VisualNovelGame.Model.Levels
 {
-    public class EasyMode : IlevelStrategy
+    public class EasyMode : IModeStrategy
     {
         // Define
         private static int coeff = 1;

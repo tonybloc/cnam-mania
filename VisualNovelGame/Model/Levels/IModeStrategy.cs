@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace cnam_mania.VisualNovelGame.Model.Episodes
 {
-    public interface IlevelStrategy
+    public interface IModeStrategy
     {
         void ExecuteChoice(Character character, Choice choice);
     }
