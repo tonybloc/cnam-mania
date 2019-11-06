@@ -51,7 +51,7 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// <summary>
         /// Creates a character regarding of the builder choosen.
         /// </summary>
-        public void createCharacter()
+        public void CreateCharacter()
         {
             this.CharacterBuilder.SetFoodAttribute();
             this.CharacterBuilder.SetIntelligenceAttribute();

@@ -15,22 +15,22 @@ namespace cnam_mania.VisualNovelGame.Model.Characters
 
         public override void SetFoodAttribute()
         {
-            this.Character.Food = 40;
+            base.Character.Food = 40;
         }
 
         public override void SetIntelligenceAttribute()
         {
-            this.Character.Intellect = 70;
+            base.Character.Intellect = 70;
         }
 
         public override void SetMoneyAttribute()
         {
-            this.Character.Money = 60;
+            base.Character.Money = 60;
         }
 
         public override void SetPopularityAttribute()
         {
-            this.Character.Popularity = 40;
+            base.Character.Popularity = 40;
         }
     }
 }
