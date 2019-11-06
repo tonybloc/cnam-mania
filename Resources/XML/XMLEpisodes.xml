@@ -389,24 +389,6 @@
   </Episode>
   <Episode>
     <Id>5</Id>
-    <!--TODO : redirection ep 5 vers 3 OK ? -->
-    <Story>
-      <Id>0</Id>
-      <IsCrucial>false</IsCrucial>
-      <Title></Title>
-      <Choice>
-        <Description></Description>
-        <NextEpisodeId>3</NextEpisodeId>
-        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-        <Food>0</Food>
-        <Smart>0</Smart>
-        <Popularity>0</Popularity>
-        <Money>0</Money>
-      </Choice>
-    </Story>
-  </Episode>
-  <Episode>
-    <Id>6</Id>
     <Story>
       <Id>0</Id>
       <IsCrucial>false</IsCrucial>
@@ -482,7 +464,7 @@
     </Story>
   </Episode>
   <Episode>
-    <Id>7</Id>
+    <Id>6</Id>
     <Story>
       <Id>0</Id>
       <IsCrucial>false</IsCrucial>
@@ -585,7 +567,7 @@
     </Story>
   </Episode>
   <Episode>
-    <Id>8</Id>
+    <Id>7</Id>
     <Story>
       <Id>1</Id>
       <IsCrucial>false</IsCrucial>
@@ -713,7 +695,7 @@
     </Story>
   </Episode>
   <Episode>
-    <Id>9</Id>
+    <Id>8</Id>
     <Story>
       <Id>0</Id>
       <IsCrucial>true</IsCrucial>
@@ -763,7 +745,7 @@
 
   </Episode>
   <Episode>
-    <Id>10</Id>
+    <Id>9</Id>
     <Story>
       <Id>0</Id>
       <IsCrucial>false</IsCrucial>
