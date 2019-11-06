@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using cnam_mania.VisualNovelGame.Model.Episodes;
+using cnam_mania.VisualNovelGame.Model.Memento;
 
 namespace cnam_mania.VisualNovelGame.Manager
 {
@@ -19,6 +20,11 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// </summary>
         private static VisualNovelManager _instance = null;
 
+        /// <summary>
+        /// Game history 
+        /// </summary>
+        public List<SavingPointMemento> history;
+        
         /// <summary>
         /// EpisodeManager instance
         /// </summary>
@@ -40,7 +46,8 @@ namespace cnam_mania.VisualNovelGame.Manager
         private VisualNovelManager()
         {
             this.episodeManager = EpisodeManager.Instance;
-            this.characterManager = CharacterManager.Instance; 
+            this.characterManager = CharacterManager.Instance;
+            this.history = new List<SavingPointMemento>();
         }
 
         /// <summary>
@@ -77,7 +84,59 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// </summary>
         public void InitGame(String character, String gameMode)
         {
-             // chooses the Character according to user's choice
+
+        }
+
+        public void SaveGame()
+        {
+            // retrieves current game state 
+            SavingPoint savingPoint = new SavingPoint(this.characterManager.CharacterBuilder.GetCharacter(), this.episodeManager.CurrentEpisode);
+            // Originator will creates and stores states in Memento
+            Originator originator = new Originator();
+            // Originator instanciates saving point 
+            originator.SetSavingPoint(savingPoint);
+            // add generated memento in history 
+            this.history.Add(originator.Save());
+           
+        }
+        /// <summary>
+        /// Retrieves last game state saved.
+        /// </summary>
+        /// <param name="lastEpisode"></param>
+        /// <returns></returns>
+        public SavingPointMemento getSavingPointMemento(int lastEpisode)
+        {
+            return this.history.ElementAt(lastEpisode);
+        }
+
+        /// <summary>
+        /// Resets items state at a given time.
+        /// </summary>
+        public void backToSavingPoint()
+        {
+            // retrieve savingPoint
+            SavingPointMemento savingPointMemento = getSavingPointMemento(this.history.Count-1);
+
+            // if there is a saving point
+            if (savingPointMemento != null)
+            { 
+                // reset character's data 
+                this.characterManager.CharacterBuilder.Character.Food = savingPointMemento.GetSavingPoint().CharacterState.Food;
+                this.characterManager.CharacterBuilder.Character.Intellect = savingPointMemento.GetSavingPoint().CharacterState.Intellect;
+                this.characterManager.CharacterBuilder.Character.Money = savingPointMemento.GetSavingPoint().CharacterState.Money;
+                this.characterManager.CharacterBuilder.Character.Popularity = savingPointMemento.GetSavingPoint().CharacterState.Popularity;
+                // back to last episode saved
+                this.episodeManager.CurrentEpisode = savingPointMemento.GetSavingPoint().EpisodeState;
+            } 
+        }
+
+        /// <summary>
+        /// Creates a character based on user's choice.
+        /// </summary>
+        /// <param name="character">Character type</param>
+        public void CreateCharacter(String character)
+        {
+            // chooses the Character
             switch (character)
             {
                 case "SMART":
@@ -93,11 +152,18 @@ namespace cnam_mania.VisualNovelGame.Manager
                     this.characterManager.SetCharacterBuilder(new RichCharacterBuilder());
                     break;
                 default:
-                    break; 
+                    break;
 
             }
-           
-            // chooses the game mode according to user's choice
+        }
+
+        /// <summary>
+        /// Sets the Game Mode based on user's choice.
+        /// </summary>
+        /// <param name="gameMode"></param>
+        public void SetGameMode(String gameMode)
+        {
+            // chooses the game mode
             switch (gameMode)
             {
                 case "EASY":
@@ -110,29 +176,28 @@ namespace cnam_mania.VisualNovelGame.Manager
                     this.GameMode = new HardMode();
                     break;
                 default:
-                    break; 
+                    break;
             }
         }
 
-        public void SaveGame()
-        {
-
-        }
-
-        public void CreateCharacter()
-        {
-            // TODO 
-
-        }
-
-        public void CheckVictory()
+        /// <summary>
+        /// Checks if Game is finished
+        /// </summary>
+        public void EndGame()
         {
             // TODO 
         }
 
-        public void SwitchEpisode()
+        /// <summary>
+        /// After user's choice, chains the stories. 
+        /// </summary>
+        /// <param name="choice"></param>
+        public void SwitchEpisode(Choice choice)
         {
-            // TODO 
+            if (choice != null)
+                this.episodeManager.nextStory(choice); 
+
+            //TODO : add exceptions
         }
 
     }
