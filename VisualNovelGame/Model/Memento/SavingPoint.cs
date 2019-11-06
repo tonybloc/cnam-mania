@@ -10,29 +10,25 @@ namespace cnam_mania.VisualNovelGame.Model.Memento
 {
     public class SavingPoint
     {
+        /// <summary>
+        /// Character to save
+        /// </summary>
         private Character CharacterState { get; set; } 
 
+        /// <summary>
+        /// Episode to save
+        /// </summary>
         private Episode EpisodeState { get; set; }
 
+        /// <summary>
+        /// Class constructor
+        /// </summary>
+        /// <param name="characterState"></param>
+        /// <param name="episodeToSave"></param>
         public SavingPoint(Character characterState, Episode episodeToSave)
         {
             CharacterState = characterState;
             EpisodeState = episodeToSave;
-        }
-
-        public IMemento Save()
-        {
-            return new SavingPointMemento(this);
-        }
-
-        public void Restore(IMemento memento)
-        {
-            if (!(memento is SavingPointMemento))
-            {
-                throw new Exception("Unknown Memento class: " + memento.ToString());
-            }
-            this.CharacterState = memento.GetSavingPoint().CharacterState;
-            this.EpisodeState= memento.GetSavingPoint().EpisodeState;
         }
     }
 }

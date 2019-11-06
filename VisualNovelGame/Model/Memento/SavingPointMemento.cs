@@ -8,8 +8,15 @@ namespace cnam_mania.VisualNovelGame.Model.Memento
 {
     public class SavingPointMemento : IMemento
     {
+        /// <summary>
+        /// Saving point to save and restore
+        /// </summary>
         private SavingPoint _state;
 
+        /// <summary>
+        /// Class constructor 
+        /// </summary>
+        /// <param name="state"></param>
         public SavingPointMemento(SavingPoint state)
         {
             _state = state;
