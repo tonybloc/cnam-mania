@@ -1,4 +1,4 @@
-﻿using cnam_mania.Model.MiniGames;
+﻿using cnam_mania.VisualNovelGame.Manager;
 using System;
 using System.Collections.Generic;
 using System.Linq;

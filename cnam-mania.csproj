@@ -55,33 +55,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Manager\Characters\CharacterManager.cs" />
-    <Compile Include="Model\Characters\Character.cs" />
-    <Compile Include="Model\Characters\CharacterBuilder.cs" />
-    <Compile Include="Model\Characters\GreedyCharacterBuilder.cs" />
-    <Compile Include="Model\Characters\PopularCharacterBuilder.cs" />
-    <Compile Include="Model\Characters\RichCharacterBuilder.cs" />
-    <Compile Include="Model\Characters\SmartCharacterBuilder.cs" />
-    <Compile Include="Model\Episodes\Choice.cs" />
-    <Compile Include="Model\Episodes\Episode.cs" />
-    <Compile Include="Model\Episodes\EpisodeManager.cs" />
-    <Compile Include="Model\Episodes\Story.cs" />
-    <Compile Include="Model\Levels\EasyMode.cs" />
-    <Compile Include="Model\Levels\HardMode.cs" />
-    <Compile Include="Model\Levels\ILevelStrategy.cs" />
-    <Compile Include="Model\Levels\MediumMode.cs" />
-    <Compile Include="Model\Memento\IMemento.cs" />
-    <Compile Include="Model\Memento\IOriginator.cs" />
-    <Compile Include="Model\Memento\SavingPoint.cs" />
-    <Compile Include="Model\Memento\SavingPointMemento.cs" />
-    <Compile Include="Model\MiniGames\AbsGameManager.cs" />
-    <Compile Include="Model\MiniGames\MiniGamesFactory.cs" />
-    <Compile Include="Model\MiniGames\RebutManager.cs" />
-    <Compile Include="Model\MiniGames\RiddleManager.cs" />
-    <Compile Include="Model\MiniGames\VisualNovelManager.cs" />
-    <Compile Include="Model\Serie.cs" />
-    <Compile Include="Service\Xml\XmlDataAccess.cs" />
-    <Compile Include="Settings\Config.cs" />
+    <Compile Include="VisualNovelGame\Manager\Characters\CharacterManager.cs" />
+    <Compile Include="VisualNovelGame\Model\Characters\Character.cs" />
+    <Compile Include="VisualNovelGame\Model\Characters\CharacterBuilder.cs" />
+    <Compile Include="VisualNovelGame\Model\Characters\GreedyCharacterBuilder.cs" />
+    <Compile Include="VisualNovelGame\Model\Characters\PopularCharacterBuilder.cs" />
+    <Compile Include="VisualNovelGame\Model\Characters\RichCharacterBuilder.cs" />
+    <Compile Include="VisualNovelGame\Model\Characters\SmartCharacterBuilder.cs" />
+    <Compile Include="VisualNovelGame\Model\Episodes\Choice.cs" />
+    <Compile Include="VisualNovelGame\Model\Episodes\Episode.cs" />
+    <Compile Include="VisualNovelGame\Manager\Episode\EpisodeManager.cs" />
+    <Compile Include="VisualNovelGame\Model\Episodes\Story.cs" />
+    <Compile Include="VisualNovelGame\Model\Levels\EasyMode.cs" />
+    <Compile Include="VisualNovelGame\Model\Levels\HardMode.cs" />
+    <Compile Include="VisualNovelGame\Model\Levels\ILevelStrategy.cs" />
+    <Compile Include="VisualNovelGame\Model\Levels\MediumMode.cs" />
+    <Compile Include="VisualNovelGame\Model\Memento\IMemento.cs" />
+    <Compile Include="VisualNovelGame\Model\Memento\IOriginator.cs" />
+    <Compile Include="VisualNovelGame\Model\Memento\SavingPoint.cs" />
+    <Compile Include="VisualNovelGame\Model\Memento\SavingPointMemento.cs" />
+    <Compile Include="Games\AbsGameManager.cs" />
+    <Compile Include="Games\MiniGamesFactory.cs" />
+    <Compile Include="RebutGame\RebutManager.cs" />
+    <Compile Include="RiddleGame\RiddleManager.cs" />
+    <Compile Include="VisualNovelGame\Manager\VisualNovelManager.cs" />
+    <Compile Include="VisualNovelGame\Model\Episodes\Serie.cs" />
+    <Compile Include="VisualNovelGame\Service\Xml\XmlDataAccess.cs" />
+    <Compile Include="VisualNovelGame\Settings\Config.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -122,10 +122,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Pictures\" />
+    <Folder Include="VisualNovelGame\Resources\Pictures\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\XML\XMLEpisodes.xml" />
+    <Resource Include="VisualNovelGame\Resources\XML\XMLEpisodes.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
