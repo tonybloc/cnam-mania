@@ -11,6 +11,7 @@ namespace cnam_mania.VisualNovelGame.Model.Episodes
     [XmlRoot("Choice")]
     public class Choice
     {
+        #region Attributes
         [XmlElement("Description")]
         public string Description { get; set; }
         /// <summary>
@@ -48,6 +49,9 @@ namespace cnam_mania.VisualNovelGame.Model.Episodes
         /// </summary>
         [XmlElement("NextEpisodeId")]
         public int NextEpisodeId { get; set; }
+        #endregion
+
+        #region Constructor
 
         /// <summary>
         /// Class constructor
@@ -75,5 +79,6 @@ namespace cnam_mania.VisualNovelGame.Model.Episodes
             this.NextStoryCurrentEpisode = nextStoryCurrentEpisode;
             this.NextEpisodeId = nextEpisodeId;
         }
+        #endregion
     }
 }

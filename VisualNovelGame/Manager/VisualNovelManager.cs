@@ -1,5 +1,5 @@
 ﻿using cnam_mania.Game;
-using cnam_mania.VisualNovelGame.Manager.Episode;
+using cnam_mania.VisualNovelGame.Manager.Episodes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
