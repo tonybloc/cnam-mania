@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="VisualNovelGame\Exceptions\EpisodeNotFound.cs" />
     <Compile Include="VisualNovelGame\Manager\Characters\CharacterManager.cs" />
     <Compile Include="VisualNovelGame\Model\Characters\Character.cs" />
     <Compile Include="VisualNovelGame\Model\Characters\CharacterBuilder.cs" />

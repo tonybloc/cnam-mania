@@ -28,6 +28,7 @@ namespace cnam_mania
             InitializeComponent();
             _VisualNovelManager = VisualNovelManager.Instance;
 
+
         }
     }
 }
