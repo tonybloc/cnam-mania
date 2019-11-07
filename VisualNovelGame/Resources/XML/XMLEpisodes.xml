@@ -365,10 +365,9 @@
       <Id>2</Id>
       <IsCrucial>false</IsCrucial>
       <Title>Une voiture vous fonce dessus</Title>
-
       <Choice>
         <Description>Esquiver</Description>
-        <NextEpisodeId>0</NextEpisodeId>
+        <NextEpisodeId>8</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
         <Smart>5</Smart>
@@ -719,6 +718,9 @@
         <Money>0</Money>
       </Choice>
     </Story>
+  </Episode>
+  <Episode>
+    <Id>10</Id>
     <Story>
       <Id>1</Id>
       <IsCrucial>false</IsCrucial>
@@ -742,7 +744,6 @@
         <Money>0</Money>
       </Choice>
     </Story>
-
   </Episode>
   <Episode>
     <Id>9</Id>
@@ -752,8 +753,8 @@
       <Title>C'est Noël, vous achetez une caisse de vin pour Antonin Kalk !</Title>
       <Choice>
         <Description>Vous avez une très bonne note au contrôle ! Vous validez cette matière avec succès !</Description>
-        <NextEpisodeId>0</NextEpisodeId>
-        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
+        <NextEpisodeId>10</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
         <Smart>0</Smart>
         <Popularity>10</Popularity>
