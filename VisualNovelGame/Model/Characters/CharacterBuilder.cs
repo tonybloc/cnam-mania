@@ -9,7 +9,7 @@ namespace cnam_mania.VisualNovelGame.Model.Characters
     public abstract class CharacterBuilder
     {
         #region Attributes
-        protected Character Character { get; private set; }
+        public Character Character { get; private set; }
         #endregion
 
         #region Methodes

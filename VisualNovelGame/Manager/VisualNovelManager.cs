@@ -195,7 +195,7 @@ namespace cnam_mania.VisualNovelGame.Manager
         public void SwitchEpisode(Choice choice)
         {
             if (choice != null)
-                this.episodeManager.nextStory(choice); 
+                this.episodeManager.(choice); 
 
             //TODO : add exceptions
         }

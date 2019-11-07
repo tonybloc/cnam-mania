@@ -10,17 +10,17 @@ namespace cnam_mania.VisualNovelGame.Manager
     public class CharacterManager
     {
         // Unique instance of class.
-        public static CharacterManager _instance = null;
+        private static CharacterManager _instance = null;
 
         /// <summary>
         /// Character builder.
         /// </summary>
-        public CharacterBuilder CharacterBuilder { get; set; }
+        public CharacterBuilder CharacterBuilder { get; private set; }
 
         /// <summary>
         /// Create new instance of CharacterManager.
         /// </summary>
-        public CharacterManager()
+        private CharacterManager()
         {
         }
 
