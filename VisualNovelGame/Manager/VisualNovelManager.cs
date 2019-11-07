@@ -192,10 +192,10 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// After user's choice, chains the stories. 
         /// </summary>
         /// <param name="choice"></param>
-        public void SwitchEpisode(Choice choice)
+        public void SwitchStory(Choice choice)
         {
             if (choice != null)
-                this.episodeManager.(choice); 
+                this.episodeManager.NextStory(choice); 
 
             //TODO : add exceptions
         }
