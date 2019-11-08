@@ -1,6 +1,5 @@
-﻿using cnam_mania.Game;
+using cnam_mania.View;
 using cnam_mania.VisualNovelGame.Manager;
-using cnam_mania.VisualNovelGame.Model.Episodes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +26,25 @@ namespace cnam_mania
     {
         public MainWindow()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            _VisualNovelManager = VisualNovelManager.Instance;
+        }
+
+        private void btnVisualNovel_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new PlayerChoiceInterface();
+            MenuContent.Visibility = Visibility.Hidden;
+        }
+
+        private void btnRebus_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnRiddle_Click(object sender, RoutedEventArgs e)
+        {
+
+
         }
     }
 }

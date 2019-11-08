@@ -1,0 +1,92 @@
+﻿<Page x:Class="cnam_mania.VisualNovelGame.View.EpisodeInterface"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:cnam_mania.VisualNovelGame.View"
+      xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      Height="{DynamicResource {x:Static SystemParameters.PrimaryScreenHeightKey}}"
+      Width="{DynamicResource {x:Static SystemParameters.PrimaryScreenWidthKey}}" 
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EpisodeInterface">
+    <Page.Background>
+        <ImageBrush ImageSource="../Resources/Pictures/episode.jpg"/>
+
+    </Page.Background>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="LightGray" Offset="1"/>
+                    <GradientStop Color="#EBEBEB"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="2">
+                <StackPanel Orientation="Horizontal">
+                    <Button  Height="50" Width="130">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Rectangle Width="100" Height="50" Stroke="BlueViolet" Fill="BlueViolet" VerticalAlignment="Top"/>
+                                        <Polygon Points= "0,0 30,25, 0,50" Stroke="BlueViolet" Fill="BlueViolet" />
+                                    </StackPanel>
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Click"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button  Height="50" Width="130">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Polygon  Stroke="BlueViolet" Fill="BlueViolet" />
+
+                                        <Rectangle Width="100" Height="50" Stroke="BlueViolet" Fill="BlueViolet" VerticalAlignment="Top"/>
+                                    </StackPanel>
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Click"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Height="50" Width="50">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="../Resources/Pictures/icoNotoriete.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button x:Name="btnBack" Margin="10" Width="75"  Foreground="Black">
+                        <MaterialDesign:PackIcon Kind="ArrowBack" />
+                    </Button>
+                    <Button x:Name="btnForward" Margin="10" Width="75"  Foreground="Black">
+                        <MaterialDesign:PackIcon Kind="ArrowForward" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

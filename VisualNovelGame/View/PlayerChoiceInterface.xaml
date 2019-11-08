@@ -1,0 +1,128 @@
+﻿<Page x:Class="cnam_mania.View.PlayerChoiceInterface"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:cnam_mania.View"
+      xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      Height="{DynamicResource {x:Static SystemParameters.PrimaryScreenHeightKey}}"
+      Width="{DynamicResource {x:Static SystemParameters.PrimaryScreenWidthKey}}" 
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PlayerChoiceInterface">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="LightGray" Offset="1"/>
+                    <GradientStop Color="#EBEBEB"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="Personnalisation" FontSize="32" Margin="30" FontStyle="Normal" FontWeight="Bold" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
+
+            <DockPanel Grid.Row="1">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="Mode" FontSize="22"  Margin="20,10" FontStyle="Normal" FontWeight="DemiBold" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
+
+                    <StackPanel >
+                        <StackPanel.Resources>
+                            <Style x:Key="Flag" TargetType="RadioButton">
+                                <Style.Triggers>
+                                    <Trigger Property="IsChecked" Value="False">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                    </Trigger>
+                                </Style.Triggers>
+
+                                <Setter Property="BorderThickness" Value="2"/>
+
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="RadioButton">
+                                            <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                Background="Transparent"
+                                CornerRadius="20">
+                                                <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </StackPanel.Resources>
+
+                        <ItemsControl>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <RadioButton ToolTip="Facile" Margin="30" Content="../Resources/Pictures/happy.png" Style="{StaticResource Flag}" BorderBrush="Green" Width="60" Height="60"/>
+                                <RadioButton ToolTip="Moyen" Margin="30" Content="../Resources/Pictures/medium.png" Style="{StaticResource Flag}" BorderBrush="Orange" Width="60" Height="60"/>
+                                <RadioButton ToolTip="Difficile" Margin="30" Content="../Resources/Pictures/hard.png" Style="{StaticResource Flag}" BorderBrush="Red" Width="60" Height="60"/>
+                            </StackPanel>
+                        </ItemsControl>
+                    </StackPanel>
+                    <TextBlock  HorizontalAlignment="Center" Text="Joueur" FontSize="22" Margin="20,10"  FontStyle="Normal" FontWeight="DemiBold" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
+
+                    <StackPanel >
+                        <StackPanel.Resources>
+                            <Style x:Key="Flag" TargetType="RadioButton">
+                                <Style.Triggers>
+                                    <Trigger Property="IsChecked" Value="False">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                    </Trigger>
+                                </Style.Triggers>
+
+                                <Setter Property="BorderThickness" Value="2"/>
+
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="RadioButton">
+                                            <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                Background="Transparent"
+                                CornerRadius="20">
+                                                <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </StackPanel.Resources>
+
+                        <ItemsControl>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <RadioButton ToolTip="Riche" Margin="30" Content="../Resources/Pictures/IcoArgent.png" Style="{StaticResource Flag}" BorderBrush="Red" Width="60" Height="60"/>
+                                <RadioButton ToolTip="Intelligent" Margin="30" Content="../Resources/Pictures/IcoIntelligence.png" Style="{StaticResource Flag}" BorderBrush="Orange" Width="60" Height="60"/>
+                                <RadioButton ToolTip="Populaire" Margin="30" Content="../Resources/Pictures/icoNotoriete.png" Style="{StaticResource Flag}" BorderBrush="Green" Width="60" Height="60"/>
+                                <RadioButton ToolTip="Gourmand" Margin="30" Content="../Resources/Pictures/icoNourriture.png" Style="{StaticResource Flag}" BorderBrush="Blue" Width="60" Height="60"/>
+                            </StackPanel>
+                        </ItemsControl>
+                    </StackPanel>
+                </StackPanel>
+            </DockPanel>
+            <!-- Actions -->
+            <StackPanel Grid.Row="2" DockPanel.Dock="Bottom" Orientation="Horizontal"  HorizontalAlignment="Center">
+                <Button x:Name="btnValidate" Margin="10" Width="75" Click="onClickValidate" Foreground="Black">
+                    <MaterialDesign:PackIcon Kind="DoneOutline" />
+                </Button>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Page>

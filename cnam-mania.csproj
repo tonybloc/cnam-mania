@@ -50,6 +50,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -71,6 +77,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="VisualNovelGame\Exceptions\EpisodeNotFound.cs" />
+    <Compile Include="VisualNovelGame\View\EpisodeInterface.xaml.cs">
+      <DependentUpon>EpisodeInterface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VisualNovelGame\View\PlayerChoiceInterface.xaml.cs">
+      <DependentUpon>PlayerChoiceInterface.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VisualNovelGame\Manager\Characters\CharacterManager.cs" />
     <Compile Include="VisualNovelGame\Model\Characters\Character.cs" />
     <Compile Include="VisualNovelGame\Model\Characters\CharacterBuilder.cs" />
@@ -110,6 +122,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="VisualNovelGame\View\EpisodeInterface.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VisualNovelGame\View\PlayerChoiceInterface.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -129,6 +149,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -138,7 +159,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="VisualNovelGame\Resources\Pictures\" />
+    <Resource Include="VisualNovelGame\Resources\Pictures\IcoArgent.png" />
+    <Resource Include="VisualNovelGame\Resources\Pictures\IcoIntelligence.png" />
+    <Resource Include="VisualNovelGame\Resources\Pictures\icoNotoriete.png" />
+    <Resource Include="VisualNovelGame\Resources\Pictures\icoNourriture.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="VisualNovelGame\Resources\XML\XMLEpisodes.xml">
@@ -156,6 +180,44 @@
       <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="VisualNovelGame\Resources\Pictures\cnam.png" />
+    <Resource Include="VisualNovelGame\Resources\Pictures\crohare.png" />
+    <Resource Include="VisualNovelGame\Resources\Pictures\itii.JPG" />
+    <Resource Include="VisualNovelGame\Resources\Pictures\kalk.png" />
+    <Resource Include="VisualNovelGame\Resources\Pictures\leroy.jpg" />
+    <Resource Include="VisualNovelGame\Resources\Pictures\maurice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="VisualNovelGame\Resources\Pictures\reignCnamania.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="VisualNovelGame\Resources\Pictures\episode.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="VisualNovelGame\Resources\Pictures\hard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="VisualNovelGame\Resources\Pictures\medium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="VisualNovelGame\Resources\Pictures\happy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="VisualNovelGame\Resources\Pictures\arrow.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
