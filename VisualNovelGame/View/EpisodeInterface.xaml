@@ -13,7 +13,11 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EpisodeInterface">
     <Page.Background>
-        <ImageBrush ImageSource="../Resources/Pictures/episode.jpg"/>
+        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+            <GradientStop Color="#1F1E40" Offset="0.85"/>
+            <GradientStop Color="#2F2F51" Offset="0.70"/>
+            <GradientStop Color="#201C2D" Offset="0.25"/>
+        </LinearGradientBrush>
     </Page.Background>
     <Grid>
         <Grid.RowDefinitions>
