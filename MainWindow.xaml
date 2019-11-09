@@ -4,9 +4,42 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cnam_mania"
+        xmlns:model="clr-namespace:cnam_mania.VisualNovelGame.Model.Episodes"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>            
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ListView Grid.Row="0" Grid.Column="0" x:Name="EpisodesListView" Margin="30">
+        </ListView>
         
+        <StackPanel Grid.Row="0" Grid.Column="1" Margin="30">
+            <TextBlock x:Name="StoryTitle" Text="{Binding Path=Story.Title, Mode=TwoWay}"></TextBlock>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="nFistChoice" Grid.Row="0" Grid.Column="0" Text="{Binding Path=FirstChoice.Description, Mode=TwoWay}"/>
+                <TextBlock x:Name="nSecondChoice" Grid.Row="0" Grid.Column="1" Text="{Binding Path=SecondChoice.Description, Mode=TwoWay}"/>
+                <Button Grid.Row="1" Grid.Column="0" Click="onClickFirstChoice">FirstChoice</Button>
+                <Button Grid.Row="1" Grid.Column="1" Click="onClickSecondChoice">SecondeChoice</Button>
+            </Grid>
+        </StackPanel>
+         
     </Grid>
 </Window>

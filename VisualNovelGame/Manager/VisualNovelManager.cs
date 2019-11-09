@@ -39,7 +39,9 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// Game mode choosen by the user
         /// </summary>
         public IModeStrategy GameMode { get; set; }
+        #endregion
 
+        #region 
         /// <summary>
         /// Creation of the VisualNovelManager
         /// </summary>
@@ -99,6 +101,7 @@ namespace cnam_mania.VisualNovelGame.Manager
             this.history.Add(originator.Save());
            
         }
+        
         /// <summary>
         /// Retrieves last game state saved.
         /// </summary>

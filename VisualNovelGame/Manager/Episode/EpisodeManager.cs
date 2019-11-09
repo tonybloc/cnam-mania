@@ -4,7 +4,9 @@ using cnam_mania.VisualNovelGame.Model.Episodes;
 using cnam_mania.VisualNovelGame.Service.Xml;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,19 +14,55 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
 {
     public class EpisodeManager
     {
-
         // Unique instance of manager
         private static EpisodeManager _instance;
 
+
         #region Variables
-        #region Variables (public)
-        public Episode CurrentEpisode { get; set; }
-        public Story CurrentStory { get; private set; }
+
+        #region Bindable Attributes
+        public Episode CurrentEpisode
+        {
+            get { return _currentEpisode; }
+            set
+            {
+                if (_currentEpisode != value)
+                {
+                    _currentEpisode = value;                    
+                }
+            }
+        }
+        public Story CurrentStory
+        {
+            get { return _currentStory; }
+            set
+            {
+                if (_currentStory != value)
+                {
+                    _currentStory = value;
+                }
+            }
+        }
+        public Serie Serie
+        {
+            get { return _serie; }
+            set
+            {
+                if (_serie != value)
+                {
+                    _serie = value;
+                }
+            }
+        }
         #endregion 
 
+
         #region Variable (private)
-        private Serie Serie { get; set; }
+        private Serie _serie { get; set; }
+        private Episode _currentEpisode { get; set; }
+        private Story _currentStory { get; set; }
         #endregion
+
         #endregion
 
         #region Constructor / Instance
@@ -63,38 +101,38 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
                 return _instance;
             }
         }
-        
+
         #endregion
 
+        #region Episodes behavior
         /// <summary>
         /// Get next story
         /// </summary>
         public void NextStory(Choice choice)
-        {            
-            if( (this.CurrentEpisode != null) && (this.CurrentStory != null) )
+        {
+            if ((this.CurrentEpisode != null) && (this.CurrentStory != null))
             {
                 // Get index of currentEpisode.
-                int IndexCurrentEpisode =  this.Serie.Episodes.FindIndex((item) => item.EpisodeId == CurrentEpisode.EpisodeId);
+                int IndexCurrentEpisode = this._serie.Episodes.FindIndex((item) => item.EpisodeId == CurrentEpisode.EpisodeId);
 
                 // Get index of currentStory.
                 int IndexCurrentStory = this.CurrentEpisode.Stories.FindIndex((item) => item.Id == CurrentStory.Id);
 
                 // Define if we can skip storys in episode
-                if (this.CurrentStory.IsCrucial)
+
+                if (!choice.NextStoryCurrentEpisode)
                 {
-                    if(!choice.NextStoryCurrentEpisode)
-                    {
-                        // Find next story in next episode                    
-                        this.CurrentEpisode = GetEpisode(choice.NextEpisodeId);
-                        this.CurrentStory = GetStory(choice.NextEpisodeId, 0);
-                        return;
-                    }
+                    // Find next story in next episode                    
+                    this.CurrentEpisode = GetEpisode(choice.NextEpisodeId);
+                    this.CurrentStory = GetStory(choice.NextEpisodeId, 0);
+                    return;
                 }
-                
+
+
                 // If exist next story in episode - switch. Else next epsiode
-                if (HasNextStoryInEpsiode(this.CurrentEpisode.EpisodeId, this.CurrentStory.Id) )
+                if (HasNextStoryInEpsiode(this.CurrentEpisode.EpisodeId, this.CurrentStory.Id))
                 {
-                    this.CurrentStory = this.CurrentEpisode.Stories[GetEpsiodeIndex(this.CurrentEpisode.EpisodeId, this.Serie.Episodes)+1];
+                    this.CurrentStory = this.CurrentEpisode.Stories[GetEpsiodeIndex(this.CurrentEpisode.EpisodeId, this._serie.Episodes) + 1];
                     return;
                 }
                 else
@@ -102,10 +140,11 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
                     this.CurrentEpisode = this.GetEpisode(choice.NextEpisodeId);
                     this.CurrentStory = GetStory(choice.NextEpisodeId, 0);
                     return;
-                }                
+                }
             }
         }
-        
+
+
         /// <summary>
         /// Define if episode exist
         /// </summary>
@@ -113,7 +152,7 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
         /// <returns></returns>
         private bool EpisodeExist(int episodeId)
         {
-           return this.Serie.Episodes.Exists((item) => item.EpisodeId == episodeId);            
+            return this.Serie.Episodes.Exists((item) => item.EpisodeId == episodeId);
         }
 
         /// <summary>
@@ -160,9 +199,10 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
         /// <returns></returns>
         private bool HasNextStoryInEpsiode(int episodeId, int storyId)
         {
-            return ( GetStoryIndex(episodeId, storyId) < GetEpisode(episodeId).Stories.Count() -1);
+            return (GetStoryIndex(episodeId, storyId) < GetEpisode(episodeId).Stories.Count() - 1);
 
         }
+
         /// <summary>
         /// Find episode with specifique id
         /// </summary>
@@ -190,6 +230,6 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
             }
             return null;
         }
-
+        #endregion
     }
 }
