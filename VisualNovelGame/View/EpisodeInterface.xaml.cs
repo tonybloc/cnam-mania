@@ -1,4 +1,5 @@
 ﻿using cnam_mania.VisualNovelGame.Manager;
+using cnam_mania.VisualNovelGame.Model.Characters;
 using cnam_mania.VisualNovelGame.Model.Episodes;
 using System;
 using System.Collections.Generic;
@@ -96,6 +97,22 @@ namespace cnam_mania.VisualNovelGame.View
                 }
             }
         }
+
+        public Character Character
+        {
+            get { return this._game.characterManager.CharacterBuilder.Character; }
+            set
+            {
+                if (this._game.characterManager.CharacterBuilder.Character != value)
+                {
+                    _game.characterManager.CharacterBuilder.Character.Food = value.Food;
+                    _game.characterManager.CharacterBuilder.Character.Money = value.Money;
+                    _game.characterManager.CharacterBuilder.Character.Popularity = value.Popularity;
+                    _game.characterManager.CharacterBuilder.Character.Intellect = value.Intellect;
+                    OnPropertyChanged();
+                }
+            }
+        }
         #endregion
 
         /// <summary>
@@ -142,7 +159,6 @@ namespace cnam_mania.VisualNovelGame.View
                 FirstChoice = new Choice { Description = "Aucune idéee" };
                 SecondChoice = new Choice { Description = "Aucune idéee" };
             }
-
         }
 
 
@@ -151,7 +167,7 @@ namespace cnam_mania.VisualNovelGame.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnClickFirstChoice(object sender, RoutedEventArgs e)
+        private void OnClickFirstChoice(object sender, EventArgs e)
         {
             NextStory(FirstChoice);
         }
@@ -161,7 +177,7 @@ namespace cnam_mania.VisualNovelGame.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnClickSecondChoice(object sender, RoutedEventArgs e)
+        private void OnClickSecondChoice(object sender, EventArgs e)
         {
             NextStory(SecondChoice);
         }
