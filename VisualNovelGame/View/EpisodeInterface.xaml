@@ -46,16 +46,16 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Row="0" Grid.ColumnSpan="2">
                 <!--<ListView x:Name="EpisodesListView" Margin="30"></ListView>-->
-                <TextBlock Text="{Binding Path=Story.Title, Mode=TwoWay}"></TextBlock>
+                <TextBlock Text="{Binding Path=Story.Title, Mode=OneWay}"></TextBlock>
             </Grid>
             <Grid Grid.Row="1" Grid.Column="0">
                 <Button Click="OnClickFirstChoice">
-                    <TextBlock x:Name="nFistChoice" Text="{Binding Path=FirstChoice.Description, Mode=TwoWay}"/>
+                    <TextBlock x:Name="nFistChoice" Text="{Binding Path=FirstChoice.Description, Mode=OneWay}"/>
                 </Button>
             </Grid>
             <Grid Grid.Row="1" Grid.Column="1">
                 <Button Click="OnClickSecondChoice">
-                    <TextBlock x:Name="nSecondChoice" Text="{Binding Path=SecondChoice.Description, Mode=TwoWay}"/>
+                    <TextBlock x:Name="nSecondChoice" Text="{Binding Path=SecondChoice.Description, Mode=OneWay}"/>
                 </Button>
             </Grid>
             <Grid Grid.Row="2">

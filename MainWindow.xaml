@@ -12,9 +12,6 @@
     <Window.Background>
         <ImageBrush ImageSource="VisualNovelGame/Resources/Pictures/reignCnamania.png"/>
     </Window.Background>
-    <Window.DataContext>
-        <local:App></local:App>
-    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
