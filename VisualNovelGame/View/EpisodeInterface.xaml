@@ -55,21 +55,21 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
- <Grid Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid Grid.Column="0" Grid.ColumnSpan="2">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Vertical"  Margin="10">
                         <Image Width="50" Height="50" Source="../Resources/Pictures/IcoArgent.png"></Image>
                         <TextBlock Text="{Binding Path=Character.Money, Mode=OneWay}"></TextBlock>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Vertical"  Margin="10">
                         <Image Width="50" Height="50" Source="../Resources/Pictures/IcoIntelligence.png"></Image>
                         <TextBlock Text="{Binding Path=Character.Intellect, Mode=OneWay}"></TextBlock>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Vertical"  Margin="10">
                         <Image Width="50" Height="50" Source="../Resources/Pictures/IcoNotoriete.png"></Image>
                         <TextBlock Text="{Binding Path=Character.Popularity, Mode=OneWay}"></TextBlock>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Vertical"  Margin="10">
                         <Image Width="50" Height="50" Source="../Resources/Pictures/IcoNourriture.png"></Image>
                         <TextBlock Text="{Binding Path=Character.Food, Mode=OneWay}"></TextBlock>
                     </StackPanel>
