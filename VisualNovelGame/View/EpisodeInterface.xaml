@@ -5,13 +5,18 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:cnam_mania.VisualNovelGame.View"
       xmlns:model="clr-namespace:cnam_mania.VisualNovelGame.Model.Episodes"
-      xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       Height="{DynamicResource {x:Static SystemParameters.PrimaryScreenHeightKey}}"
       Width="{DynamicResource {x:Static SystemParameters.PrimaryScreenWidthKey}}" 
       FontFamily="{DynamicResource MaterialDesignFont}"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EpisodeInterface">
+
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Page.Resources>
+    
+    <!-- Page Background -->
     <Page.Background>
         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
             <GradientStop Color="#1F1E40" Offset="0.85"/>
@@ -19,6 +24,8 @@
             <GradientStop Color="#201C2D" Offset="0.25"/>
         </LinearGradientBrush>
     </Page.Background>
+    
+    <!-- Page content -->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -32,13 +39,13 @@
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Row="1" Grid.Column="1">
+            <!-- Setup Grid -->
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="LightGray" Offset="1"/>
                     <GradientStop Color="#EBEBEB"/>
                 </LinearGradientBrush>
             </Grid.Background>
-
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="3*"/>
@@ -48,64 +55,30 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            
+            <!-- Grid Components -->                        
             <Grid Grid.Row="0" Grid.ColumnSpan="2">
-                <!--<ListView x:Name="EpisodesListView" Margin="30"></ListView>-->
                 <TextBlock Text="{Binding Path=Story.Title, Mode=OneWay}"></TextBlock>
             </Grid>
+
+            <!-- First button choice -->
             <Grid Grid.Row="1" Grid.Column="0">
-                <Button Click="OnClickFirstChoice">
-                    <TextBlock x:Name="nFistChoice" Text="{Binding Path=FirstChoice.Description, Mode=OneWay}"/>
-                </Button>
+                <Button x:Name="btnFirstChoice" 
+                    Grid.Row="1" 
+                    Grid.Column="0" 
+                    Click="OnClickFirstChoice" 
+                    Visibility="{Binding Path=ChoiceVisibility, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}"
+                    Content="{Binding Path=FirstChoice.Description, Mode=OneWay}"/>
             </Grid>
+            
+            <!-- Second button choice -->
             <Grid Grid.Row="1" Grid.Column="1">
-                <Button Click="OnClickSecondChoice">
-                    <TextBlock x:Name="nSecondChoice" Text="{Binding Path=SecondChoice.Description, Mode=OneWay}"/>
-                </Button>
-            </Grid>
-            <Grid Grid.Row="2">
-                <StackPanel Orientation="Horizontal">
-                    <Button  Height="50" Width="130">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Grid>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Rectangle Width="100" Height="50" Stroke="BlueViolet" Fill="BlueViolet" VerticalAlignment="Top"/>
-                                        <Polygon Points= "0,0 30,25, 0,50" Stroke="BlueViolet" Fill="BlueViolet" />
-                                    </StackPanel>
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Click"/>
-                                </Grid>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button  Height="50" Width="130">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Grid>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Polygon  Stroke="BlueViolet" Fill="BlueViolet" />
-
-                                        <Rectangle Width="100" Height="50" Stroke="BlueViolet" Fill="BlueViolet" VerticalAlignment="Top"/>
-                                    </StackPanel>
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Click"/>
-                                </Grid>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button Height="50" Width="50">
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Image Source="../Resources/Pictures/icoNotoriete.png"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-
-                    <Button x:Name="btnBack" Margin="10" Width="75"  Foreground="Black">
-                        <MaterialDesign:PackIcon Kind="ArrowBack" />
-                    </Button>
-                    <Button x:Name="btnForward" Margin="10" Width="75"  Foreground="Black">
-                        <MaterialDesign:PackIcon Kind="ArrowForward" />
-                    </Button>
-                </StackPanel>
+                <Button x:Name="btnSecondChoice" 
+                    Grid.Row="1" 
+                    Grid.Column="1" 
+                    Click="OnClickSecondChoice" 
+                    Visibility="{Binding Path=ChoiceVisibility, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}"
+                    Content="{Binding Path=SecondChoice.Description, Mode=OneWay}"/>
             </Grid>
         </Grid>
     </Grid>
