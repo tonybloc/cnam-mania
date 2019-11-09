@@ -22,16 +22,19 @@ namespace cnam_mania.View
     /// </summary>
     public partial class PlayerChoiceInterface : Page
     {
+        private Options type = null;
+
         public PlayerChoiceInterface()
         {
             InitializeComponent();
         }
 
+        
         private void onClickValidate(object sender, RoutedEventArgs e)
         {
             try
             {
-
+                //MessageBox.Show(string.Format("Mode :{0}, Joueur{1}"))
                 ((MainWindow)Window.GetWindow(this)).MainContent.Content = new EpisodeInterface();
                 ((MainWindow)Window.GetWindow(this)).MenuContent.Visibility = Visibility.Hidden;
             }

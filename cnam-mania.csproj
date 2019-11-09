@@ -77,9 +77,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="VisualNovelGame\Exceptions\EpisodeNotFound.cs" />
+    <Compile Include="VisualNovelGame\Model\Memento\Originator.cs" />
     <Compile Include="VisualNovelGame\View\EpisodeInterface.xaml.cs">
       <DependentUpon>EpisodeInterface.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VisualNovelGame\View\GameMode.cs" />
+    <Compile Include="VisualNovelGame\View\Options.cs" />
     <Compile Include="VisualNovelGame\View\PlayerChoiceInterface.xaml.cs">
       <DependentUpon>PlayerChoiceInterface.xaml</DependentUpon>
     </Compile>
@@ -110,6 +113,7 @@
     <Compile Include="VisualNovelGame\Model\Episodes\Serie.cs" />
     <Compile Include="VisualNovelGame\Service\Xml\XmlDataAccess.cs" />
     <Compile Include="VisualNovelGame\Settings\Config.cs" />
+    <Compile Include="VisualNovelGame\View\PlayerType.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

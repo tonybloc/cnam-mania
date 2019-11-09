@@ -39,85 +39,83 @@
 
             <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="Personnalisation" FontSize="32" Margin="30" FontStyle="Normal" FontWeight="Bold" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
 
-            <DockPanel Grid.Row="1">
-                <StackPanel Orientation="Vertical">
-                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="Mode" FontSize="22"  Margin="20,10" FontStyle="Normal" FontWeight="DemiBold" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
+            <StackPanel Grid.Row="1" Orientation="Vertical">
+                <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" Text="Veuillez sélectionner un mode :" FontSize="18"  Margin="20,10" FontStyle="Normal"  TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
 
-                    <StackPanel >
-                        <StackPanel.Resources>
-                            <Style x:Key="Flag" TargetType="RadioButton">
-                                <Style.Triggers>
-                                    <Trigger Property="IsChecked" Value="False">
-                                        <Setter Property="Opacity" Value="0.5"/>
-                                    </Trigger>
-                                </Style.Triggers>
+                <StackPanel >
+                    <StackPanel.Resources>
+                        <Style x:Key="Flag" TargetType="RadioButton">
+                            <Style.Triggers>
+                                <Trigger Property="IsChecked" Value="False">
+                                    <Setter Property="Opacity" Value="0.3"/>
+                                </Trigger>
+                            </Style.Triggers>
 
-                                <Setter Property="BorderThickness" Value="2"/>
+                            <Setter Property="BorderThickness" Value="0"/>
 
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="RadioButton">
-                                            <Border BorderThickness="{TemplateBinding BorderThickness}"
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <Border BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 Background="Transparent"
                                 CornerRadius="20">
-                                                <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </StackPanel.Resources>
+                                            <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </StackPanel.Resources>
 
-                        <ItemsControl>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <RadioButton ToolTip="Facile" Margin="30" Content="../Resources/Pictures/happy.png" Style="{StaticResource Flag}" BorderBrush="Green" Width="60" Height="60"/>
-                                <RadioButton ToolTip="Moyen" Margin="30" Content="../Resources/Pictures/medium.png" Style="{StaticResource Flag}" BorderBrush="Orange" Width="60" Height="60"/>
-                                <RadioButton ToolTip="Difficile" Margin="30" Content="../Resources/Pictures/hard.png" Style="{StaticResource Flag}" BorderBrush="Red" Width="60" Height="60"/>
-                            </StackPanel>
-                        </ItemsControl>
-                    </StackPanel>
-                    <TextBlock  HorizontalAlignment="Center" Text="Joueur" FontSize="22" Margin="20,10"  FontStyle="Normal" FontWeight="DemiBold" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
-
-                    <StackPanel >
-                        <StackPanel.Resources>
-                            <Style x:Key="Flag" TargetType="RadioButton">
-                                <Style.Triggers>
-                                    <Trigger Property="IsChecked" Value="False">
-                                        <Setter Property="Opacity" Value="0.5"/>
-                                    </Trigger>
-                                </Style.Triggers>
-
-                                <Setter Property="BorderThickness" Value="2"/>
-
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="RadioButton">
-                                            <Border BorderThickness="{TemplateBinding BorderThickness}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                Background="Transparent"
-                                CornerRadius="20">
-                                                <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </StackPanel.Resources>
-
-                        <ItemsControl>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <RadioButton ToolTip="Riche" Margin="30" Content="../Resources/Pictures/IcoArgent.png" Style="{StaticResource Flag}" BorderBrush="Red" Width="60" Height="60"/>
-                                <RadioButton ToolTip="Intelligent" Margin="30" Content="../Resources/Pictures/IcoIntelligence.png" Style="{StaticResource Flag}" BorderBrush="Orange" Width="60" Height="60"/>
-                                <RadioButton ToolTip="Populaire" Margin="30" Content="../Resources/Pictures/icoNotoriete.png" Style="{StaticResource Flag}" BorderBrush="Green" Width="60" Height="60"/>
-                                <RadioButton ToolTip="Gourmand" Margin="30" Content="../Resources/Pictures/icoNourriture.png" Style="{StaticResource Flag}" BorderBrush="Blue" Width="60" Height="60"/>
-                            </StackPanel>
-                        </ItemsControl>
-                    </StackPanel>
+                    <ItemsControl>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <RadioButton ToolTip="Facile" Margin="30" Content="../Resources/Pictures/happy.png" Style="{StaticResource Flag}" BorderBrush="Green" Width="60" Height="60"/>
+                            <RadioButton ToolTip="Moyen" Margin="30" Content="../Resources/Pictures/medium.png" Style="{StaticResource Flag}" BorderBrush="Orange" Width="60" Height="60"/>
+                            <RadioButton ToolTip="Difficile" Margin="30" Content="../Resources/Pictures/hard.png" Style="{StaticResource Flag}" BorderBrush="Red" Width="60" Height="60"/>
+                        </StackPanel>
+                    </ItemsControl>
                 </StackPanel>
-            </DockPanel>
+                <TextBlock  HorizontalAlignment="Center" Text="Veuillez sélectionner le type de joueur :" FontSize="18" Margin="20,10"  FontStyle="Normal" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
+
+                <StackPanel >
+                    <StackPanel.Resources>
+                        <Style x:Key="Flag" TargetType="RadioButton">
+                            <Style.Triggers>
+                                <Trigger Property="IsChecked" Value="False">
+                                    <Setter Property="Opacity" Value="0.3"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                            <Setter Property="BorderThickness" Value="3"/>
+
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                Background="Transparent"
+                                CornerRadius="20">
+                                            <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <ItemsControl>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <RadioButton ToolTip="Riche" Margin="30" Content="../Resources/Pictures/IcoArgent.png" Style="{StaticResource Flag}" BorderBrush="Orange" Width="60" Height="60"/>
+                            <RadioButton ToolTip="Intelligent" Margin="30" Content="../Resources/Pictures/IcoIntelligence.png" Style="{StaticResource Flag}" BorderBrush="Violet" Width="60" Height="60"/>
+                            <RadioButton ToolTip="Populaire" Margin="30" Content="../Resources/Pictures/icoNotoriete.png" Style="{StaticResource Flag}" BorderBrush="Green" Width="60" Height="60"/>
+                            <RadioButton ToolTip="Gourmand" Margin="30" Content="../Resources/Pictures/icoNourriture.png" Style="{StaticResource Flag}" BorderBrush="Blue" Width="60" Height="60"/>
+                        </StackPanel>
+                    </ItemsControl>
+                </StackPanel>
+            </StackPanel>
             <!-- Actions -->
-            <StackPanel Grid.Row="2" DockPanel.Dock="Bottom" Orientation="Horizontal"  HorizontalAlignment="Center">
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Button x:Name="btnValidate" Margin="10" Width="75" Click="onClickValidate" Foreground="Black">
                     <MaterialDesign:PackIcon Kind="DoneOutline" />
                 </Button>
