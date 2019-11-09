@@ -154,7 +154,6 @@ namespace cnam_mania.VisualNovelGame.View
         private void OnClickFirstChoice(object sender, RoutedEventArgs e)
         {
             NextStory(FirstChoice);
-            OnPropertyChanged();
         }
 
         /// <summary>
@@ -165,7 +164,6 @@ namespace cnam_mania.VisualNovelGame.View
         private void OnClickSecondChoice(object sender, RoutedEventArgs e)
         {
             NextStory(SecondChoice);
-            OnPropertyChanged();
         }
 
 
