@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cnam_mania.Properties;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace cnam_mania.Settings
     public static class Config
     {
         // XML files path
-        public static readonly string filePath_XmlStory = "../../Resources/XML/XMLEpisodes.xml";
+        public static readonly string filePath_XmlStory = "./VisualNovelGame/Resources/XML/XMLEpisodes.xml";
 
         // Setting player
         public static int FOOD = 50;

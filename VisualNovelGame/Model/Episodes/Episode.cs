@@ -45,5 +45,10 @@ namespace cnam_mania.VisualNovelGame.Model.Episodes
         }
 
 
+        public override string ToString()
+        {
+            return string.Format("Episode {0} avec {1} histoire", this.EpisodeId, this.Stories.Count());
+        }
+
     }
 }

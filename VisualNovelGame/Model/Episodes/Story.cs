@@ -17,10 +17,6 @@ namespace cnam_mania.VisualNovelGame.Model.Episodes
         [XmlElement("Id")]
         public int Id { get; set; }
 
-        /// <summary>
-        /// Current choice made.
-        /// </summary>
-        private Choice CurrentChoice { get; set; }
 
         /// <summary>
         /// Choices available for a story.
@@ -28,11 +24,6 @@ namespace cnam_mania.VisualNovelGame.Model.Episodes
         [XmlElement("Choice")]
         public List<Choice> Choices { get; set; }
 
-        /// <summary>
-        /// Defines if a story is crucial or not.
-        /// </summary>
-        [XmlElement("IsCrucial")]
-        public bool IsCrucial { get; set; }
 
         /// <summary>
         /// Title of the story
@@ -54,11 +45,9 @@ namespace cnam_mania.VisualNovelGame.Model.Episodes
         /// <param name="currentChoice"></param>
         /// <param name="choices"></param>
         /// <param name="isCrucial"></param>
-        public Story(Choice currentChoice, List<Choice> choices, bool isCrucial)
+        public Story(List<Choice> choices)
         {
-            CurrentChoice = currentChoice;
             Choices = choices;
-            IsCrucial = isCrucial;
         }
     }
 }
