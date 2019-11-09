@@ -66,6 +66,8 @@ namespace cnam_mania.VisualNovelGame.View
         /// Define visibilty of choice buttons
         /// </summary>
         private bool _choiceVisibility;
+
+        private Character _character; 
         #endregion
 
         #region Bindable Attributes
@@ -119,10 +121,10 @@ namespace cnam_mania.VisualNovelGame.View
 
         public Character Character
         {
-            get { return this._game.characterManager.CharacterBuilder.Character; }
+            get { return _game.characterManager.CharacterBuilder.GetCharacter(); }
             set
             {
-                if (this._game.characterManager.CharacterBuilder.Character != value)
+                if (_game.characterManager.CharacterBuilder.GetCharacter() != value)
                 {
                     _game.characterManager.CharacterBuilder.Character.Food = value.Food;
                     _game.characterManager.CharacterBuilder.Character.Money = value.Money;
