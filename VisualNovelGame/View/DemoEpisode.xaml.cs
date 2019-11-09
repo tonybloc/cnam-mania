@@ -17,7 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace cnam_mania.VisualNovelGame.Views
+namespace cnam_mania.VisualNovelGame.View
 {
     /// <summary>
     /// Logique d'interaction pour DemoEpisode.xaml
