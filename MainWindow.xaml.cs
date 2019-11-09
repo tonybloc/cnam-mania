@@ -1,3 +1,4 @@
+using cnam_mania.Game;
 using cnam_mania.View;
 using cnam_mania.VisualNovelGame.Manager;
 using System;
@@ -24,28 +25,44 @@ namespace cnam_mania
     /// </summary>
     public partial class MainWindow : Window
     {
-        private VisualNovelManager _VisualNovelManager;
-
+        /// <summary>
+        /// Initialize first window
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
-            _VisualNovelManager = VisualNovelManager.Instance;
         }
 
+        /// <summary>
+        /// Launch Visual novel game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVisualNovel_Click(object sender, RoutedEventArgs e)
         {
+            MiniGamesFactory.createGamesManager("VisualNovel");
             MainContent.Content = new PlayerChoiceInterface();
             MenuContent.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Launch Rebus game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRebus_Click(object sender, RoutedEventArgs e)
         {
-
+            MiniGamesFactory.createGamesManager("Rebus");
         }
 
+        /// <summary>
+        /// Launch Riddle game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRiddle_Click(object sender, RoutedEventArgs e)
         {
-
+            MiniGamesFactory.createGamesManager("Riddle");
 
         }
     }

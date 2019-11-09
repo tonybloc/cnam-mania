@@ -11,12 +11,17 @@ namespace cnam_mania.Game
 {
     public static class MiniGamesFactory
     {
+        /// <summary>
+        /// Create the desired game manager 
+        /// </summary>
+        /// <param name="game">Game desired by the user</param>
+        /// <returns></returns>
         public static AbsGameManager createGamesManager(string game)
         {
             AbsGameManager manager;
             switch (game)
             {
-                case "Rebut":
+                case "Rebus":
                     manager = new RebutManager();
                     break;
                 case "Riddle":

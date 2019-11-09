@@ -45,9 +45,9 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// <param name="characterBuilder"></param>
         public void SetCharacterBuilder(CharacterBuilder characterBuilder)
         {
-            this.CharacterBuilder = characterBuilder; 
+            this.CharacterBuilder = characterBuilder;
         }
-        
+
         /// <summary>
         /// Creates a character regarding of the builder choosen.
         /// </summary>
