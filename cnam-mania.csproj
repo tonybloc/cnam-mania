@@ -77,11 +77,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="VisualNovelGame\Exceptions\EpisodeNotFound.cs" />
-    <Compile Include="VisualNovelGame\Model\Memento\Originator.cs" />
+    <Compile Include="VisualNovelGame\View\DemoEpisode.xaml.cs">
+      <DependentUpon>DemoEpisode.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VisualNovelGame\View\EpisodeInterface.xaml.cs">
       <DependentUpon>EpisodeInterface.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VisualNovelGame\View\GameMode.cs" />
+    <Compile Include="VisualNovelGame\Enumeration\GameMode.cs" />
     <Compile Include="VisualNovelGame\View\Options.cs" />
     <Compile Include="VisualNovelGame\View\PlayerChoiceInterface.xaml.cs">
       <DependentUpon>PlayerChoiceInterface.xaml</DependentUpon>
@@ -102,9 +104,9 @@
     <Compile Include="VisualNovelGame\Model\Levels\IModeStrategy.cs" />
     <Compile Include="VisualNovelGame\Model\Levels\MediumMode.cs" />
     <Compile Include="VisualNovelGame\Model\Memento\IMemento.cs" />
-    <Compile Include="VisualNovelGame\Model\Memento\Originator.cs" />
     <Compile Include="VisualNovelGame\Model\Memento\SavingPoint.cs" />
     <Compile Include="VisualNovelGame\Model\Memento\SavingPointMemento.cs" />
+    <Compile Include="VisualNovelGame\Model\Memento\Originator.cs" />
     <Compile Include="Games\AbsGameManager.cs" />
     <Compile Include="Games\MiniGamesFactory.cs" />
     <Compile Include="RebutGame\RebutManager.cs" />
@@ -113,7 +115,7 @@
     <Compile Include="VisualNovelGame\Model\Episodes\Serie.cs" />
     <Compile Include="VisualNovelGame\Service\Xml\XmlDataAccess.cs" />
     <Compile Include="VisualNovelGame\Settings\Config.cs" />
-    <Compile Include="VisualNovelGame\View\PlayerType.cs" />
+    <Compile Include="VisualNovelGame\Enumeration\PlayerType.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -126,6 +128,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="VisualNovelGame\View\DemoEpisode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="VisualNovelGame\View\EpisodeInterface.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -185,18 +191,7 @@
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 et x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="VisualNovelGame\Resources\Pictures\cnam.png" />
     <Resource Include="VisualNovelGame\Resources\Pictures\crohare.png" />

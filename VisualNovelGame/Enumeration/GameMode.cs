@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cnam_mania.VisualNovelGame.View
+namespace cnam_mania.VisualNovelGame.Enumeration
 {
     public enum GameMode
     {
         EASY,
         MEDIUM,
         HARD
-
     }
 }
