@@ -35,7 +35,7 @@ namespace cnam_mania.View
             try
             {
                 //MessageBox.Show(string.Format("Mode :{0}, Joueur{1}"))
-                ((MainWindow)Window.GetWindow(this)).MainContent.Content = new EpisodeInterface();
+                ((MainWindow)Window.GetWindow(this)).MainContent.Content = new DemoEpisode();
                 ((MainWindow)Window.GetWindow(this)).MenuContent.Visibility = Visibility.Hidden;
             }
             catch (Exception exp)

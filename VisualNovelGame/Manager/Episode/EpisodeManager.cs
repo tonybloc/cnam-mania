@@ -108,7 +108,7 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
         /// <summary>
         /// Get next story
         /// </summary>
-        public void NextStory(Choice choice)
+        public bool NextStory(Choice choice)
         {
             if ((this.CurrentEpisode != null) && (this.CurrentStory != null))
             {
@@ -119,7 +119,7 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
                     // Find next story in next episode                    
                     this.CurrentEpisode = GetEpisode(choice.NextEpisodeId);
                     this.CurrentStory = GetStory(choice.NextEpisodeId, 0);
-                    return;
+                    return true; ;
                 }
 
 
@@ -127,15 +127,16 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
                 if (HasNextStoryInEpsiode(this.CurrentEpisode, this.CurrentStory))
                 {
                     this.CurrentStory = this.CurrentEpisode.Stories[GetStoryIndex(this.CurrentEpisode, this.CurrentStory) + 1];
-                    return;
+                    return true;
                 }
                 else
                 {
                     this.CurrentEpisode = this.GetEpisode(choice.NextEpisodeId);
                     this.CurrentStory = GetStory(choice.NextEpisodeId, 0);
-                    return;
+                    return true;
                 }
             }
+            return false;
         }
 
 

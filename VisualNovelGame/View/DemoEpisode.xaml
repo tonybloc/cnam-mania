@@ -7,6 +7,7 @@
       xmlns:model="clr-namespace:cnam_mania.VisualNovelGame.Model.Episodes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      Background="White"
       Title="DemoEpisode">
 
     <Grid>
@@ -29,6 +30,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -36,10 +38,25 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock x:Name="nFistChoice" Grid.Row="0" Grid.Column="0" Text="{Binding Path=FirstChoice.Description, Mode=TwoWay}"/>
-                <TextBlock x:Name="nSecondChoice" Grid.Row="0" Grid.Column="1" Text="{Binding Path=SecondChoice.Description, Mode=TwoWay}"/>
-                <Button Grid.Row="1" Grid.Column="0" Click="onClickFirstChoice">FirstChoice</Button>
-                <Button Grid.Row="1" Grid.Column="1" Click="onClickSecondChoice">SecondeChoice</Button>
+                <TextBlock x:Name="nEpsiodeId" 
+                           Grid.Row="2" 
+                           Grid.Column="0" 
+                           Text="{Binding Path=Episode.EpisodeId, Mode=OneWay}"/>
+
+                
+                <Button x:Name="btnFirstChoice" 
+                        Grid.Row="1" 
+                        Grid.Column="0" 
+                        Click="OnClickFirstChoice" 
+                        Visibility="{Binding Path=ChoiceVisibility, Mode=OneWay}"
+                        Content="{Binding Path=FirstChoice.Description, Mode=OneWay}"/>
+                
+                <Button x:Name="btnSecondChoice" 
+                    Grid.Row="1" 
+                    Grid.Column="1" 
+                    Click="OnClickSecondChoice" 
+                    Visibility="{Binding Path=ChoiceVisibility, Mode=OneWay}"
+                    Content="{Binding Path=SecondChoice.Description, Mode=OneWay}"/>
             </Grid>
         </StackPanel>
     </Grid>
