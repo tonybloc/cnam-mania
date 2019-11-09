@@ -1,5 +1,6 @@
 ﻿using cnam_mania.VisualNovelGame.Manager;
 using cnam_mania.VisualNovelGame.Model.Characters;
+using cnam_mania.VisualNovelGame.Manager.Episodes;
 using cnam_mania.VisualNovelGame.Model.Episodes;
 using System;
 using System.Collections.Generic;
@@ -23,16 +24,24 @@ namespace cnam_mania.VisualNovelGame.View
     /// <summary>
     /// Logique d'interaction pour EpisodeInterface.xaml
     /// </summary>
-    public partial class EpisodeInterface : Page
+    public partial class EpisodeInterface : Page, INotifyPropertyChanged
     {
 
         // Property change attribute
         public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Game manager
         /// </summary>
         private VisualNovelManager _game;
 
+        /// <summary>
+        /// Current epsiode
+        /// </summary>
+        private Episode Episode { get; set; }
+
+
+        #region Private Bindable Attributes
         /// <summary>
         /// current story
         /// </summary>
@@ -48,6 +57,16 @@ namespace cnam_mania.VisualNovelGame.View
         /// </summary>
         private Choice _secondChoice;
 
+        /// <summary>
+        /// Define if the story is the lastest
+        /// </summary>
+        private bool _finalStory;
+
+        /// <summary>
+        /// Define visibilty of choice buttons
+        /// </summary>
+        private bool _choiceVisibility;
+        #endregion
 
         #region Bindable Attributes
         /// <summary>
@@ -65,7 +84,7 @@ namespace cnam_mania.VisualNovelGame.View
                 }
             }
         }
-
+                
         /// <summary>
         /// current story, first choice related
         /// </summary>
@@ -113,10 +132,40 @@ namespace cnam_mania.VisualNovelGame.View
                 }
             }
         }
+        /// <summary>
+        /// Define if the story is the lastest
+        /// </summary>
+        public bool FinalStory
+        {
+            get { return _finalStory; }
+            set
+            {
+                if (_finalStory != value)
+                {
+                    _finalStory = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        /// <summary>
+        /// Define visibilty of choice buttons
+        /// </summary>
+        public bool ChoiceVisibility
+        {
+            get { return _choiceVisibility; }
+            set
+            {
+                if (_choiceVisibility != value)
+                {
+                    _choiceVisibility = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
         #endregion
 
         /// <summary>
-        /// Episode UI constructor
+        /// Create new instance of demoepsiode
         /// </summary>
         public EpisodeInterface()
         {
@@ -124,60 +173,70 @@ namespace cnam_mania.VisualNovelGame.View
             DataContext = this;
 
             _game = VisualNovelManager.Instance;
-            //EpisodesListView.ItemsSource = _game.episodeManager.Serie.Episodes;
+            LoadEpsiodeManagerAttributes(_game.episodeManager);
+        }
 
-            Story = _game.episodeManager.CurrentStory;
+        /// <summary>
+        /// Retreive attribute from epsiode manager.
+        /// </summary>
+        /// <param name="manager">Manager of epsiode</param>
+        private void LoadEpsiodeManagerAttributes(EpisodeManager manager)
+        {
+            // Update story attribute
+            Story = manager.CurrentStory;
+
+            // Update epsiode attribute
+            Episode = manager.CurrentEpisode;
+
+            // Update choices attribute
             if (Story != null && Story.Choices != null && Story.Choices.Count == 2)
             {
                 FirstChoice = Story.Choices[0];
                 SecondChoice = Story.Choices[1];
+
+                FinalStory = false;
+                ChoiceVisibility = true;
             }
             else
             {
-                FirstChoice = new Choice { Description = "Aucune idée" };
-                SecondChoice = new Choice { Description = "Aucune idée" };
+                FinalStory = true;
+                ChoiceVisibility = false;
             }
         }
 
         /// <summary>
-        /// Go to next story
+        /// Get next story according choice
         /// </summary>
-        /// <param name="c"></param>
+        /// <param name="c">Selected choice</param>
         private void NextStory(Choice c)
         {
-            _game.episodeManager.NextStory(c);
-            Story = _game.episodeManager.CurrentStory;
-
-            OnPropertyChanged();
-            if (Story != null && Story.Choices != null && Story.Choices.Count == 2)
+            if (_game.episodeManager.NextStory(c))
             {
-                FirstChoice = Story.Choices[0];
-                SecondChoice = Story.Choices[1];
+                LoadEpsiodeManagerAttributes(_game.episodeManager);
             }
             else
             {
-                FirstChoice = new Choice { Description = "Aucune idéee" };
-                SecondChoice = new Choice { Description = "Aucune idéee" };
+                FinalStory = true;
+                ChoiceVisibility = false;
             }
         }
 
-
         /// <summary>
-        /// Bind first choice to current story
+        /// Click on first choice
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnClickFirstChoice(object sender, EventArgs e)
+        /// <param name="sender">Targeted object</param>
+        /// <param name="e">Event source</param>
+        private void OnClickFirstChoice(object sender, RoutedEventArgs e)
         {
             NextStory(FirstChoice);
         }
 
         /// <summary>
-        /// Bind second choice to current story
+        /// Click on seconde choice
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnClickSecondChoice(object sender, EventArgs e)
+        private void OnClickSecondChoice(object sender, RoutedEventArgs e)
         {
             NextStory(SecondChoice);
         }
@@ -188,7 +247,7 @@ namespace cnam_mania.VisualNovelGame.View
         /// Notify propery changed
         /// </summary>
         /// <param name="propertyName">Property name</param>
-       private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

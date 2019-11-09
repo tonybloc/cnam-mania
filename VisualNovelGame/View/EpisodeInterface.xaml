@@ -5,16 +5,27 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:cnam_mania.VisualNovelGame.View"
       xmlns:model="clr-namespace:cnam_mania.VisualNovelGame.Model.Episodes"
-      xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       Height="{DynamicResource {x:Static SystemParameters.PrimaryScreenHeightKey}}"
       Width="{DynamicResource {x:Static SystemParameters.PrimaryScreenWidthKey}}" 
       FontFamily="{DynamicResource MaterialDesignFont}"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EpisodeInterface">
+
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Page.Resources>
+    
+    <!-- Page Background -->
     <Page.Background>
-        <ImageBrush ImageSource="../Resources/Pictures/episode.jpg"/>
+        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+            <GradientStop Color="#1F1E40" Offset="0.85"/>
+            <GradientStop Color="#2F2F51" Offset="0.70"/>
+            <GradientStop Color="#201C2D" Offset="0.25"/>
+        </LinearGradientBrush>
     </Page.Background>
+    
+    <!-- Page content -->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -28,13 +39,13 @@
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Row="1" Grid.Column="1">
+            <!-- Setup Grid -->
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="LightGray" Offset="1"/>
                     <GradientStop Color="#EBEBEB"/>
                 </LinearGradientBrush>
             </Grid.Background>
-
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.5*"/>
                 <RowDefinition Height="*"/>
@@ -44,23 +55,23 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" Grid.ColumnSpan="2">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+ <Grid Grid.Column="0" Grid.ColumnSpan="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel Orientation="Vertical">
                         <Image Width="50" Height="50" Source="../Resources/Pictures/IcoArgent.png"></Image>
-                        <TextBlock Text="{Binding Path=Story.Title, Mode=OneWay}"></TextBlock>
+                        <TextBlock Text="{Binding Path=Character.Money, Mode=OneWay}"></TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <Image Width="50" Height="50" Source="../Resources/Pictures/IcoIntelligence.png"></Image>
-                        <TextBlock Text="{Binding Path=Story.Title, Mode=OneWay}"></TextBlock>
+                        <TextBlock Text="{Binding Path=Character.Intellect, Mode=OneWay}"></TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <Image Width="50" Height="50" Source="../Resources/Pictures/IcoNotoriete.png"></Image>
-                        <TextBlock Text="{Binding Path=Story.Title, Mode=OneWay}"></TextBlock>
+                        <TextBlock Text="{Binding Path=Character.Popularity, Mode=OneWay}"></TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Vertical">
                         <Image Width="50" Height="50" Source="../Resources/Pictures/IcoNourriture.png"></Image>
-                        <TextBlock Text="{Binding Path=Story.Title, Mode=OneWay}"></TextBlock>
+                        <TextBlock Text="{Binding Path=Character.Food, Mode=OneWay}"></TextBlock>
                     </StackPanel>
                 </StackPanel> 
             </Grid>
@@ -69,14 +80,16 @@
                 <TextBlock Text="{Binding Path=Story.Title, Mode=OneWay}"></TextBlock>
             </Grid>
             <Grid Grid.Row="2" Grid.Column="0">
-                <Button Click="OnClickFirstChoice" HorizontalAlignment="Stretch" Width="200" Height="80">
+                <Button Click="OnClickFirstChoice" HorizontalAlignment="Stretch" Width="200" Height="80"                        
+                    Visibility="{Binding Path=ChoiceVisibility, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}">                    
                     <TextBlock x:Name="nFistChoice" Text="{Binding Path=FirstChoice.Description, Mode=OneWay}"/>
                 </Button>
             </Grid>
             <Grid Grid.Row="2" Grid.Column="1">
-                <Button Click="OnClickSecondChoice" HorizontalAlignment="Stretch" Width="200" Height="80">
-                    <TextBlock x:Name="nSecondChoice" Text="{Binding Path=SecondChoice.Description, Mode=OneWay}"/>
-                </Button>
+            <Button Click="OnClickSecondChoice" HorizontalAlignment="Stretch" Width="200" Height="80"                        
+                    Visibility="{Binding Path=ChoiceVisibility, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}">
+                <TextBlock x:Name="nSecondChoice" Text="{Binding Path=SecondChoice.Description, Mode=OneWay}"/>
+            </Button>
             </Grid>
         </Grid>
     </Grid>
