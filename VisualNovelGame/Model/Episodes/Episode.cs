@@ -16,18 +16,16 @@ namespace cnam_mania.VisualNovelGame.Model.Episodes
         /// </summary>
         [XmlElement("Id")]
         public int EpisodeId { get; set; }
-
-        /// <summary>
-        /// Current story of the episode.
-        /// </summary>
-        public Story CurrentStory { get; set; }
-
+        
         /// <summary>
         /// List of stories
         /// </summary>
         [XmlElement("Story")]
         public List<Story> Stories { get; set; }
 
+        /// <summary>
+        /// Create new instance of class
+        /// </summary>
         public Episode()
         {
             Stories = new List<Story>();
@@ -38,10 +36,9 @@ namespace cnam_mania.VisualNovelGame.Model.Episodes
         /// </summary>
         /// <param name="episodeId"></param>
         /// <param name="currentStory"></param>
-        public Episode(int episodeId, Story currentStory)
+        public Episode(int episodeId)
         {
             EpisodeId = episodeId;
-            CurrentStory = currentStory;
         }
 
 
