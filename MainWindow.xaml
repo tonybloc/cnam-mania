@@ -41,5 +41,7 @@
             </Grid>
             <Frame x:Name="MainContent" NavigationUIVisibility="Hidden"/>
         </Grid>
+        <!-- Notification -->
+        <ContentControl Grid.Column="0" Grid.Row="0" x:Name="NotificationsPanel"></ContentControl>
     </Grid>
 </Window>

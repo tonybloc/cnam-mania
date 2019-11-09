@@ -1,6 +1,7 @@
 using cnam_mania.Game;
 using cnam_mania.View;
 using cnam_mania.VisualNovelGame.Manager;
+using cnam_mania.VisualNovelGame.View.Notifications;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,6 +32,7 @@ namespace cnam_mania
         public MainWindow()
         {
             InitializeComponent();
+            this.PreviewKeyDown += new KeyEventHandler(HandleEsc);
         }
 
         /// <summary>
@@ -63,6 +65,21 @@ namespace cnam_mania
         private void btnRiddle_Click(object sender, RoutedEventArgs e)
         {
             MiniGamesFactory.createGamesManager("Riddle");
+
+        }
+
+        /// <summary>
+        /// Escape the game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void HandleEsc(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                NotificationsPanel.Visibility = Visibility.Visible;
+                NotificationsPanel.Content = new SubMenuOfGame();
+            }
 
         }
     }

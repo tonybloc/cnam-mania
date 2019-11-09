@@ -81,6 +81,9 @@
       <DependentUpon>EpisodeInterface.xaml</DependentUpon>
     </Compile>
     <Compile Include="VisualNovelGame\Enumeration\GameMode.cs" />
+    <Compile Include="VisualNovelGame\View\Notifications\SubMenuOfGame.xaml.cs">
+      <DependentUpon>SubMenuOfGame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VisualNovelGame\View\Options.cs" />
     <Compile Include="VisualNovelGame\View\PlayerChoiceInterface.xaml.cs">
       <DependentUpon>PlayerChoiceInterface.xaml</DependentUpon>
@@ -127,6 +130,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="VisualNovelGame\View\EpisodeInterface.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VisualNovelGame\View\Notifications\SubMenuOfGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
