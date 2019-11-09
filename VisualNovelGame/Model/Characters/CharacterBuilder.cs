@@ -16,7 +16,7 @@ namespace cnam_mania.VisualNovelGame.Model.Characters
         /// <summary>
         /// Creates a new Character. 
         /// </summary>
-        public void CreateCharacter()
+        public CharacterBuilder()
         {
             this.Character = new Character();
         }

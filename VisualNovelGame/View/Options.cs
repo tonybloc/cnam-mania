@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace cnam_mania.VisualNovelGame.View
 {
-   public class Options
+    public class Options
     {
         /// <summary>
-        /// Getter and setter PlayerType
+        /// Getter and setter of enum PlayerType
         /// </summary>
-        public PlayerType playerTypeEnum { get; set; }
+        public PlayerType playerType { get; set; }
 
         /// <summary>
-        /// Getter and setter GameMode
+        /// Getter and setter of enum GameMode
         /// </summary>
         public GameMode gameMode { get; set; }
     }

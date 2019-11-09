@@ -116,6 +116,7 @@
     <Compile Include="VisualNovelGame\Service\Xml\XmlDataAccess.cs" />
     <Compile Include="VisualNovelGame\Settings\Config.cs" />
     <Compile Include="VisualNovelGame\Enumeration\PlayerType.cs" />
+    <Compile Include="VisualNovelGame\View\RadioButtonCheckedConverter.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

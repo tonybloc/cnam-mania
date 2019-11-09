@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using cnam_mania.VisualNovelGame.Model.Episodes;
 using cnam_mania.VisualNovelGame.Model.Memento;
+using cnam_mania.VisualNovelGame.Enumeration;
 
 namespace cnam_mania.VisualNovelGame.Manager
 {
@@ -38,10 +39,10 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// <summary>
         /// Game mode choosen by the user
         /// </summary>
-        public IModeStrategy GameMode { get; set; }
+        public IModeStrategy GameModeStrategy { get; set; }
         #endregion
 
-        #region 
+        #region Initialization
         /// <summary>
         /// Creation of the VisualNovelManager
         /// </summary>
@@ -84,9 +85,10 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// <summary>
         /// Initialize the game items. 
         /// </summary>
-        public void InitGame(String character, String gameMode)
+        public void InitGame(PlayerType character, GameMode gameMode)
         {
-
+            CreateCharacter(character);
+            SetGameMode(gameMode);
         }
 
         public void SaveGame()
@@ -137,22 +139,26 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// Creates a character based on user's choice.
         /// </summary>
         /// <param name="character">Character type</param>
-        public void CreateCharacter(String character)
+        public void CreateCharacter(PlayerType character)
         {
             // chooses the Character
             switch (character)
             {
-                case "SMART":
+                case PlayerType.SMART:
                     this.characterManager.SetCharacterBuilder(new SmartCharacterBuilder());
+                    this.characterManager.CreateCharacter();
                     break;
-                case "GREEDY":
+                case PlayerType.GREEDY:
                     this.characterManager.SetCharacterBuilder(new GreedyCharacterBuilder());
+                    this.characterManager.CreateCharacter();
                     break;
-                case "POPULAR":
+                case PlayerType.POPULAR:
                     this.characterManager.SetCharacterBuilder(new PopularCharacterBuilder());
+                    this.characterManager.CreateCharacter();
                     break;
-                case "RICH":
+                case PlayerType.RICH:
                     this.characterManager.SetCharacterBuilder(new RichCharacterBuilder());
+                    this.characterManager.CreateCharacter();
                     break;
                 default:
                     break;
@@ -164,19 +170,19 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// Sets the Game Mode based on user's choice.
         /// </summary>
         /// <param name="gameMode"></param>
-        public void SetGameMode(String gameMode)
+        public void SetGameMode(GameMode gameMode)
         {
             // chooses the game mode
             switch (gameMode)
             {
-                case "EASY":
-                    this.GameMode = new EasyMode();
+                case GameMode.EASY:
+                    this.GameModeStrategy = new EasyMode();
                     break;
-                case "MEDIUM":
-                    this.GameMode = new MediumMode();
+                case GameMode.MEDIUM:
+                    this.GameModeStrategy = new MediumMode();
                     break;
-                case "HARD":
-                    this.GameMode = new HardMode();
+                case GameMode.HARD:
+                    this.GameModeStrategy = new HardMode();
                     break;
                 default:
                     break;
