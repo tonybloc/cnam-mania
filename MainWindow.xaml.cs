@@ -85,8 +85,16 @@ namespace cnam_mania
             EpisodesListView.ItemsSource = _game.episodeManager.Serie.Episodes;
 
             Story = _game.episodeManager.CurrentStory;
-            FirstChoice = Story.Choices[0];
-            SecondChoice = Story.Choices[1];
+            if (Story != null && Story.Choices != null && Story.Choices.Count == 2)
+            {
+                FirstChoice = Story.Choices[0];
+                SecondChoice = Story.Choices[1];
+            }
+            else
+            {
+                FirstChoice = new Choice { Description = "Aucune idéee" };
+                SecondChoice = new Choice { Description = "Aucune idéee" };
+            }
         }
 
 
@@ -94,8 +102,16 @@ namespace cnam_mania
         {
             _game.episodeManager.NextStory(c);
             Story = _game.episodeManager.CurrentStory;
-            FirstChoice = Story.Choices[0];
-            SecondChoice = Story.Choices[1];
+            if(Story != null && Story.Choices != null && Story.Choices.Count == 2)
+            {
+                FirstChoice = Story.Choices[0];
+                SecondChoice = Story.Choices[1];
+            }
+            else
+            {
+                FirstChoice = new Choice { Description = "Aucune idéee" };
+                SecondChoice = new Choice { Description = "Aucune idéee" };
+            }
         }
 
 

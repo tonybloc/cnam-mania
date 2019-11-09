@@ -112,12 +112,6 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
         {
             if ((this.CurrentEpisode != null) && (this.CurrentStory != null))
             {
-                // Get index of currentEpisode.
-                int IndexCurrentEpisode = this._serie.Episodes.FindIndex((item) => item.EpisodeId == CurrentEpisode.EpisodeId);
-
-                // Get index of currentStory.
-                int IndexCurrentStory = this.CurrentEpisode.Stories.FindIndex((item) => item.Id == CurrentStory.Id);
-
                 // Define if we can skip storys in episode
 
                 if (!choice.NextStoryCurrentEpisode)
@@ -130,9 +124,9 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
 
 
                 // If exist next story in episode - switch. Else next epsiode
-                if (HasNextStoryInEpsiode(this.CurrentEpisode.EpisodeId, this.CurrentStory.Id))
+                if (HasNextStoryInEpsiode(this.CurrentEpisode, this.CurrentStory))
                 {
-                    this.CurrentStory = this.CurrentEpisode.Stories[GetEpsiodeIndex(this.CurrentEpisode.EpisodeId, this._serie.Episodes) + 1];
+                    this.CurrentStory = this.CurrentEpisode.Stories[GetStoryIndex(this.CurrentEpisode, this.CurrentStory) + 1];
                     return;
                 }
                 else
@@ -175,9 +169,9 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
         /// <param name="episodeId">episode id</param>
         /// <param name="episodes">list of episode</param>
         /// <returns>index of epsiode</returns>
-        private int GetEpsiodeIndex(int episodeId, List<Episode> episodes)
+        private int GetEpsiodeIndex(Episode episode, List<Episode> episodes)
         {
-            return episodes.FindIndex((item) => item.EpisodeId == episodeId);
+            return episodes.IndexOf(episode);
         }
 
         /// <summary>
@@ -186,10 +180,11 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
         /// <param name="episodeId">episode id</param>
         /// <param name="storyId">story id</param>
         /// <returns>Inde of story</returns>
-        private int GetStoryIndex(int episodeId, int storyId)
+        private int GetStoryIndex(Episode episode, Story story)
         {
-            return GetEpisode(episodeId).Stories.FindIndex((item) => item.Id == storyId);
+            return episode.Stories.IndexOf(story);
         }
+
 
         /// <summary>
         /// Check if it exist next story in epsiode
@@ -197,9 +192,9 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
         /// <param name="episodeId"></param>
         /// <param name="storyId"></param>
         /// <returns></returns>
-        private bool HasNextStoryInEpsiode(int episodeId, int storyId)
+        private bool HasNextStoryInEpsiode(Episode episode, Story story)
         {
-            return (GetStoryIndex(episodeId, storyId) < GetEpisode(episodeId).Stories.Count() - 1);
+            return (GetStoryIndex(episode, story) < episode.Stories.Count() - 1);
 
         }
 

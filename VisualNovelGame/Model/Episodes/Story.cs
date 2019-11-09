@@ -45,9 +45,9 @@ namespace cnam_mania.VisualNovelGame.Model.Episodes
         /// <param name="currentChoice"></param>
         /// <param name="choices"></param>
         /// <param name="isCrucial"></param>
-        public Story(List<Choice> choices)
+        public Story(string Title)
         {
-            Choices = choices;
+            this.Title = Title;
         }
     }
 }
