@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,12 +11,62 @@ namespace cnam_mania.VisualNovelGame.Model.Characters
     public class Character : INotifyPropertyChanged
     {
         #region Attributes
-        #region (Public) Attributes
-        public int Intellect { get; set;
+        #region Bindable Attributes
+        public int Intellect
+        {
+            get { return _intellect; }
+            set
+            {
+                if( _intellect != value)
+                {
+                    _intellect = value;
+                    OnPropertyChanged();
+                }
+            }
         }
-        public int Food { get; set; }
-        public int Popularity { get; set; }
-        public int Money { get; set; }
+        public int Food
+        {
+            get { return _food; }
+            set
+            {
+                if (_food != value)
+                {
+                    _food = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        public int Popularity
+        {
+            get { return _popularity; }
+            set
+            {
+                if (_popularity != value)
+                {
+                    _popularity = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        public int Money
+        {
+            get { return _money; }
+            set
+            {
+                if (_money != value)
+                {
+                    _money = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        #endregion
+
+        #region Private bindable attributes
+        private int _intellect;
+        private int _food;
+        private int _popularity;
+        private int _money;
         #endregion
         #endregion
 
@@ -41,11 +92,15 @@ namespace cnam_mania.VisualNovelGame.Model.Characters
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged(string propertyName)
+        #region Notify Bindable attribute
+        /// <summary>
+        /// Notify propery changed
+        /// </summary>
+        /// <param name="propertyName">Property name</param>
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-                handler(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        #endregion
     }
 }
