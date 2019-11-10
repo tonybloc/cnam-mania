@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Facts>
+  <Fact
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>1</Id>
+    <Description>
+        Le prénom de César n'était pas Jules, mais Caïus !
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>2</Id>
+    <Description>
+      Les cheveux gris n'existent pas, il y a que des cheveux de couleur et des cheveux blancs !
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>3</Id>
+    <Description>
+      L'arc-en-ciel ne possède pas 7 couleurs, mais une infinité de couleurs !
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>4</Id>
+    <Description>
+      L'arc-en-ciel ne possède pas 7 couleurs, mais une infinité de couleurs !
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>5</Id>
+    <Description>
+      Les chauves-souris ne sont pas aveugles ! 
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>6</Id>
+    <Description>
+      L'ananas n'est pas un fruit mais un ensemble de fruits, car il est constitué de plusieurs fleurs comme les baies !
+    </Description>
+  </Fact>
+</Facts>
