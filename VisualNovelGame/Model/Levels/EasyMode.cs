@@ -20,7 +20,10 @@ namespace cnam_mania.VisualNovelGame.Model.Levels
 
         public void ExecuteChoice(Character character, Choice choice)
         {
-            character.Food += choice.FoodPoints * coeff;
+            character.Food += (choice.FoodPoints < 1) ? Math.Abs(choice.FoodPoints) * coeff * (-1) : choice.FoodPoints * coeff;
+            character.Intellect += (choice.SmartPoints < 1) ? Math.Abs(choice.SmartPoints) * coeff * (-1) : choice.SmartPoints * coeff;
+            character.Popularity += (choice.PopularityPoints < 1) ? Math.Abs(choice.PopularityPoints) * coeff * (-1) : choice.PopularityPoints * coeff;
+            character.Money += (choice.WealthyPoints < 1) ? Math.Abs(choice.WealthyPoints) * coeff * (-1) : choice.WealthyPoints * coeff;
         }
     }
 }
