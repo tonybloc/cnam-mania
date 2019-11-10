@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace cnam_mania.VisualNovelGame.Model.Memento
 {
-    public interface IMemento
+    public interface IOriginator
     {
         /// <summary>
-        /// Used to retrieve the memento's data.
+        /// Create new instance of memento
         /// </summary>
-        void Restore();
+        /// <returns>Memento</returns>
+        IMemento Save();
     }
 }

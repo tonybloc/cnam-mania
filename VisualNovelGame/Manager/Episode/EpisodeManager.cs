@@ -112,7 +112,7 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
         {
             if ((this.CurrentEpisode != null) && (this.CurrentStory != null))
             {
-                // Define if we can skip storys in episode
+                // Define if we can skip stories in episode
 
                 if (!choice.NextStoryCurrentEpisode)
                 {

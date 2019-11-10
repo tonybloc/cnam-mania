@@ -29,12 +29,17 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// <summary>
         /// EpisodeManager instance
         /// </summary>
-        public EpisodeManager episodeManager;
+        public EpisodeManager EpisodeManager;
 
         /// <summary>
         /// CharacterManager instance
         /// </summary>
-        public CharacterManager characterManager;
+        public CharacterManager CharacterManager;
+
+        /// <summary>
+        /// SavingPoint instance
+        /// </summary>
+        public SavingPointOriginator SavingPointOriginator;
 
         /// <summary>
         /// Game mode choosen by the user
@@ -48,8 +53,9 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// </summary>
         private VisualNovelManager()
         {
-            this.episodeManager = EpisodeManager.Instance;
-            this.characterManager = CharacterManager.Instance;
+            this.EpisodeManager = EpisodeManager.Instance;
+            this.CharacterManager = CharacterManager.Instance;
+            SavingPointOriginator = new SavingPointOriginator();
             this.history = new List<SavingPointMemento>();
         }
 
@@ -91,16 +97,19 @@ namespace cnam_mania.VisualNovelGame.Manager
             SetGameMode(gameMode);
         }
 
-        public void SaveGame()
+        /// <summary>
+        /// Create new saving point
+        /// </summary>
+        /// <param name="character">character state</param>
+        /// <param name="episode">epsiode state</param>
+        public void CreateSavingPoint(Character character, Episode episode)
         {
-            // retrieves current game state 
-            SavingPoint savingPoint = new SavingPoint(this.characterManager.CharacterBuilder.GetCharacter(), this.episodeManager.CurrentEpisode);
-            // Originator will creates and stores states in Memento
-            Originator originator = new Originator();
             // Originator instanciates saving point 
-            originator.SetSavingPoint(savingPoint);
+            SavingPointOriginator.SetCharacterState(character);
+            SavingPointOriginator.SetEpisodeState(episode);
+
             // add generated memento in history 
-            this.history.Add(originator.Save());
+            this.history.Add((SavingPointMemento)SavingPointOriginator.Save());
            
         }
         
@@ -109,30 +118,17 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// </summary>
         /// <param name="lastEpisode"></param>
         /// <returns></returns>
-        public SavingPointMemento getSavingPointMemento(int lastEpisode)
+        public void RestorSavingPoint(int index)
         {
-            return this.history.ElementAt(lastEpisode);
-        }
+            SavingPointMemento memento = (SavingPointMemento)this.history.ElementAt(index);
+            memento.Restore();
 
-        /// <summary>
-        /// Resets items state at a given time.
-        /// </summary>
-        public void backToSavingPoint()
-        {
-            // retrieve savingPoint
-            SavingPointMemento savingPointMemento = getSavingPointMemento(this.history.Count-1);
-
-            // if there is a saving point
-            if (savingPointMemento != null)
-            { 
-                // reset character's data 
-                this.characterManager.CharacterBuilder.Character.Food = savingPointMemento.GetSavingPoint().CharacterState.Food;
-                this.characterManager.CharacterBuilder.Character.Intellect = savingPointMemento.GetSavingPoint().CharacterState.Intellect;
-                this.characterManager.CharacterBuilder.Character.Money = savingPointMemento.GetSavingPoint().CharacterState.Money;
-                this.characterManager.CharacterBuilder.Character.Popularity = savingPointMemento.GetSavingPoint().CharacterState.Popularity;
-                // back to last episode saved
-                this.episodeManager.CurrentEpisode = savingPointMemento.GetSavingPoint().EpisodeState;
-            } 
+            // not good !!!
+            this.EpisodeManager.CurrentEpisode = SavingPointOriginator.GetEpisodeState();
+            this.CharacterManager.CharacterBuilder.GetCharacter().Food = SavingPointOriginator.GetCharacterState().Food;
+            this.CharacterManager.CharacterBuilder.GetCharacter().Popularity = SavingPointOriginator.GetCharacterState().Popularity;
+            this.CharacterManager.CharacterBuilder.GetCharacter().Money = SavingPointOriginator.GetCharacterState().Money;
+            this.CharacterManager.CharacterBuilder.GetCharacter().Intellect = SavingPointOriginator.GetCharacterState().Intellect;
         }
 
         /// <summary>
@@ -145,20 +141,20 @@ namespace cnam_mania.VisualNovelGame.Manager
             switch (character)
             {
                 case PlayerType.SMART:
-                    this.characterManager.SetCharacterBuilder(new SmartCharacterBuilder());
-                    this.characterManager.CreateCharacter();
+                    this.CharacterManager.SetCharacterBuilder(new SmartCharacterBuilder());
+                    this.CharacterManager.CreateCharacter();
                     break;
                 case PlayerType.GREEDY:
-                    this.characterManager.SetCharacterBuilder(new GreedyCharacterBuilder());
-                    this.characterManager.CreateCharacter();
+                    this.CharacterManager.SetCharacterBuilder(new GreedyCharacterBuilder());
+                    this.CharacterManager.CreateCharacter();
                     break;
                 case PlayerType.POPULAR:
-                    this.characterManager.SetCharacterBuilder(new PopularCharacterBuilder());
-                    this.characterManager.CreateCharacter();
+                    this.CharacterManager.SetCharacterBuilder(new PopularCharacterBuilder());
+                    this.CharacterManager.CreateCharacter();
                     break;
                 case PlayerType.RICH:
-                    this.characterManager.SetCharacterBuilder(new RichCharacterBuilder());
-                    this.characterManager.CreateCharacter();
+                    this.CharacterManager.SetCharacterBuilder(new RichCharacterBuilder());
+                    this.CharacterManager.CreateCharacter();
                     break;
                 default:
                     break;
@@ -200,17 +196,23 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// <summary>
         /// After user's choice, chains the stories. 
         /// </summary>
-        /// <param name="choice"></param>
+        /// <param name="choice">selected choice</param>
         public bool SwitchStory(Choice choice)
         {
+            Episode episode = this.EpisodeManager.CurrentEpisode;
+
             if (choice != null)
             {
-                this.episodeManager.NextStory(choice);
-                this.GameModeStrategy.ExecuteChoice(this.characterManager.CharacterBuilder.Character, choice);
+                this.GameModeStrategy.ExecuteChoice(this.CharacterManager.CharacterBuilder.GetCharacter(), choice);
+
+                this.EpisodeManager.NextStory(choice);
+
+                if ( (episode == null) || (episode.EpisodeId != this.EpisodeManager.CurrentEpisode.EpisodeId) )
+                    CreateSavingPoint(this.CharacterManager.CharacterBuilder.GetCharacter(), this.EpisodeManager.CurrentEpisode);
+                
                 return true; 
             }
-            return false; 
-            //TODO : add exceptions
+            return false;
         }
 
     }

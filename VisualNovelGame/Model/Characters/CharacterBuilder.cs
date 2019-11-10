@@ -9,7 +9,7 @@ namespace cnam_mania.VisualNovelGame.Model.Characters
     public abstract class CharacterBuilder
     {
         #region Attributes
-        public Character Character { get; private set; }
+        protected Character Character { get; private set; }
         #endregion
 
         #region Methodes
@@ -29,6 +29,7 @@ namespace cnam_mania.VisualNovelGame.Model.Characters
         {
             return this.Character; 
         }
+
 
         /// <summary>
         /// Update the food attribute of character

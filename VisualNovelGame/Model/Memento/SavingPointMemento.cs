@@ -1,4 +1,6 @@
-﻿using System;
+﻿using cnam_mania.VisualNovelGame.Model.Characters;
+using cnam_mania.VisualNovelGame.Model.Episodes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,26 +11,41 @@ namespace cnam_mania.VisualNovelGame.Model.Memento
     public class SavingPointMemento : IMemento
     {
         /// <summary>
-        /// Saving point to save and restore
+        /// Character to save
         /// </summary>
-        private SavingPoint _state;
+        public Character CharacterState { get; set; }
 
         /// <summary>
-        /// Class constructor 
+        /// Episode to save
         /// </summary>
-        /// <param name="state"></param>
-        public SavingPointMemento(SavingPoint state)
+        public Episode EpisodeState { get; set; }
+
+
+        /// <summary>
+        /// Originator 
+        /// </summary>
+        private SavingPointOriginator _originator;
+
+        /// <summary>
+        /// Create new instance of class
+        /// </summary>
+        /// <param name="originator">Originator</param>
+        /// <param name="state">Saving point</param>
+        public SavingPointMemento(SavingPointOriginator originator, Character characterState, Episode episodeState)
         {
-            _state = state;
+            _originator = originator;
+            this.CharacterState = characterState;
+            this.EpisodeState = episodeState;
         }
 
         /// <summary>
         /// Originator uses this method when restoring its state.
         /// </summary>
-        /// <returns></returns>
-        public SavingPoint GetSavingPoint()
+        public void Restore()
         {
-            return this._state; 
+            _originator.SetCharacterState(CharacterState);
+            _originator.SetEpisodeState(EpisodeState);
         }
+
     }
 }

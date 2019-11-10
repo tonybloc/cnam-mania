@@ -250,7 +250,7 @@ namespace cnam_mania.VisualNovelGame.View
         {
             if (_game.SwitchStory(c))
             {
-                LoadEpsiodeManagerAttributes(_game.episodeManager);
+                LoadEpsiodeManagerAttributes(_game.EpisodeManager);
             }
             else
             {
@@ -281,6 +281,19 @@ namespace cnam_mania.VisualNovelGame.View
             ShowStoryBackground();
         }
 
+
+        private void OnClickContinue(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ((MainWindow)Window.GetWindow(this)).MainContent.Content = new EpisodeMementoInterface();
+                ((MainWindow)Window.GetWindow(this)).MenuContent.Visibility = Visibility.Hidden;
+            }
+            catch (Exception exp)
+            {
+                Console.WriteLine(exp.Message);
+            }
+        }
 
         #region Notify Bindable attribute
         /// <summary>

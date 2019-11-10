@@ -77,15 +77,21 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="VisualNovelGame\Exceptions\EpisodeNotFound.cs" />
+    <Compile Include="VisualNovelGame\Model\Memento\IOriginator.cs" />
     <Compile Include="VisualNovelGame\View\EpisodeInterface.xaml.cs">
       <DependentUpon>EpisodeInterface.xaml</DependentUpon>
     </Compile>
     <Compile Include="VisualNovelGame\Enumeration\GameMode.cs" />
+<<<<<<< HEAD
     <Compile Include="VisualNovelGame\View\GameRulesInterface.xaml.cs">
       <DependentUpon>GameRulesInterface.xaml</DependentUpon>
     </Compile>
     <Compile Include="VisualNovelGame\View\Notifications\SubMenuOfGame.xaml.cs">
       <DependentUpon>SubMenuOfGame.xaml</DependentUpon>
+=======
+    <Compile Include="VisualNovelGame\View\EpsiodeMementoInterface.xaml.cs">
+      <DependentUpon>EpsiodeMementoInterface.xaml</DependentUpon>
+>>>>>>> update(memento): implement and test failed !
     </Compile>
     <Compile Include="VisualNovelGame\View\Options.cs" />
     <Compile Include="VisualNovelGame\View\PlayerChoiceInterface.xaml.cs">
@@ -107,9 +113,8 @@
     <Compile Include="VisualNovelGame\Model\Levels\IModeStrategy.cs" />
     <Compile Include="VisualNovelGame\Model\Levels\MediumMode.cs" />
     <Compile Include="VisualNovelGame\Model\Memento\IMemento.cs" />
-    <Compile Include="VisualNovelGame\Model\Memento\SavingPoint.cs" />
     <Compile Include="VisualNovelGame\Model\Memento\SavingPointMemento.cs" />
-    <Compile Include="VisualNovelGame\Model\Memento\Originator.cs" />
+    <Compile Include="VisualNovelGame\Model\Memento\SavingPointOriginator.cs" />
     <Compile Include="Games\AbsGameManager.cs" />
     <Compile Include="Games\MiniGamesFactory.cs" />
     <Compile Include="RebutGame\RebutManager.cs" />
@@ -139,11 +144,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+<<<<<<< HEAD
     <Page Include="VisualNovelGame\View\GameRulesInterface.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VisualNovelGame\View\Notifications\SubMenuOfGame.xaml">
+=======
+    <Page Include="VisualNovelGame\View\EpsiodeMementoInterface.xaml">
+>>>>>>> update(memento): implement and test failed !
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

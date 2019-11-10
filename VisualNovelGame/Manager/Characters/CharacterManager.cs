@@ -17,6 +17,7 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// </summary>
         public CharacterBuilder CharacterBuilder { get; private set; }
 
+
         /// <summary>
         /// Create new instance of CharacterManager.
         /// </summary>

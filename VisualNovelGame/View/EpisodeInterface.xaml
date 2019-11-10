@@ -49,44 +49,43 @@
             </Grid.ColumnDefinitions>
             
             <!-- Grid content -->
-            <Grid Grid.Column="0" Grid.ColumnSpan="2">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <StackPanel Orientation="Vertical"  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Image Width="50" Height="50" Source="../Resources/Pictures/IcoArgent.png"></Image>
-                        <TextBlock Text="{Binding Path=Character.Money, Mode=OneWay}"  HorizontalAlignment="Center" FontSize="15"></TextBlock>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical"  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Image Width="50" Height="50" Source="../Resources/Pictures/IcoIntelligence.png"></Image>
-                        <TextBlock Text="{Binding Path=Character.Intellect, Mode=OneWay}"  HorizontalAlignment="Center"  FontSize="15"></TextBlock>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical"  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Image Width="50" Height="50" Source="../Resources/Pictures/IcoNotoriete.png"></Image>
-                        <TextBlock Text="{Binding Path=Character.Popularity, Mode=OneWay}" HorizontalAlignment="Center"  FontSize="15"></TextBlock>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical"  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Image Width="50" Height="50" Source="../Resources/Pictures/IcoNourriture.png"></Image>
-                        <TextBlock Text="{Binding Path=Character.Food, Mode=OneWay}"  HorizontalAlignment="Center"  FontSize="15"></TextBlock>
-                    </StackPanel>
-                </StackPanel> 
-            </Grid>
-            <Grid Grid.Row="1" Grid.ColumnSpan="2">
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Text="{Binding Path=Episode.Title, Mode=OneWay, StringFormat='Episode : {0}'}" HorizontalAlignment="Center" FontSize="16" Foreground="Gray" Margin="5" />
-                    <TextBlock Text="{Binding Path=Story.Title, Mode=OneWay}"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" TextWrapping="Wrap" Margin="20"></TextBlock>
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Vertical"  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightYellow">
+                    <Image Width="50" Height="50" Source="../Resources/Pictures/IcoArgent.png"></Image>
+                    <TextBlock Text="{Binding Path=Character.Money, Mode=OneWay}"  HorizontalAlignment="Center" FontSize="15"></TextBlock>
                 </StackPanel>
-            </Grid>
-            <Grid Grid.Row="2" Grid.Column="0">
-                <Button Click="OnClickFirstChoice" HorizontalAlignment="Stretch" Width="300" Height="80"                        
-                    Visibility="{Binding Path=ChoiceVisibility, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}">                    
-                    <TextBlock x:Name="nFistChoice" Text="{Binding Path=FirstChoice.Description, Mode=OneWay}" TextWrapping="Wrap"/>
-                </Button>
-            </Grid>
-            <Grid Grid.Row="2" Grid.Column="1">
-            <Button Click="OnClickSecondChoice" HorizontalAlignment="Stretch" Width="300" Height="80"                        
+                <StackPanel Orientation="Vertical"  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Width="50" Height="50" Source="../Resources/Pictures/IcoIntelligence.png"></Image>
+                    <TextBlock Text="{Binding Path=Character.Intellect, Mode=OneWay}"  HorizontalAlignment="Center"  FontSize="15"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Vertical"  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Width="50" Height="50" Source="../Resources/Pictures/IcoNotoriete.png"></Image>
+                    <TextBlock Text="{Binding Path=Character.Popularity, Mode=OneWay}" HorizontalAlignment="Center"  FontSize="15"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Vertical"  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Width="50" Height="50" Source="../Resources/Pictures/IcoNourriture.png"></Image>
+                    <TextBlock Text="{Binding Path=Character.Food, Mode=OneWay}"  HorizontalAlignment="Center"  FontSize="15"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.ColumnSpan="2">
+                <TextBlock Text="{Binding Path=Episode.Title, Mode=OneWay, StringFormat='Episode : {0}'}" HorizontalAlignment="Center" FontSize="16" Foreground="Gray" Margin="5" />
+                <TextBlock Text="{Binding Path=Story.Title, Mode=OneWay}"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" TextWrapping="Wrap" Margin="20"></TextBlock>
+            </StackPanel>
+            
+            <Button Grid.Row="2" Grid.Column="0" Click="OnClickFirstChoice" HorizontalAlignment="Stretch" Width="300" Height="80"                        
                     Visibility="{Binding Path=ChoiceVisibility, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}">
-                    <TextBlock x:Name="nSecondChoice" Text="{Binding Path=SecondChoice.Description, Mode=OneWay}" TextWrapping="Wrap"/>
+                <TextBlock x:Name="nFistChoice" Text="{Binding Path=FirstChoice.Description, Mode=OneWay}" TextWrapping="Wrap"/>
             </Button>
-            </Grid>
+            <Button Grid.Row="2" Grid.Column="1" Click="OnClickSecondChoice" HorizontalAlignment="Stretch" Width="300" Height="80"                        
+                        Visibility="{Binding Path=ChoiceVisibility, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}">
+                <TextBlock x:Name="nSecondChoice" Text="{Binding Path=SecondChoice.Description, Mode=OneWay}" TextWrapping="Wrap"/>
+            </Button>
+
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50" Visibility="{Binding Path=FinalStory, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}">
+                <TextBlock TextWrapping="Wrap" FontSize="24" TextAlignment="Center">Félicitation ! Vous venez de finir l'une des histoire porposée par le VisualNovel.</TextBlock>
+                <Button Width="300" Margin="30" Click="OnClickContinue">Continuer</Button>
+            </StackPanel>
         </Grid>
+
     </Grid>
 </Page>
