@@ -120,6 +120,9 @@
     <Compile Include="VisualNovelGame\Settings\Config.cs" />
     <Compile Include="VisualNovelGame\Enumeration\PlayerType.cs" />
     <Compile Include="VisualNovelGame\View\RadioButtonCheckedConverter.cs" />
+    <Compile Include="VisualNovelGame\View\StereotypesInterface.xaml.cs">
+      <DependentUpon>StereotypesInterface.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -145,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VisualNovelGame\View\PlayerChoiceInterface.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VisualNovelGame\View\StereotypesInterface.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
