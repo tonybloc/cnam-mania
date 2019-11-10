@@ -1,6 +1,7 @@
 using cnam_mania.Game;
 using cnam_mania.View;
 using cnam_mania.VisualNovelGame.Manager;
+using cnam_mania.VisualNovelGame.View;
 using cnam_mania.VisualNovelGame.View.Notifications;
 using System;
 using System.Collections.Generic;
@@ -81,6 +82,17 @@ namespace cnam_mania
                 NotificationsPanel.Content = new SubMenuOfGame();
             }
 
+        }
+
+        /// <summary>
+        /// Description of the games
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnClickHelp(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new GameRulesInterface();
+            MenuContent.Visibility = Visibility.Hidden;
         }
     }
 }
