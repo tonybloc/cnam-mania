@@ -10,7 +10,7 @@
         d:DesignHeight="450" d:DesignWidth="800"
         mc:Ignorable="d"
         WindowState="Maximized"
-        Title="CNAM-MANIA" 
+        Title="CNAMANIA" 
         WindowStartupLocation="CenterScreen">
     <Window.Background>
         <ImageBrush ImageSource="VisualNovelGame/Resources/Pictures/reignCnamania.png"/>
