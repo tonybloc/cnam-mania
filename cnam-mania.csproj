@@ -77,9 +77,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="VisualNovelGame\Exceptions\EpisodeNotFound.cs" />
-    <Compile Include="VisualNovelGame\View\DemoEpisode.xaml.cs">
-      <DependentUpon>DemoEpisode.xaml</DependentUpon>
-    </Compile>
     <Compile Include="VisualNovelGame\View\EpisodeInterface.xaml.cs">
       <DependentUpon>EpisodeInterface.xaml</DependentUpon>
     </Compile>
@@ -129,10 +126,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="VisualNovelGame\View\DemoEpisode.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="VisualNovelGame\View\EpisodeInterface.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
