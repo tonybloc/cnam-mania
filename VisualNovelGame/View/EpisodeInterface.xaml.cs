@@ -178,8 +178,21 @@ namespace cnam_mania.VisualNovelGame.View
             _game = VisualNovelManager.Instance;
             LoadEpsiodeManagerAttributes(_game.episodeManager);
             _character = _game.characterManager.CharacterBuilder.GetCharacter();
+
+            ShowStoryBackground();
         }
 
+        private void ShowStoryBackground()
+        {
+            ImageBrush brush = new ImageBrush();
+            Image image = new Image();
+            //image.Source = new BitmapImage(new Uri("Resources/../../../VisualNovelGame/Resources/Pictures/reignCnamania_"+ Story.Id.ToString()+".png", UriKind.Relative));
+            image.Source = new BitmapImage(new Uri("VisualNovelGame/Resources/Pictures/reignCnamania_"+ Story.Id.ToString()+".png", UriKind.Relative));
+
+            brush.ImageSource = image.Source;
+
+            StoryGrid.Background = brush;
+        }
         /// <summary>
         /// Retreive attribute from epsiode manager.
         /// </summary>
@@ -234,6 +247,7 @@ namespace cnam_mania.VisualNovelGame.View
         private void OnClickFirstChoice(object sender, RoutedEventArgs e)
         {
             NextStory(FirstChoice);
+            ShowStoryBackground();
         }
 
         /// <summary>
@@ -244,6 +258,7 @@ namespace cnam_mania.VisualNovelGame.View
         private void OnClickSecondChoice(object sender, RoutedEventArgs e)
         {
             NextStory(SecondChoice);
+            ShowStoryBackground();
         }
 
 

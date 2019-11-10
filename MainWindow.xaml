@@ -35,7 +35,7 @@
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                
+
                 <Button Grid.Column="0" Grid.Row="0" Height="50" Width="50" Click="OnClickHelp" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20" ToolTip="Descriptions des jeux">
                     <Button.Template>
                         <ControlTemplate>
@@ -46,9 +46,10 @@
 
 
                 <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
-                        <Button x:Name="btnVisualNovel" Content="Visual Novel" Height="50" Width="130" Margin="20,15" FontSize="16" Padding="10" VerticalAlignment="Top" Grid.Row="0" Click="btnVisualNovel_Click" />
-                        <Button x:Name="btnRebus" Content="Rébus" Height="50" Width="130" Margin="20,15" FontSize="16" Padding="10" VerticalAlignment="Top" Grid.Row="1" Click="btnRebus_Click"/>
-                        <Button x:Name="btnRiddle" Content="Devinettes" Height="50" Width="130" Margin="20,15"   FontSize="16" Padding="10" VerticalAlignment="Top" Grid.Row="2" Click="btnRiddle_Click" />
+                    <Button x:Name="btnVisualNovel" Content="Visual Novel" Height="50" Width="130" Margin="20,15" FontSize="16" Padding="10" VerticalAlignment="Top" Click="btnVisualNovel_Click" />
+                    <Button x:Name="btnStereotypes" Content="Idées reçues" Height="50" Width="130" Margin="20,15" FontSize="16" Padding="10" VerticalAlignment="Top" Click="btnStereotypes_Click" />
+                    <Button x:Name="btnRebus" Content="Rébus" Height="50" Width="130" Margin="20,15" FontSize="16" Padding="10" VerticalAlignment="Top" Click="btnRebus_Click" Visibility="Hidden"/>
+                    <Button x:Name="btnRiddle" Content="Devinettes" Height="50" Width="130" Margin="20,15" FontSize="16" Padding="10" VerticalAlignment="Top" Click="btnRiddle_Click" Visibility="Hidden"/>
                 </StackPanel>
             </Grid>
             <Frame x:Name="MainContent" NavigationUIVisibility="Hidden"/>

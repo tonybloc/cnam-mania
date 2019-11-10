@@ -94,5 +94,16 @@ namespace cnam_mania
             MainContent.Content = new GameRulesInterface();
             MenuContent.Visibility = Visibility.Hidden;
         }
+
+        /// <summary>
+        /// Acces to Stereotypes interface
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnStereotypes_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new StereotypesInterface();
+            MenuContent.Visibility = Visibility.Hidden;
+        }
     }
 }
