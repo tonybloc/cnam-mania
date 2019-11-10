@@ -70,7 +70,10 @@
                 </StackPanel> 
             </Grid>
             <Grid Grid.Row="1" Grid.ColumnSpan="2">
-                <TextBlock Text="{Binding Path=Story.Title, Mode=OneWay}"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" TextWrapping="Wrap" Margin="20"></TextBlock>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="{Binding Path=Episode.Title, Mode=OneWay, StringFormat='Episode : {0}'}" HorizontalAlignment="Center" FontSize="16" Foreground="Gray" Margin="5" />
+                    <TextBlock Text="{Binding Path=Story.Title, Mode=OneWay}"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" TextWrapping="Wrap" Margin="20"></TextBlock>
+                </StackPanel>
             </Grid>
             <Grid Grid.Row="2" Grid.Column="0">
                 <Button Click="OnClickFirstChoice" HorizontalAlignment="Stretch" Width="300" Height="80"                        

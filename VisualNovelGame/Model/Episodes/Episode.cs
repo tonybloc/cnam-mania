@@ -16,6 +16,12 @@ namespace cnam_mania.VisualNovelGame.Model.Episodes
         /// </summary>
         [XmlElement("Id")]
         public int EpisodeId { get; set; }
+
+        /// <summary>
+        /// Episode title
+        /// </summary>
+        [XmlElement("Title")]
+        public string Title { get; set; }
         
         /// <summary>
         /// List of stories

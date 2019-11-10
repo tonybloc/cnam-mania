@@ -4,6 +4,7 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <Id>1</Id>
+    <Title>Journée de cours</Title>
     <Story>
       <Id>0</Id>
       <Title>Aujourd'hui, vous avez cours de "Tests et validations".</Title>
@@ -97,6 +98,7 @@
   </Episode>
   <Episode>
     <Id>2</Id>
+    <Title>Indépendance</Title>
     <Story>
       <Id>0</Id>
       <Title>Votre réveil sonne pour la 5ème fois</Title>
@@ -191,6 +193,7 @@
   </Episode>
   <Episode >
     <Id>3</Id>
+    <Title>Jean-Marc est présent</Title>
     <Story>
       <Id>0</Id>
       <Title>Vous avez un contrôle de maths</Title>
@@ -284,6 +287,7 @@
   </Episode>
   <Episode>
     <Id>4</Id>
+    <Title>Fin de journée</Title>
     <Story>
       <Id>0</Id>
       <Title>Vous êtes bourré</Title>
@@ -353,6 +357,7 @@
   </Episode>
   <Episode>
     <Id>5</Id>
+    <Title>Rattrapage</Title>
     <Story>
       <Id>0</Id>
       <Title>Vous venez de ratter l'épreuve de mathématiques. Que souhaitez-vous faire ?</Title>
@@ -422,6 +427,7 @@
   </Episode>
   <Episode>
     <Id>6</Id>
+    <Title>Cumulation de projet</Title>
     <Story>
       <Id>0</Id>
       <Title>Emmanuel MAURICE vous a donné un nouveau TP.</Title>
@@ -513,6 +519,7 @@
   </Episode>
   <Episode>
     <Id>7</Id>
+    <Title>Escapade nocture</Title>
     <Story>
       <Id>0</Id>
       <Title>En marchant vers chez vous, vous tombez dans une flaque d'eau et apercevez un papier.</Title>
@@ -627,6 +634,7 @@
   </Episode>
   <Episode>
     <Id>8</Id>
+    <Title>Retard</Title>
     <Story>
       <Id>0</Id>
       <Title>Avez-vous accumulez du retard dans le projet MET ?</Title>
@@ -652,6 +660,7 @@
   </Episode>
   <Episode>
     <Id>10</Id>
+    <Title>Rendu projet</Title>
     <Story>
       <Id>0</Id>
       <Title>Estimez-vous avoir une bonne note au projet MET ?</Title>
@@ -677,6 +686,7 @@
   </Episode>
   <Episode>
     <Id>9</Id>
+    <Title>Corruption</Title>
     <Story>
       <Id>0</Id>
       <Title>C'est Noël, vous achetez une caisse de vin pour Antonin Kalk !</Title>
@@ -702,6 +712,7 @@
   </Episode>
   <Episode>
     <Id>88</Id>
+    <Title>Glouton</Title>
     <Story>
       <Id>0</Id>
       <Title>Vous mangez de trop, vous ne parvenez plus à venir au CFAI.</Title>
@@ -718,13 +729,15 @@
   </Episode>
   <Episode>
     <Id>89</Id>
+    <Title>Fin de projet</Title>
     <Story>
       <Id>0</Id>
-      <Title>Félicitations !</Title>
+      <Title>Vous avez réussi votre projet ! Félicitation</Title>
     </Story>
   </Episode>
   <Episode>
     <Id>90</Id>
+    <Title>Intoxication</Title>
     <Story>
       <Id>0</Id>
       <Title>Vous n’avez plus de nourriture et la pluie battante vous empêche d’aller au BDE. Vous mangez un champignon pour tenir. Pas de chance. Il était vénéneux.</Title>
@@ -741,6 +754,7 @@
   </Episode>
   <Episode>
     <Id>91</Id>
+    <Title>Good bye</Title>
     <Story>
       <Id>0</Id>
       <Title>Plus personne ne vous aime même Jean Marc. On vous jette par le fenêtre de la salle de cours. Vous y survivez mais vous vous dites qu’il vaudrait mieux partir !</Title>
@@ -757,11 +771,10 @@
   </Episode>
   <Episode>
     <Id>92</Id>
+    <Title>Boring out</Title>
     <Story>
       <Id>0</Id>
-      <Title>
-        Vous avez accumulé trop de retard pour les projets et n’arrivez plus à gérer la cadence avec le rendu des TPs. Vous partez en vacances à Darmstadt.
-      </Title>
+      <Title>Vous avez accumulé trop de retard pour les projets et n’arrivez plus à gérer la cadence avec le rendu des TPs. Vous partez en vacances à Darmstadt.</Title>
       <Choice>
         <Description>FIN !</Description>
         <NextEpisodeId>0</NextEpisodeId>
@@ -775,6 +788,7 @@
   </Episode>
   <Episode>
     <Id>93</Id>
+    <Title>Fatigue</Title>
     <Story>
       <Id>0</Id>
       <Title>Vous avez cours avec F.Croharé (le prof de gestion de projet), mais vous rendez l’âme au bout de la 100ème slide... Et c’est déjà un record !</Title>
@@ -791,6 +805,7 @@
   </Episode>
   <Episode>
     <Id>94</Id>
+    <Title>Loto</Title>
     <Story>
       <Id>0</Id>
       <Title>Vous gagnez au loto. Vous achetez le CFAI. Vous ne passerez plus une minute de plus en cours.</Title>
@@ -807,6 +822,7 @@
   </Episode>
   <Episode>
     <Id>95</Id>
+    <Title>Titanium</Title>
     <Story>
       <Id>0</Id>
       <Title>Pas de bol, vous êtes apprenti chez Titanium. Souhaitez-vous vraiment plus de détails ?</Title>
@@ -823,6 +839,7 @@
   </Episode>
   <Episode>
     <Id>96</Id>
+    <Title>Burning out</Title>
     <Story>
       <Id>0</Id>
       <Title>Vous êtes en burning out.</Title>
@@ -839,6 +856,7 @@
   </Episode>
   <Episode>
     <Id>97</Id>
+    <Title>Fin de formation</Title>
     <Story>
       <Id>0</Id>
       <Title>Vous avez échoué au devoir. Jean-Marc n'a pas pu vous sauver.</Title>
@@ -846,6 +864,7 @@
   </Episode>
   <Episode>
     <Id>98</Id>
+    <Title>Good bye</Title>
     <Story>
       <Id>0</Id>
       <Title>Paix à votre âme, vous étiez si jeune...</Title>
@@ -853,6 +872,7 @@
   </Episode>
   <Episode>
     <Id>99</Id>
+    <Title>Good bye</Title>
     <Story>
       <Id>0</Id>
       <Title>Vous êtes viré du CFAI pour faute grave !</Title>

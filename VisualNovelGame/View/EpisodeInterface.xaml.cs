@@ -35,13 +35,14 @@ namespace cnam_mania.VisualNovelGame.View
         /// </summary>
         private VisualNovelManager _game;
 
+        
+        #region Private Bindable Attributes
+
         /// <summary>
         /// Current epsiode
         /// </summary>
-        private Episode Episode { get; set; }
+        private Episode _episode;
 
-
-        #region Private Bindable Attributes
         /// <summary>
         /// current story
         /// </summary>
@@ -123,6 +124,9 @@ namespace cnam_mania.VisualNovelGame.View
             }
         }
 
+        /// <summary>
+        /// current character
+        /// </summary>
         public Character Character
         {
             get { return _character; }
@@ -161,6 +165,22 @@ namespace cnam_mania.VisualNovelGame.View
                 if (_choiceVisibility != value)
                 {
                     _choiceVisibility = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Current epsiode
+        /// </summary>
+        public Episode Episode
+        {
+            get { return _episode; }
+            set
+            {
+                if (_episode != value)
+                {
+                    _episode = value;
                     OnPropertyChanged();
                 }
             }
