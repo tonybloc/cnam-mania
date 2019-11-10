@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace cnam_mania.VisualNovelGame.Model.Characters
 {
-    public class Character
+    public class Character : INotifyPropertyChanged
     {
         #region Attributes
         #region (Public) Attributes
-        public int Intellect { get; set; }
+        public int Intellect { get; set;
+        }
         public int Food { get; set; }
         public int Popularity { get; set; }
         public int Money { get; set; }
@@ -35,6 +37,15 @@ namespace cnam_mania.VisualNovelGame.Model.Characters
             this.Food = food;
             this.Popularity = popularity;
             this.Money = money;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -67,7 +67,11 @@ namespace cnam_mania.VisualNovelGame.View
         /// </summary>
         private bool _choiceVisibility;
 
+        /// <summary>
+        /// Character stats 
+        /// </summary>
         private Character _character; 
+
         #endregion
 
         #region Bindable Attributes
@@ -121,15 +125,12 @@ namespace cnam_mania.VisualNovelGame.View
 
         public Character Character
         {
-            get { return _game.characterManager.CharacterBuilder.GetCharacter(); }
+            get { return _character; }
             set
             {
-                if (_game.characterManager.CharacterBuilder.GetCharacter() != value)
+                if (_character != value)
                 {
-                    _game.characterManager.CharacterBuilder.Character.Food = value.Food;
-                    _game.characterManager.CharacterBuilder.Character.Money = value.Money;
-                    _game.characterManager.CharacterBuilder.Character.Popularity = value.Popularity;
-                    _game.characterManager.CharacterBuilder.Character.Intellect = value.Intellect;
+                    _character = value; 
                     OnPropertyChanged();
                 }
             }
@@ -176,6 +177,7 @@ namespace cnam_mania.VisualNovelGame.View
 
             _game = VisualNovelManager.Instance;
             LoadEpsiodeManagerAttributes(_game.episodeManager);
+            _character = _game.characterManager.CharacterBuilder.GetCharacter();
         }
 
         /// <summary>
@@ -205,6 +207,7 @@ namespace cnam_mania.VisualNovelGame.View
                 ChoiceVisibility = false;
             }
         }
+        
 
         /// <summary>
         /// Get next story according choice
@@ -212,7 +215,7 @@ namespace cnam_mania.VisualNovelGame.View
         /// <param name="c">Selected choice</param>
         private void NextStory(Choice c)
         {
-            if (_game.episodeManager.NextStory(c))
+            if (_game.SwitchStory(c))
             {
                 LoadEpsiodeManagerAttributes(_game.episodeManager);
             }
