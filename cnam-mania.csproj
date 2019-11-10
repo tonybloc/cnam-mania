@@ -81,6 +81,12 @@
       <DependentUpon>EpisodeInterface.xaml</DependentUpon>
     </Compile>
     <Compile Include="VisualNovelGame\Enumeration\GameMode.cs" />
+    <Compile Include="VisualNovelGame\View\GameRulesInterface.xaml.cs">
+      <DependentUpon>GameRulesInterface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VisualNovelGame\View\Notifications\SubMenuOfGame.xaml.cs">
+      <DependentUpon>SubMenuOfGame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VisualNovelGame\View\Options.cs" />
     <Compile Include="VisualNovelGame\View\PlayerChoiceInterface.xaml.cs">
       <DependentUpon>PlayerChoiceInterface.xaml</DependentUpon>
@@ -130,6 +136,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="VisualNovelGame\View\GameRulesInterface.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VisualNovelGame\View\Notifications\SubMenuOfGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="VisualNovelGame\View\PlayerChoiceInterface.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -169,6 +183,7 @@
     <Resource Include="VisualNovelGame\Resources\Pictures\icoNourriture.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="VisualNovelGame\Resources\Pictures\help.png" />
     <Content Include="VisualNovelGame\Resources\XML\XMLEpisodes.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
