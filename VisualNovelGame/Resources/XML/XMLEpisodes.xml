@@ -196,7 +196,7 @@
       <Title>Vous avez un contrôle de maths</Title>
       <Choice>
         <Description>J'espère que ça passe...</Description>
-        <NextEpisodeId>6</NextEpisodeId>
+        <NextEpisodeId>5</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
         <Smart>-10</Smart>
@@ -264,7 +264,7 @@
       <Title>Adrien raye une voiture</Title>
       <Choice>
         <Description>Je prends un Snap</Description>
-        <NextEpisodeId>7</NextEpisodeId>
+        <NextEpisodeId>6</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
         <Smart>0</Smart>
@@ -273,7 +273,7 @@
       </Choice>
       <Choice>
         <Description>Poukav</Description>
-        <NextEpisodeId>7</NextEpisodeId>
+        <NextEpisodeId>6</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
         <Smart>0</Smart>
@@ -320,7 +320,7 @@
       </Choice>
       <Choice>
         <Description>A pieds</Description>
-        <NextEpisodeId>8</NextEpisodeId>
+        <NextEpisodeId>7</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
         <Smart>10</Smart>
@@ -333,7 +333,7 @@
       <Title>Une voiture vous fonce dessus</Title>
       <Choice>
         <Description>Esquiver</Description>
-        <NextEpisodeId>8</NextEpisodeId>
+        <NextEpisodeId>7</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
         <Smart>5</Smart>
@@ -402,7 +402,7 @@
       <Title>Le rendu du projet est le : 27 novembre. Quel status reflète le plus votre état d'avancement ?</Title>
       <Choice>
         <Description>Je conceptualise l'UML</Description>
-        <NextEpisodeId>9</NextEpisodeId>
+        <NextEpisodeId>8</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
         <Smart>-5</Smart>
@@ -411,7 +411,7 @@
       </Choice>
       <Choice>
         <Description>Je finalise le projet</Description>
-        <NextEpisodeId>9</NextEpisodeId>
+        <NextEpisodeId>8</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
         <Smart>10</Smart>
@@ -471,7 +471,7 @@
       <Title>Le rendu du projet de MET est le : 27 novembre. Quel status reflète le plus votre état d'avancement ?</Title>
       <Choice>
         <Description>Je n'ai pas encore fini le projet !</Description>
-        <NextEpisodeId>9</NextEpisodeId>
+        <NextEpisodeId>8</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>-5</Food>
         <Smart>-5</Smart>
@@ -514,7 +514,7 @@
   <Episode>
     <Id>7</Id>
     <Story>
-      <Id>1</Id>
+      <Id>0</Id>
       <Title>En marchant vers chez vous, vous tombez dans une flaque d'eau et apercevez un papier.</Title>
       <Choice>
         <Description>Je rammasse le papier, c'est un billet de loto.</Description>
@@ -581,7 +581,7 @@
       </Choice>
     </Story>
     <Story>
-      <Id>0</Id>
+      <Id>3</Id>
       <Title>Vous avez trop bu... les murs tanguent...</Title>
       <Choice>
         <Description>Vous rédigez un mail bizarre à votre manager. Vous êtes viré !</Description>
@@ -603,7 +603,7 @@
       </Choice>
     </Story>
     <Story>
-      <Id>1</Id>
+      <Id>4</Id>
       <Title>Titanium vous démarche, acceptez-vous la proposition ?</Title>
       <Choice>
         <Description>Oui, tout à fait !</Description>
@@ -616,7 +616,7 @@
       </Choice>
       <Choice>
         <Description>Non, sans façon, je connais l'histoire...</Description>
-        <NextEpisodeId>7</NextEpisodeId>
+        <NextEpisodeId>6</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
         <Smart>0</Smart>
@@ -653,7 +653,7 @@
   <Episode>
     <Id>10</Id>
     <Story>
-      <Id>1</Id>
+      <Id>0</Id>
       <Title>Estimez-vous avoir une bonne note au projet MET ?</Title>
       <Choice>
         <Description>Oui, j'ai géré ! 3/3 assuré !</Description>
