@@ -196,8 +196,8 @@ namespace cnam_mania.VisualNovelGame.View
             DataContext = this;
 
             _game = VisualNovelManager.Instance;
-            LoadEpsiodeManagerAttributes(_game.episodeManager);
-            _character = _game.characterManager.CharacterBuilder.GetCharacter();
+            LoadEpsiodeManagerAttributes(_game.EpisodeManager);
+            _character = _game.CharacterManager.CharacterBuilder.GetCharacter();
 
             ShowStoryBackground();
         }
