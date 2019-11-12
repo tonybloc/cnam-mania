@@ -207,7 +207,7 @@ namespace cnam_mania.VisualNovelGame.View
             ImageBrush brush = new ImageBrush();
             Image image = new Image();
             //image.Source = new BitmapImage(new Uri("Resources/../../../VisualNovelGame/Resources/Pictures/reignCnamania_"+ Story.Id.ToString()+".png", UriKind.Relative));
-            image.Source = new BitmapImage(new Uri("VisualNovelGame/Resources/Pictures/reignCnamania_"+ Story.Id.ToString()+".png", UriKind.Relative));
+            image.Source = new BitmapImage(new Uri("VisualNovelGame/Resources/Pictures/"+ Episode.EpisodeId.ToString() + "-"+ Story.Id.ToString()+".png", UriKind.Relative));
 
             brush.ImageSource = image.Source;
 

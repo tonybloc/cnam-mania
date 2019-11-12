@@ -9,11 +9,9 @@
       FontFamily="{DynamicResource MaterialDesignFont}"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EpisodeInterface">
-
     <Page.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
     </Page.Resources>
-    
     <!-- Page Background -->
     <Page.Background>
         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
@@ -27,12 +25,12 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="5*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
@@ -44,13 +42,16 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             
             <!-- Grid content -->
             <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <StackPanel Orientation="Vertical"  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightYellow">
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="../Resources/Pictures/bois.jpg" />
+                    </StackPanel.Background>
+                <StackPanel Orientation="Vertical"  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Width="50" Height="50" Source="../Resources/Pictures/IcoArgent.png"></Image>
                     <TextBlock Text="{Binding Path=Character.Money, Mode=OneWay}"  HorizontalAlignment="Center" FontSize="15"></TextBlock>
                 </StackPanel>
@@ -67,11 +68,14 @@
                     <TextBlock Text="{Binding Path=Character.Food, Mode=OneWay}"  HorizontalAlignment="Center"  FontSize="15"></TextBlock>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.ColumnSpan="2">
-                <TextBlock Text="{Binding Path=Episode.Title, Mode=OneWay, StringFormat='Episode : {0}'}" HorizontalAlignment="Center" FontSize="16" Foreground="Gray" Margin="5" />
-                <TextBlock Text="{Binding Path=Story.Title, Mode=OneWay}"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" TextWrapping="Wrap" Margin="20"></TextBlock>
+            <Border Grid.Row="1" Grid.ColumnSpan="2"  BorderThickness="1" BorderBrush="Red" Background="AntiqueWhite" CornerRadius="10" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical" >
+                <TextBlock Text="{Binding Path=Episode.Title, Mode=OneWay, StringFormat='Episode : {0}'}" HorizontalAlignment="Center" FontSize="16" Foreground="Gray" Margin="5"/>
+                    <TextBlock Text="{Binding Path=Story.Title, Mode=OneWay}"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" TextWrapping="Wrap" Margin="20" Background="AntiqueWhite"/>
+                
             </StackPanel>
-            
+            </Border>
+
             <Button Grid.Row="2" Grid.Column="0" Click="OnClickFirstChoice" HorizontalAlignment="Stretch" Width="300" Height="80"                        
                     Visibility="{Binding Path=ChoiceVisibility, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}">
                 <TextBlock x:Name="nFistChoice" Text="{Binding Path=FirstChoice.Description, Mode=OneWay}" TextWrapping="Wrap"/>
