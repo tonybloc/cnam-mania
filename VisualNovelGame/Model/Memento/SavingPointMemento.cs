@@ -13,12 +13,12 @@ namespace cnam_mania.VisualNovelGame.Model.Memento
         /// <summary>
         /// Character to save
         /// </summary>
-        public Character CharacterState { get; set; }
+        public Character CharacterState { get;  private set; }
 
         /// <summary>
         /// Episode to save
         /// </summary>
-        public Episode EpisodeState { get; set; }
+        public Episode EpisodeState { get; private set; }
 
 
         /// <summary>

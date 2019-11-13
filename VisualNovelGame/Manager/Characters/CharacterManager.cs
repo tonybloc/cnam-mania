@@ -13,6 +13,11 @@ namespace cnam_mania.VisualNovelGame.Manager
         private static CharacterManager _instance = null;
 
         /// <summary>
+        /// Current character of visual novel game
+        /// </summary>
+        public Character Character { get; set; }
+
+        /// <summary>
         /// Character builder.
         /// </summary>
         public CharacterBuilder CharacterBuilder { get; private set; }
@@ -23,6 +28,8 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// </summary>
         private CharacterManager()
         {
+            // Default character
+            this.Character = null;
         }
 
         /// <summary>
@@ -47,17 +54,15 @@ namespace cnam_mania.VisualNovelGame.Manager
         public void SetCharacterBuilder(CharacterBuilder characterBuilder)
         {
             this.CharacterBuilder = characterBuilder;
+            this.Character = this.CharacterBuilder.GetCharacter();
         }
 
         /// <summary>
-        /// Creates a character regarding of the builder choosen.
+        /// Clear manager data
         /// </summary>
-        public void CreateCharacter()
-        {
-            this.CharacterBuilder.SetFoodAttribute();
-            this.CharacterBuilder.SetIntelligenceAttribute();
-            this.CharacterBuilder.SetMoneyAttribute();
-            this.CharacterBuilder.SetPopularityAttribute();
+        public static void Clear()
+        { 
+            _instance = null;
         }
     }
 }

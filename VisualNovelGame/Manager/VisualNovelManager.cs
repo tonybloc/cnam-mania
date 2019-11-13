@@ -25,7 +25,8 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// Game history 
         /// </summary>
         public List<SavingPointMemento> history;
-        
+
+        #region Managers
         /// <summary>
         /// EpisodeManager instance
         /// </summary>
@@ -35,11 +36,13 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// CharacterManager instance
         /// </summary>
         public CharacterManager CharacterManager;
+        #endregion
 
         /// <summary>
         /// SavingPoint instance
         /// </summary>
-        public SavingPointOriginator SavingPointOriginator;
+        public SavingPointOriginator SavingPointOriginator;       
+
 
         /// <summary>
         /// Game mode choosen by the user
@@ -65,6 +68,8 @@ namespace cnam_mania.VisualNovelGame.Manager
         public static void Reset()
         {
             _instance = null;
+            EpisodeManager.Clear();
+            CharacterManager.Clear();
         }
 
         /// <summary>
@@ -116,19 +121,18 @@ namespace cnam_mania.VisualNovelGame.Manager
         /// <summary>
         /// Retrieves last game state saved.
         /// </summary>
-        /// <param name="lastEpisode"></param>
+        /// <param name="index">index of memento</param>
         /// <returns></returns>
-        public void RestorSavingPoint(int index)
+        public void RestoreSavingPoint(int index)
         {
             SavingPointMemento memento = (SavingPointMemento)this.history.ElementAt(index);
             memento.Restore();
 
-            // not good !!!
-            this.EpisodeManager.CurrentEpisode = SavingPointOriginator.GetEpisodeState();
-            this.CharacterManager.CharacterBuilder.GetCharacter().Food = SavingPointOriginator.GetCharacterState().Food;
-            this.CharacterManager.CharacterBuilder.GetCharacter().Popularity = SavingPointOriginator.GetCharacterState().Popularity;
-            this.CharacterManager.CharacterBuilder.GetCharacter().Money = SavingPointOriginator.GetCharacterState().Money;
-            this.CharacterManager.CharacterBuilder.GetCharacter().Intellect = SavingPointOriginator.GetCharacterState().Intellect;
+            this.CharacterManager.Character = SavingPointOriginator.GetCharacterState();
+            this.EpisodeManager.SetCurrentEpsiode(SavingPointOriginator.GetEpisodeState());
+
+            this.history.RemoveRange(index, this.history.Count - index);
+            CreateSavingPoint(this.CharacterManager.Character.Clone(), this.EpisodeManager.CurrentEpisode);
         }
 
         /// <summary>
@@ -142,24 +146,22 @@ namespace cnam_mania.VisualNovelGame.Manager
             {
                 case PlayerType.SMART:
                     this.CharacterManager.SetCharacterBuilder(new SmartCharacterBuilder());
-                    this.CharacterManager.CreateCharacter();
                     break;
                 case PlayerType.GREEDY:
                     this.CharacterManager.SetCharacterBuilder(new GreedyCharacterBuilder());
-                    this.CharacterManager.CreateCharacter();
                     break;
                 case PlayerType.POPULAR:
                     this.CharacterManager.SetCharacterBuilder(new PopularCharacterBuilder());
-                    this.CharacterManager.CreateCharacter();
                     break;
                 case PlayerType.RICH:
                     this.CharacterManager.SetCharacterBuilder(new RichCharacterBuilder());
-                    this.CharacterManager.CreateCharacter();
                     break;
                 default:
                     break;
 
             }
+
+            CreateSavingPoint(this.CharacterManager.Character.Clone(), this.EpisodeManager.CurrentEpisode);
         }
 
         /// <summary>
@@ -203,12 +205,12 @@ namespace cnam_mania.VisualNovelGame.Manager
 
             if (choice != null)
             {
-                this.GameModeStrategy.ExecuteChoice(this.CharacterManager.CharacterBuilder.GetCharacter(), choice);
+                this.GameModeStrategy.ExecuteChoice(this.CharacterManager.Character, choice);
 
                 this.EpisodeManager.NextStory(choice);
 
-                if ( (episode == null) || (episode.EpisodeId != this.EpisodeManager.CurrentEpisode.EpisodeId) )
-                    CreateSavingPoint(this.CharacterManager.CharacterBuilder.GetCharacter(), this.EpisodeManager.CurrentEpisode);
+                if ( (episode.EpisodeId != this.EpisodeManager.CurrentEpisode.EpisodeId) )
+                    CreateSavingPoint(this.CharacterManager.Character.Clone(), this.EpisodeManager.CurrentEpisode);
                 
                 return true; 
             }

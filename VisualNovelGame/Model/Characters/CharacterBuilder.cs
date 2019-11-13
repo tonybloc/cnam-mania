@@ -9,7 +9,7 @@ namespace cnam_mania.VisualNovelGame.Model.Characters
     public abstract class CharacterBuilder
     {
         #region Attributes
-        protected Character Character { get; private set; }
+        protected Character Character { get; set; }
         #endregion
 
         #region Methodes
@@ -19,6 +19,10 @@ namespace cnam_mania.VisualNovelGame.Model.Characters
         public CharacterBuilder()
         {
             this.Character = new Character();
+            SetFoodAttribute();
+            SetPopularityAttribute();
+            SetMoneyAttribute();
+            SetIntelligenceAttribute();
         }
         
         /// <summary>
@@ -26,27 +30,27 @@ namespace cnam_mania.VisualNovelGame.Model.Characters
         /// </summary>
         /// <returns></returns>
         public Character GetCharacter()
-        {
-            return this.Character; 
+        {   
+            return this.Character;
         }
 
 
         /// <summary>
         /// Update the food attribute of character
         /// </summary>
-        public abstract void SetFoodAttribute();
+        protected abstract void SetFoodAttribute();
         /// <summary>
         /// Update the popularity attribute of character
         /// </summary>
-        public abstract void SetPopularityAttribute();
+        protected abstract void SetPopularityAttribute();
         /// <summary>
         /// Update the money attribute of character
         /// </summary>
-        public abstract void SetMoneyAttribute();
+        protected abstract void SetMoneyAttribute();
         /// <summary>
         /// Update the intelligence attribute of character
         /// </summary>
-        public abstract void SetIntelligenceAttribute();
+        protected abstract void SetIntelligenceAttribute();
         #endregion
 
     }

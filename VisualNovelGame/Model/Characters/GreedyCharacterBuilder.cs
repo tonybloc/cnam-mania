@@ -13,22 +13,22 @@ namespace cnam_mania.VisualNovelGame.Model.Characters
         /// </summary>
         public GreedyCharacterBuilder() : base() {}
 
-        public override void SetFoodAttribute()
+        protected override void SetFoodAttribute()
         {
             base.Character.Food = 70;
         }
 
-        public override void SetIntelligenceAttribute()
+        protected override void SetIntelligenceAttribute()
         {
             base.Character.Intellect = 60;
         }
 
-        public override void SetMoneyAttribute()
+        protected override void SetMoneyAttribute()
         {
             base.Character.Money = 40;
         }
 
-        public override void SetPopularityAttribute()
+        protected override void SetPopularityAttribute()
         {
             base.Character.Popularity = 40;
         }

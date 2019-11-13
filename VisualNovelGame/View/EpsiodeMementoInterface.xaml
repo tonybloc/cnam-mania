@@ -5,52 +5,75 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:cnam_mania.VisualNovelGame.View"
       xmlns:memento="clr-namespace:cnam_mania.VisualNovelGame.Model.Memento"
-      mc:Ignorable="d" 
+      mc:Ignorable="d"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      Height="{DynamicResource {x:Static SystemParameters.PrimaryScreenHeightKey}}"
+      Width="{DynamicResource {x:Static SystemParameters.PrimaryScreenWidthKey}}"  
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Memento">
 
     <Page.Resources>
         <DataTemplate DataType="{x:Type memento:SavingPointMemento }">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding EpisodeState.Title, Mode=OneWay}"></TextBlock>
+                <TextBlock Text="{Binding EpisodeState.Title, Mode=OneWay, StringFormat='Episode : {0}'}"></TextBlock>
                 <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Image Width="16" Height="16" Source="../Resources/Pictures/IcoArgent.png"></Image>
-                        <TextBlock Text="{Binding CharacterState.Money, Mode=OneWay}"  HorizontalAlignment="Center" FontSize="15"></TextBlock>
+                        <Image Width="14" Height="14" Source="../Resources/Pictures/IcoArgent.png"></Image>
+                        <TextBlock Text="{Binding CharacterState.Money, Mode=OneWay}"  FontSize="15"></TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Image Width="16" Height="16" Source="../Resources/Pictures/IcoIntelligence.png"></Image>
-                        <TextBlock Text="{Binding CharacterState.Intellect, Mode=OneWay}"  HorizontalAlignment="Center"  FontSize="15"></TextBlock>
+                        <Image Width="14" Height="14" Source="../Resources/Pictures/IcoIntelligence.png"></Image>
+                        <TextBlock Text="{Binding CharacterState.Intellect, Mode=OneWay}"  FontSize="15"></TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Image Width="16" Height="16" Source="../Resources/Pictures/IcoNotoriete.png"></Image>
-                        <TextBlock Text="{Binding CharacterState.Popularity, Mode=OneWay}" HorizontalAlignment="Center"  FontSize="15"></TextBlock>
+                        <Image Width="14" Height="14" Source="../Resources/Pictures/IcoNotoriete.png"></Image>
+                        <TextBlock Text="{Binding CharacterState.Popularity, Mode=OneWay}"  FontSize="15"></TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <Image Width="16" Height="16" Source="../Resources/Pictures/IcoNourriture.png"></Image>
-                        <TextBlock Text="{Binding CharacterState.Food, Mode=OneWay}"  HorizontalAlignment="Center"  FontSize="15"></TextBlock>
+                        <Image Width="14" Height="14" Source="../Resources/Pictures/IcoNourriture.png"></Image>
+                        <TextBlock Text="{Binding CharacterState.Food, Mode=OneWay}" FontSize="15"></TextBlock>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
     </Page.Resources>
     
-    <Grid Background="Aquamarine">
+    <Grid Background="White">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <ScrollViewer Grid.Row="0" Grid.Column="0" >
-            <ListView x:Name="MementoList" Height="400"
-                  SelectedIndex="{Binding Path=SelectedIndex, Mode=TwoWay}"
-                  ItemsSource="{Binding Path=Saves, Mode=TwoWay}">
-            </ListView>
-        </ScrollViewer>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock  Grid.Row="0" TextWrapping="Wrap" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20" FontWeight="Bold">Félicitation ! Vous venez de finir l'une des histoire porposée par le VisualNovel.</TextBlock>
 
-        <Button Click="OnClickRestor">Restor</Button>
+            <StackPanel Grid.Row="1">
+                <TextBlock TextWrapping="Wrap" FontSize="18" >Pour rejouter un épisode selectionnez un des points de sauvegard.</TextBlock>
+                <ScrollViewer Grid.Row="1" Grid.Column="1" Height="300" Margin="0 10" >
+                    <ListView x:Name="MementoList"
+                      SelectedIndex="{Binding Path=SelectedIndex, Mode=TwoWay}"
+                      ItemsSource="{Binding Path=Saves, Mode=TwoWay}">
+                    </ListView>
+                </ScrollViewer>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Click="OnClickRestore" Width="200" Margin="10">Restorer</Button>
+                <Button Click="onClickHome"  Width="200" Margin="10">Quitter</Button>
+            </StackPanel>
+        </Grid>
         
+
     </Grid>
 </Page>

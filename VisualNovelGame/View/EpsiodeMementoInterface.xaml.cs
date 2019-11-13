@@ -27,10 +27,12 @@ namespace cnam_mania.VisualNovelGame.View
     {
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         public VisualNovelManager _manager;
 
-        public ObservableCollection<SavingPointMemento> Saves { get; set; }
-
+       
+        #region Bindable attributes
+        private int _selectedIndex;
         public int SelectedIndex
         {
             get { return _selectedIndex; }
@@ -43,9 +45,13 @@ namespace cnam_mania.VisualNovelGame.View
                 }
             }
         }
+        public ObservableCollection<SavingPointMemento> Saves { get; set; }
 
-        private int _selectedIndex;
+        #endregion
 
+        /// <summary>
+        /// Create new instance of class
+        /// </summary>
         public EpisodeMementoInterface()
         {
             InitializeComponent();
@@ -55,34 +61,34 @@ namespace cnam_mania.VisualNovelGame.View
             SelectedIndex = 0;
         }
 
-        private void OnClickRestor(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Click on restore memento
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event</param>
+        private void OnClickRestore(object sender, RoutedEventArgs e)
         {
-            if (SelectedIndex != 0)
+            this._manager.RestoreSavingPoint(SelectedIndex);
+            try
             {
-                this._manager.RestorSavingPoint(SelectedIndex);
-                try
-                {
-                    ((MainWindow)Window.GetWindow(this)).MainContent.Content = new EpisodeInterface();
-                    ((MainWindow)Window.GetWindow(this)).MenuContent.Visibility = Visibility.Hidden;
-                }
-                catch (Exception exp)
-                {
-                    Console.WriteLine(exp.Message);
-                }
+                ((MainWindow)Window.GetWindow(this)).MainContent.Content = new EpisodeInterface();
+                ((MainWindow)Window.GetWindow(this)).MenuContent.Visibility = Visibility.Hidden;
             }
-            else
+            catch (Exception exp)
             {
-                try
-                {
-                    ((MainWindow)Window.GetWindow(this)).MainContent.Content = null;
-                    ((MainWindow)Window.GetWindow(this)).MenuContent.Visibility = Visibility.Visible;
-                }
-                catch (Exception exp)
-                {
-                    Console.WriteLine(exp.Message);
-                }
-            }
+                Console.WriteLine(exp.Message);
+            }          
         }
+
+        private void onClickHome(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Window.GetWindow(this)).MainContent.Content = null;
+            ((MainWindow)Window.GetWindow(this)).MenuContent.Visibility = Visibility.Visible;
+            ((MainWindow)Window.GetWindow(this)).MainContent.DataContext = null;
+            VisualNovelManager.Reset();
+            this.Content = null;
+        }
+
 
         #region Notify Bindable attribute
         /// <summary>

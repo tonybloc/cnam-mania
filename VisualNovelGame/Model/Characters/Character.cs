@@ -101,6 +101,17 @@ namespace cnam_mania.VisualNovelGame.Model.Characters
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+
+        public Character Clone()
+        {
+            Character c = Activator.CreateInstance<Character>();
+            c.Food = this.Food;
+            c.Intellect = this.Intellect;
+            c.Money = this.Money;
+            c.Popularity = this.Popularity;
+            return c;
+        }
         #endregion
     }
 }

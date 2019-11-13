@@ -24,7 +24,7 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
         public Episode CurrentEpisode
         {
             get { return _currentEpisode; }
-            set
+            private set
             {
                 if (_currentEpisode != value)
                 {
@@ -35,7 +35,7 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
         public Story CurrentStory
         {
             get { return _currentStory; }
-            set
+            private set
             {
                 if (_currentStory != value)
                 {
@@ -43,7 +43,7 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
                 }
             }
         }
-        public Serie Serie
+        private Serie Serie
         {
             get { return _serie; }
             set
@@ -105,6 +105,16 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
         #endregion
 
         #region Episodes behavior
+        /// <summary>
+        /// Set current epsiode
+        /// </summary>
+        /// <param name="episode">episode</param>
+        public void SetCurrentEpsiode(Episode episode)
+        {
+            this.CurrentEpisode = episode;
+            this.CurrentStory = GetStory(this.CurrentEpisode.EpisodeId, 0);
+        }
+        
         /// <summary>
         /// Get next story
         /// </summary>
@@ -227,5 +237,13 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
             return null;
         }
         #endregion
+
+        /// <summary>
+        /// Clear manager data
+        /// </summary>
+        public static void Clear()
+        {
+            _instance = null;
+        }
     }
 }
