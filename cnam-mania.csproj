@@ -76,6 +76,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="RiddleGame\FactManager.cs" />
+    <Compile Include="RiddleGame\Model\Fact.cs" />
+    <Compile Include="RiddleGame\Model\Facts.cs" />
     <Compile Include="VisualNovelGame\Exceptions\EpisodeNotFound.cs" />
     <Compile Include="VisualNovelGame\Model\Memento\IOriginator.cs" />
     <Compile Include="VisualNovelGame\View\EpisodeInterface.xaml.cs">
@@ -197,6 +200,12 @@
     <Resource Include="VisualNovelGame\Resources\Pictures\icoNourriture.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="VisualNovelGame\Resources\Pictures\bg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="VisualNovelGame\Resources\XML\XMLFacts.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="VisualNovelGame\Resources\Pictures\help.png" />
     <Content Include="VisualNovelGame\Resources\Pictures\1-1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -364,7 +373,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 et x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

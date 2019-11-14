@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Facts>
+  <Fact
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>1</Id>
+    <Description>
+        Le prénom de César n'était pas Jules, mais Caïus !
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>2</Id>
+    <Description>
+      Les cheveux gris n'existent pas, il y a que des cheveux de couleur et des cheveux blancs !
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>3</Id>
+    <Description>
+      L'arc-en-ciel ne possède pas 7 couleurs, mais une infinité de couleurs !
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>4</Id>
+    <Description>
+      L'arc-en-ciel ne possède pas 7 couleurs, mais une infinité de couleurs !
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>5</Id>
+    <Description>
+      Les chauves-souris ne sont pas aveugles ! 
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>6</Id>
+    <Description>
+      L'ananas n'est pas un fruit mais un ensemble de fruits, car il est constitué de plusieurs fleurs comme les baies !
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>7</Id>
+    <Description>
+      Les chats ne tombent pas toujours sur leurs pattes !
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>8</Id>
+    <Description>
+      La guerre de 100 ans a duré 116 ans et non 100 !
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>9</Id>
+    <Description>
+      Les pingouins peuvent voler ! 
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>10</Id>
+    <Description>
+      C'est l'eau qui couvre les deux tiers du globe qui donne sa couleur bleue au ciel !
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>11</Id>
+    <Description>
+      Marie-Antoinette n'a jamais dit "s'ils n'ont pas de pain, qu'ils mangent de la brioche" !
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>12</Id>
+    <Description>
+      Napoléon n'était pas si petit que ça : il mesurait 1m68 environ ce qui était au dessus de la moyenne de taille des hommes de l'époque !
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>13</Id>
+    <Description>
+      Réveiller un somnambule n'est pas dangereux (sauf pour vous) !
+    </Description>
+  </Fact>
+  <Fact>
+    <Id>14</Id>
+    <Description>
+      Le Père Noël n'est pas une invention de Coca-Cola !
+    </Description>
+  </Fact>
+  
+</Facts>

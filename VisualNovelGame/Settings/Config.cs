@@ -16,6 +16,9 @@ namespace cnam_mania.Settings
         // XML files path
         public static readonly string filePath_XmlStory = "./VisualNovelGame/Resources/XML/XMLEpisodes.xml";
 
+        // XML files path
+        public static readonly string filePath_XmlFacts = "./VisualNovelGame/Resources/XML/XMLFacts.xml";
+
         // Setting player
         public static int FOOD = 50;
         public static int SMART = 50;

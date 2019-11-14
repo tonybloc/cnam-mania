@@ -21,42 +21,43 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Grid.RowSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="../Resources/Pictures/bg.png"/>
+        </StackPanel>
+        <!--Return to menu-->
+        <Button Grid.Column="0" Grid.Row="2" x:Name="btnReturnToMenu" Margin="10" Click="ReturnToMenu" Width="200">
+            <Grid Width="150">
+                <MaterialDesign:PackIcon Kind="ArrowLeft" VerticalAlignment="Center"/>
+                <TextBlock HorizontalAlignment="Center" Text="Retour au menu" FontFamily="Champagne &amp; Limousines"/>
+            </Grid>
+        </Button>
 
         <!-- Set background-->
-        <Grid Grid.Row="1" Grid.Column="1">
+        <Grid Grid.Row="1" Grid.Column="1" >
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="LightGray" Offset="1"/>
-                    <GradientStop Color="#EBEBEB"/>
+                    <GradientStop Color="#f0eafe" Offset="1"/>
+                    <GradientStop Color="#deafba"/>
                 </LinearGradientBrush>
             </Grid.Background>
-
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <!--Title-->
             <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="Idées reçues" FontSize="32" FontStyle="Normal" FontWeight="Bold" TextWrapping="WrapWithOverflow" TextAlignment="Center" VerticalAlignment="Center"/>
-
-            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="Idées reçues" FontSize="28" FontStyle="Normal" TextWrapping="WrapWithOverflow" TextAlignment="Center" VerticalAlignment="Center"/>
-
+            <TextBlock Grid.Row="1" Text="{Binding Path=Fact.Description, Mode=OneWay}" HorizontalAlignment="Center" FontSize="28" FontStyle="Normal" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
+            <Button Grid.Row="2" Click="GenerateRandomFact" Width="200" Height="45">Inspirez-moi!</Button>
         </Grid>
-        <!--Return to menu-->
-        <Button Grid.Column="2" Grid.Row="2" x:Name="btnReturnToMenu" Margin="10" Click="ReturnToMenu">
-            <Grid Width="150">
-                <MaterialDesign:PackIcon Kind="ArrowLeft" VerticalAlignment="Center"/>
-                <TextBlock HorizontalAlignment="Center" Text="Retour au menu" FontFamily="Champagne &amp; Limousines"/>
-
-            </Grid>
-        </Button>
     </Grid>
 </Page>
