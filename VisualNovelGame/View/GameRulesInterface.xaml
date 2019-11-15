@@ -56,13 +56,8 @@
                     Veillez à faire de bon choix, sinon vous terminerez très rapidement votre partie !
                     <LineBreak/><LineBreak/>
                     
-                    <Bold FontSize="18">Rebus</Bold><LineBreak/><LineBreak/>
-                    Un rébus est un suite de dessins destinés à faire deviner un mot ou une phrase.
-                    <LineBreak/><LineBreak/>                    
-                    
-                    <Bold FontSize="18">Devinettes</Bold><LineBreak/><LineBreak/>
-                    Une devinette est une question dont il faut deviner la réponse.
-               </TextBlock>
+                    <Bold FontSize="18">Idées reçues</Bold><LineBreak/><LineBreak/>
+                    Une idée reçue est une opinion, située entre le stéréotype, le cliché et le lieu commun. En cliquant sur le bouton « Inspirez-moi », vous allez décourvrir de nombreuses idées reçues qui vont vous étonner ! <LineBreak/><LineBreak/> Bonne découverte !</TextBlock>
             </ScrollViewer>
         </Grid>
         <Button Grid.Column="2" Grid.Row="2" x:Name="btnReturnToMenu" Margin="10" Click="ReturnToMenu">
