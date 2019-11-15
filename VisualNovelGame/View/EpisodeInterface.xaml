@@ -73,7 +73,7 @@
             <Grid Grid.Row="1" Grid.ColumnSpan="2" Background="AntiqueWhite">
                 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -86,12 +86,12 @@
                     <TextBlock Text="{Binding Path=Story.Title, Mode=OneWay}"  HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="30" TextWrapping="Wrap" Margin="30"/>
                 </StackPanel>
 
-                    <Button Grid.Column="0" Grid.Row="1" Margin="20" Click="OnClickFirstChoice" HorizontalAlignment="Stretch" Width="300" Height="60"                        
+                    <Button Grid.Column="0" Grid.Row="1" Click="OnClickFirstChoice" HorizontalAlignment="Stretch" Width="300" Height="60"                        
                     Visibility="{Binding Path=ChoiceVisibility, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}">
                         <TextBlock x:Name="nFistChoice" Text="{Binding Path=FirstChoice.Description, Mode=OneWay}" TextWrapping="Wrap" TextAlignment="Center"/>
                     </Button>
                 
-                    <Button Margin="20" Grid.Column="1" Grid.Row="1" Click="OnClickSecondChoice" HorizontalAlignment="Stretch" Width="300" Height="60"                        
+                    <Button Grid.Column="1" Grid.Row="1" Click="OnClickSecondChoice" HorizontalAlignment="Stretch" Width="300" Height="60"                        
                         Visibility="{Binding Path=ChoiceVisibility, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}">
                         <TextBlock x:Name="nSecondChoice" Text="{Binding Path=SecondChoice.Description, Mode=OneWay}" TextWrapping="Wrap" TextAlignment="Center"/>
                     </Button>
