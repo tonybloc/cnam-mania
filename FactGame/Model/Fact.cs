@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace cnam_mania.RiddleGame.Model
+namespace cnam_mania.FactGame.Model
 {
     [Serializable]
     [XmlRoot("Fact")]

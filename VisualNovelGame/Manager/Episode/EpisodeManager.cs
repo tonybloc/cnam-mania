@@ -1,7 +1,7 @@
 ﻿using cnam_mania.Settings;
 using cnam_mania.VisualNovelGame.Exceptions;
 using cnam_mania.VisualNovelGame.Model.Episodes;
-using cnam_mania.VisualNovelGame.Service.Xml;
+using cnam_mania.Service.Xml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

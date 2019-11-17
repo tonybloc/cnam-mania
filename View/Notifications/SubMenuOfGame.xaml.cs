@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace cnam_mania.VisualNovelGame.View.Notifications
+namespace cnam_mania.View.Notifications
 {
     /// <summary>
     /// Logique d'interaction pour SubMenuOfGame.xaml

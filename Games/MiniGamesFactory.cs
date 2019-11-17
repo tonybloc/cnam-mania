@@ -1,5 +1,4 @@
-using cnam_mania.RebutGame;
-using cnam_mania.RiddleGame;
+using cnam_mania.FactGame.Manager;
 using cnam_mania.VisualNovelGame.Manager;
 using System;
 using System.Collections.Generic;
@@ -16,16 +15,13 @@ namespace cnam_mania.Game
         /// </summary>
         /// <param name="game">Game desired by the user</param>
         /// <returns></returns>
-        public static AbsGameManager createGamesManager(string game)
+        public static AbsGameManager CreateGamesManager(string game)
         {
             AbsGameManager manager;
             switch (game)
             {
-                case "Rebus":
-                    manager = new RebutManager();
-                    break;
-                case "Riddle":
-                    manager = new RiddleManager();
+                case "Fact":
+                    manager = FactManager.Instance;
                     break;
                 case "VisualNovel":
                     manager = VisualNovelManager.Instance;

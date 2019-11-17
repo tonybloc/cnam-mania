@@ -1,8 +1,7 @@
 using cnam_mania.Game;
-using cnam_mania.View;
-using cnam_mania.VisualNovelGame.Manager;
+using cnam_mania.FactGame.View;
 using cnam_mania.VisualNovelGame.View;
-using cnam_mania.VisualNovelGame.View.Notifications;
+using cnam_mania.View.Notifications;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,30 +42,9 @@ namespace cnam_mania
         /// <param name="e"></param>
         private void btnVisualNovel_Click(object sender, RoutedEventArgs e)
         {
-            MiniGamesFactory.createGamesManager("VisualNovel");
+            MiniGamesFactory.CreateGamesManager("VisualNovel"); // Never used !
             MainContent.Content = new PlayerChoiceInterface();
             MenuContent.Visibility = Visibility.Hidden;
-        }
-
-        /// <summary>
-        /// Launch Rebus game
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnRebus_Click(object sender, RoutedEventArgs e)
-        {
-            MiniGamesFactory.createGamesManager("Rebus");
-        }
-
-        /// <summary>
-        /// Launch Riddle game
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnRiddle_Click(object sender, RoutedEventArgs e)
-        {
-            MiniGamesFactory.createGamesManager("Riddle");
-
         }
 
         /// <summary>
@@ -102,6 +80,7 @@ namespace cnam_mania
         /// <param name="e"></param>
         private void btnStereotypes_Click(object sender, RoutedEventArgs e)
         {
+            MiniGamesFactory.CreateGamesManager("Fact"); // Never used !
             MainContent.Content = new StereotypesInterface();
             MenuContent.Visibility = Visibility.Hidden;
         }

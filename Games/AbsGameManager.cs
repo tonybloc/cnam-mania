@@ -10,10 +10,16 @@ namespace cnam_mania.Game
     public abstract class AbsGameManager
     {
 
-        private string name { get; set; }
-
-
-        // Main Method 
+        /// <summary>
+        /// Create new instance of class
+        /// </summary>
+        public AbsGameManager()
+        {
+        }
+ 
+        /// <summary>
+        /// Start Game
+        /// </summary>
         public abstract void Play();
 
     }

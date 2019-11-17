@@ -1,5 +1,6 @@
-﻿using cnam_mania.RiddleGame;
-using cnam_mania.RiddleGame.Model;
+﻿using cnam_mania.FactGame;
+using cnam_mania.FactGame.Manager;
+using cnam_mania.FactGame.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace cnam_mania.VisualNovelGame.View
+namespace cnam_mania.FactGame.View
 {
     /// <summary>
     /// Logique d'interaction pour StereotypesInterface.xaml

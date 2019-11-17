@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace cnam_mania.View
+namespace cnam_mania.VisualNovelGame.View
 {
     /// <summary>
     /// Logique d'interaction pour PlayerChoiceInterface.xaml

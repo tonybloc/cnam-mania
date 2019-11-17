@@ -1,14 +1,14 @@
 ﻿using cnam_mania.Game;
-using cnam_mania.RiddleGame.Model;
+using cnam_mania.FactGame.Model;
 using cnam_mania.Settings;
-using cnam_mania.VisualNovelGame.Service.Xml;
+using cnam_mania.Service.Xml;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cnam_mania.RiddleGame
+namespace cnam_mania.FactGame.Manager
 {
     public class FactManager : AbsGameManager
     {

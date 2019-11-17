@@ -4,7 +4,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace cnam_mania.VisualNovelGame.Service.Xml
+namespace cnam_mania.Service.Xml
 {
     public static class XmlDataAccess
     {

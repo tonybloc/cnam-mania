@@ -76,9 +76,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="RiddleGame\FactManager.cs" />
-    <Compile Include="RiddleGame\Model\Fact.cs" />
-    <Compile Include="RiddleGame\Model\Facts.cs" />
+    <Compile Include="FactGame\Manager\FactManager.cs" />
+    <Compile Include="FactGame\Model\Fact.cs" />
+    <Compile Include="FactGame\Model\Facts.cs" />
     <Compile Include="VisualNovelGame\Exceptions\EpisodeNotFound.cs" />
     <Compile Include="VisualNovelGame\Model\Memento\IOriginator.cs" />
     <Compile Include="VisualNovelGame\View\EpisodeInterface.xaml.cs">
@@ -88,7 +88,7 @@
     <Compile Include="VisualNovelGame\View\GameRulesInterface.xaml.cs">
       <DependentUpon>GameRulesInterface.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VisualNovelGame\View\Notifications\SubMenuOfGame.xaml.cs">
+    <Compile Include="View\Notifications\SubMenuOfGame.xaml.cs">
       <DependentUpon>SubMenuOfGame.xaml</DependentUpon>
     </Compile>
     <Compile Include="VisualNovelGame\View\EpsiodeMementoInterface.xaml.cs">
@@ -118,15 +118,13 @@
     <Compile Include="VisualNovelGame\Model\Memento\SavingPointOriginator.cs" />
     <Compile Include="Games\AbsGameManager.cs" />
     <Compile Include="Games\MiniGamesFactory.cs" />
-    <Compile Include="RebutGame\RebutManager.cs" />
-    <Compile Include="RiddleGame\RiddleManager.cs" />
     <Compile Include="VisualNovelGame\Manager\VisualNovelManager.cs" />
     <Compile Include="VisualNovelGame\Model\Episodes\Serie.cs" />
-    <Compile Include="VisualNovelGame\Service\Xml\XmlDataAccess.cs" />
-    <Compile Include="VisualNovelGame\Settings\Config.cs" />
+    <Compile Include="Service\Xml\XmlDataAccess.cs" />
+    <Compile Include="Settings\Config.cs" />
     <Compile Include="VisualNovelGame\Enumeration\PlayerType.cs" />
     <Compile Include="VisualNovelGame\View\RadioButtonCheckedConverter.cs" />
-    <Compile Include="VisualNovelGame\View\StereotypesInterface.xaml.cs">
+    <Compile Include="FactGame\View\StereotypesInterface.xaml.cs">
       <DependentUpon>StereotypesInterface.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -149,7 +147,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="VisualNovelGame\View\Notifications\SubMenuOfGame.xaml">
+    <Page Include="View\Notifications\SubMenuOfGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -161,7 +159,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="VisualNovelGame\View\StereotypesInterface.xaml">
+    <Page Include="FactGame\View\StereotypesInterface.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,6 +198,9 @@
     <Resource Include="VisualNovelGame\Resources\Pictures\icoNourriture.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="FactGame\Resources\Pictures\bg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="VisualNovelGame\Resources\Pictures\bg.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
