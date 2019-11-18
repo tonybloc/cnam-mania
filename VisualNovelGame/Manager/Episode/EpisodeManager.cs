@@ -9,6 +9,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using cnam_mania.VisualNovelGame.Model.Characters;
 
 namespace cnam_mania.VisualNovelGame.Manager.Episodes
 {
@@ -118,11 +119,14 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
         /// <summary>
         /// Get next story
         /// </summary>
-        public bool NextStory(Choice choice)
+        public bool NextStory(Choice choice, Character character)
         {
             if ((this.CurrentEpisode != null) && (this.CurrentStory != null))
             {
                 // Define if we can skip stories in episode
+
+                if (FindEndEpisodeAccordingCharacterAttributes(character))
+                    return false;
 
                 if (!choice.NextStoryCurrentEpisode)
                 {
@@ -149,6 +153,40 @@ namespace cnam_mania.VisualNovelGame.Manager.Episodes
             return false;
         }
 
+        /// <summary>
+        /// Find last episode of story board according character attributes
+        /// </summary>
+        /// <param name="character">character</param>
+        /// <returns></returns>
+        private bool FindEndEpisodeAccordingCharacterAttributes(Character character)
+        {
+            if(character.Intellect <= 0)
+            {
+                this.CurrentEpisode = this.Serie.Episodes.Single((e) => e.Stories[0].Choices[0].SmartPoints == -100);
+                this.CurrentStory = this.CurrentEpisode.Stories[0];
+                return true;
+            }
+            else if (character.Popularity <= 0)
+            {
+                this.CurrentEpisode = this.Serie.Episodes.Single((e) => e.Stories[0].Choices[0].PopularityPoints == -100);
+                this.CurrentStory = this.CurrentEpisode.Stories[0];
+                return true;
+            }
+            else if (character.Food <= 0)
+            {
+                this.CurrentEpisode = this.Serie.Episodes.Single((e) => e.Stories[0].Choices[0].FoodPoints == -100);
+                this.CurrentStory = this.CurrentEpisode.Stories[0];
+                return true;
+            }
+            else if (character.Money <= 0)
+            {
+                this.CurrentEpisode = this.Serie.Episodes.Single((e) => e.Stories[0].Choices[0].WealthyPoints == -100);
+                this.CurrentStory = this.CurrentEpisode.Stories[0];
+                return true;
+            }
+
+            return false;
+        }
 
         /// <summary>
         /// Define if episode exist

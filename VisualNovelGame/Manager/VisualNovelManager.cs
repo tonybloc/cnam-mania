@@ -207,7 +207,7 @@ namespace cnam_mania.VisualNovelGame.Manager
             {
                 this.GameModeStrategy.ExecuteChoice(this.CharacterManager.Character, choice);
 
-                this.EpisodeManager.NextStory(choice);
+                this.EpisodeManager.NextStory(choice, this.CharacterManager.Character);
 
                 if ( (episode.EpisodeId != this.EpisodeManager.CurrentEpisode.EpisodeId) )
                     CreateSavingPoint(this.CharacterManager.Character.Clone(), this.EpisodeManager.CurrentEpisode);

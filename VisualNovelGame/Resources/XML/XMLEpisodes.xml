@@ -499,7 +499,7 @@
       <Title>Aujourd'hui vous avez cours avec François Croharé (cf : le prof de gestion de projet)</Title>
       <Choice>
         <Description>Je sens que je vais dormir.</Description>
-        <NextEpisodeId>96</NextEpisodeId>
+        <NextEpisodeId>93</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
         <Smart>0</Smart>
@@ -508,7 +508,7 @@
       </Choice>
       <Choice>
         <Description>Encore une après-midi de perdue.</Description>
-        <NextEpisodeId>96</NextEpisodeId>
+        <NextEpisodeId>93</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
         <Smart>0</Smart>
@@ -711,19 +711,19 @@
     </Story>
   </Episode>
   <Episode>
-    <Id>88</Id>
-    <Title>Glouton</Title>
+    <Id>87</Id>
+    <Title>Bracage</Title>
     <Story>
       <Id>0</Id>
-      <Title>Vous mangez de trop, vous ne parvenez plus à venir au CFAI.</Title>
+      <Title>Vous venez de braquer la caisse du BDE. Mais Bruno vous as chopez</Title>
       <Choice>
         <Description>FIN !</Description>
         <NextEpisodeId>0</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-        <Food>100</Food>
+        <Food>0</Food>
         <Smart>0</Smart>
         <Popularity>0</Popularity>
-        <Money>0</Money>
+        <Money>-100</Money>
       </Choice>
     </Story>
   </Episode>
@@ -733,6 +733,15 @@
     <Story>
       <Id>0</Id>
       <Title>Vous avez réussi votre projet ! Félicitation</Title>
+      <Choice>
+        <Description>FIN !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
     </Story>
   </Episode>
   <Episode>
@@ -780,7 +789,7 @@
         <NextEpisodeId>0</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
-        <Smart>100</Smart>
+        <Smart>-100</Smart>
         <Popularity>0</Popularity>
         <Money>0</Money>
       </Choice>
@@ -797,7 +806,7 @@
         <NextEpisodeId>0</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
-        <Smart>-100</Smart>
+        <Smart>0</Smart>
         <Popularity>0</Popularity>
         <Money>0</Money>
       </Choice>
@@ -816,7 +825,7 @@
         <Food>0</Food>
         <Smart>0</Smart>
         <Popularity>0</Popularity>
-        <Money>100</Money>
+        <Money>0</Money>
       </Choice>
     </Story>
   </Episode>
@@ -833,7 +842,7 @@
         <Food>0</Food>
         <Smart>0</Smart>
         <Popularity>0</Popularity>
-        <Money>-100</Money>
+        <Money>0</Money>
       </Choice>
     </Story>
   </Episode>
@@ -848,7 +857,7 @@
         <NextEpisodeId>0</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
-        <Smart>100</Smart>
+        <Smart>0</Smart>
         <Popularity>0</Popularity>
         <Money>0</Money>
       </Choice>
@@ -860,6 +869,15 @@
     <Story>
       <Id>0</Id>
       <Title>Vous avez échoué au devoir. Jean-Marc n'a pas pu vous sauver.</Title>
+      <Choice>
+        <Description>FIN !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
     </Story>
   </Episode>
   <Episode>
@@ -868,6 +886,15 @@
     <Story>
       <Id>0</Id>
       <Title>Paix à votre âme, vous étiez si jeune...</Title>
+      <Choice>
+        <Description>FIN !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
     </Story>
   </Episode>
   <Episode>
@@ -876,6 +903,15 @@
     <Story>
       <Id>0</Id>
       <Title>Vous êtes viré du CFAI pour faute grave !</Title>
+      <Choice>
+        <Description>FIN !</Description>
+        <NextEpisodeId>0</NextEpisodeId>
+        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
+        <Food>0</Food>
+        <Smart>0</Smart>
+        <Popularity>0</Popularity>
+        <Money>0</Money>
+      </Choice>
     </Story>
   </Episode>
 </Serie>
