@@ -336,7 +336,7 @@
       <Id>2</Id>
       <Title>Une voiture vous fonce dessus</Title>
       <Choice>
-        <Description>Esquiver</Description>
+        <Description>Esquivez à gauche</Description>
         <NextEpisodeId>7</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
@@ -345,7 +345,7 @@
         <Money>0</Money>
       </Choice>
       <Choice>
-        <Description>Oh, shit !</Description>
+        <Description>Esquivez à droite</Description>
         <NextEpisodeId>98</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
@@ -640,7 +640,7 @@
       <Title>Avez-vous accumulez du retard dans le projet MET ?</Title>
       <Choice>
         <Description>Oui, malheureusement, le ciel m'est tombé sur la tête !</Description>
-        <NextEpisodeId>10</NextEpisodeId>
+        <NextEpisodeId>9</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
         <Smart>-5</Smart>
@@ -649,36 +649,10 @@
       </Choice>
       <Choice>
         <Description>Non... C'est parti pour l'achat des cadeaux de Noël !</Description>
-        <NextEpisodeId>0</NextEpisodeId>
-        <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
-        <Food>0</Food>
-        <Smart>5</Smart>
-        <Popularity>-5</Popularity>
-        <Money>0</Money>
-      </Choice>
-    </Story>
-  </Episode>
-  <Episode>
-    <Id>10</Id>
-    <Title>Rendu projet</Title>
-    <Story>
-      <Id>0</Id>
-      <Title>Estimez-vous avoir une bonne note au projet MET ?</Title>
-      <Choice>
-        <Description>Oui, j'ai géré ! 3/3 assuré !</Description>
         <NextEpisodeId>89</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
-        <Smart>10</Smart>
-        <Popularity>0</Popularity>
-        <Money>0</Money>
-      </Choice>
-      <Choice>
-        <Description>Je ne pense pas... flemme... </Description>
-        <NextEpisodeId>97</NextEpisodeId>
-        <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
-        <Food>0</Food>
-        <Smart>0</Smart>
+        <Smart>5</Smart>
         <Popularity>-5</Popularity>
         <Money>0</Money>
       </Choice>
@@ -691,8 +665,8 @@
       <Id>0</Id>
       <Title>C'est Noël, vous achetez une caisse de vin pour Antonin Kalk !</Title>
       <Choice>
-        <Description>Vous avez une très bonne note au contrôle ! Vous validez cette matière avec succès !</Description>
-        <NextEpisodeId>10</NextEpisodeId>
+        <Description>Oui !</Description>
+        <NextEpisodeId>89</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
         <Smart>0</Smart>
@@ -700,8 +674,8 @@
         <Money>0</Money>
       </Choice>
       <Choice>
-        <Description>Dommage, il n'a pas été satisfait par votre projet... 0/3 </Description>
-        <NextEpisodeId>0</NextEpisodeId>
+        <Description>Non !</Description>
+        <NextEpisodeId>97</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
         <Smart>0</Smart>

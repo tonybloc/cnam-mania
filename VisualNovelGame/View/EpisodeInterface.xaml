@@ -38,20 +38,20 @@
                 <ImageBrush ImageSource="../Resources/Pictures/bois.jpg" />
             </StackPanel.Background>
             <StackPanel Orientation="Vertical"  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Width="50" Height="50" Source="../Resources/Pictures/IcoArgent.png"></Image>
-                <TextBlock Text="{Binding Path=Character.Money, Mode=OneWay}"  HorizontalAlignment="Center" FontSize="15"></TextBlock>
+                <Image Width="60" Height="60" Source="../Resources/Pictures/IcoArgent.png"></Image>
+                <TextBlock Text="{Binding Path=Character.Money, Mode=OneWay}"  HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Vertical"  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Width="50" Height="50" Source="../Resources/Pictures/IcoIntelligence.png"></Image>
-                <TextBlock Text="{Binding Path=Character.Intellect, Mode=OneWay}"  HorizontalAlignment="Center"  FontSize="15"></TextBlock>
+                <Image Width="60" Height="60" Source="../Resources/Pictures/IcoIntelligence.png"></Image>
+                <TextBlock Text="{Binding Path=Character.Intellect, Mode=OneWay}"  HorizontalAlignment="Center"  FontSize="20" FontWeight="Bold"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Vertical"  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Width="50" Height="50" Source="../Resources/Pictures/IcoNotoriete.png"></Image>
-                <TextBlock Text="{Binding Path=Character.Popularity, Mode=OneWay}" HorizontalAlignment="Center"  FontSize="15"></TextBlock>
+                <Image Width="60" Height="50" Source="../Resources/Pictures/IcoNotoriete.png"></Image>
+                <TextBlock Text="{Binding Path=Character.Popularity, Mode=OneWay}" HorizontalAlignment="Center"  FontSize="20" FontWeight="Bold"></TextBlock>
             </StackPanel>
             <StackPanel Orientation="Vertical"  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Width="50" Height="50" Source="../Resources/Pictures/IcoNourriture.png"></Image>
-                <TextBlock Text="{Binding Path=Character.Food, Mode=OneWay}"  HorizontalAlignment="Center"  FontSize="15"></TextBlock>
+                <Image Width="60" Height="50" Source="../Resources/Pictures/IcoNourriture.png"></Image>
+                <TextBlock Text="{Binding Path=Character.Food, Mode=OneWay}"  HorizontalAlignment="Center"  FontSize="20" FontWeight="Bold"></TextBlock>
             </StackPanel>
         </StackPanel>
 
