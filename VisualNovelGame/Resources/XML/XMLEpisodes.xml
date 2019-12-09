@@ -101,7 +101,7 @@
     <Title>Indépendance</Title>
     <Story>
       <Id>0</Id>
-      <Title>Votre réveil sonne pour la 5ème fois</Title>
+      <Title>Votre réveil sonne pour la cinquième fois</Title>
       <Choice>
         <Description>Se réveiller</Description>
         <NextEpisodeId>0</NextEpisodeId>
@@ -360,7 +360,7 @@
     <Title>Rattrapage</Title>
     <Story>
       <Id>0</Id>
-      <Title>Vous venez de ratter l'épreuve de mathématiques. Que souhaitez-vous faire ?</Title>
+      <Title>Vous venez de rater l'épreuve de mathématiques. Que souhaitez-vous faire ?</Title>
       <Choice>
         <Description>Je vais au rattrapage, pardi !</Description>
         <NextEpisodeId>0</NextEpisodeId>
@@ -382,7 +382,7 @@
     </Story>
     <Story>
       <Id>1</Id>
-      <Title>Le projet de MET05 arrive à grand pas !</Title>
+      <Title>Le projet de MET05 arrive à grands pas !</Title>
       <Choice>
         <Description>Je travaille déjà dessus.</Description>
         <NextEpisodeId>0</NextEpisodeId>
@@ -404,7 +404,7 @@
     </Story>
     <Story>
       <Id>2</Id>
-      <Title>Le rendu du projet est le : 27 novembre. Quel status reflète le plus votre état d'avancement ?</Title>
+      <Title>Le rendu du projet est le : 11 décembre. Quel status reflète le plus votre état d'avancement ?</Title>
       <Choice>
         <Description>Je conceptualise l'UML</Description>
         <NextEpisodeId>8</NextEpisodeId>
@@ -427,7 +427,7 @@
   </Episode>
   <Episode>
     <Id>6</Id>
-    <Title>Cumulation de projet</Title>
+    <Title>Accumulation de projets</Title>
     <Story>
       <Id>0</Id>
       <Title>Emmanuel MAURICE vous a donné un nouveau TP.</Title>
@@ -454,7 +454,7 @@
       <Id>1</Id>
       <Title>Pierre LEROY vous a donné un nouveau TP</Title>
       <Choice>
-        <Description>Tranquille, je le ferai à la fin. Comme tout les autres d'ailleurs ;)</Description>
+        <Description>Tranquille, je le ferai à la fin. Comme tous les autres d'ailleurs ;)</Description>
         <NextEpisodeId>0</NextEpisodeId>
         <NextStoryCurrentEpisode>true</NextStoryCurrentEpisode>
         <Food>5</Food>
@@ -474,7 +474,7 @@
     </Story>
     <Story>
       <Id>2</Id>
-      <Title>Le rendu du projet de MET est le : 27 novembre. Quel status reflète le plus votre état d'avancement ?</Title>
+      <Title>Le rendu du projet de MET est le : 11 décembre. Quel status reflète le plus votre état d'avancement ?</Title>
       <Choice>
         <Description>Je n'ai pas encore fini le projet !</Description>
         <NextEpisodeId>8</NextEpisodeId>
@@ -519,12 +519,12 @@
   </Episode>
   <Episode>
     <Id>7</Id>
-    <Title>Escapade nocture</Title>
+    <Title>Escapade nocturne</Title>
     <Story>
       <Id>0</Id>
-      <Title>En marchant vers chez vous, vous tombez dans une flaque d'eau et apercevez un papier.</Title>
+      <Title>En rentrant chez vous, vous tombez dans une flaque d'eau et apercevez un papier.</Title>
       <Choice>
-        <Description>Je rammasse le papier, c'est un billet de loto.</Description>
+        <Description>Je rammasse le papier.</Description>
         <NextEpisodeId>94</NextEpisodeId>
         <NextStoryCurrentEpisode>false</NextStoryCurrentEpisode>
         <Food>0</Food>
@@ -686,10 +686,10 @@
   </Episode>
   <Episode>
     <Id>87</Id>
-    <Title>Bracage</Title>
+    <Title>Braquage</Title>
     <Story>
       <Id>0</Id>
-      <Title>Vous venez de braquer la caisse du BDE. Mais Bruno vous as chopez</Title>
+      <Title>Vous venez de braquer la caisse du BDE. Mais Bruno vous a choppé !</Title>
       <Choice>
         <Description>FIN !</Description>
         <NextEpisodeId>0</NextEpisodeId>
@@ -706,7 +706,7 @@
     <Title>Fin de projet</Title>
     <Story>
       <Id>0</Id>
-      <Title>Vous avez réussi votre projet ! Félicitation</Title>
+      <Title>Vous avez réussi votre projet ! Félicitations !</Title>
       <Choice>
         <Description>FIN !</Description>
         <NextEpisodeId>0</NextEpisodeId>
@@ -740,7 +740,7 @@
     <Title>Good bye</Title>
     <Story>
       <Id>0</Id>
-      <Title>Plus personne ne vous aime même Jean Marc. On vous jette par le fenêtre de la salle de cours. Vous y survivez mais vous vous dites qu’il vaudrait mieux partir !</Title>
+      <Title>Plus personne ne vous aime, ni même Jean Marc. On vous jette par la fenêtre de la salle de cours. Vous y survivez, mais vous vous dites qu’il vaudrait mieux partir !</Title>
       <Choice>
         <Description>FIN !</Description>
         <NextEpisodeId>0</NextEpisodeId>

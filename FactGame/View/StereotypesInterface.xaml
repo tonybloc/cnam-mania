@@ -56,7 +56,7 @@
 
             <!--Title-->
             <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="Idées reçues" FontSize="32" FontStyle="Normal" FontWeight="Bold" TextWrapping="WrapWithOverflow" TextAlignment="Center" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="1" Text="{Binding Path=Fact.Description, Mode=OneWay}" HorizontalAlignment="Center" FontSize="28" FontStyle="Normal" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="1" Text="{Binding Path=Fact.Description, Mode=OneWay}" HorizontalAlignment="Center" FontSize="28" FontStyle="Normal" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center" Margin="50"/>
             <Button Grid.Row="2" Click="GenerateRandomFact" Width="200" Height="45">Inspirez-moi!</Button>
         </Grid>
     </Grid>

@@ -64,7 +64,7 @@
 
 
             <StackPanel Grid.Row="0">
-                <TextBlock  Grid.Row="0" TextWrapping="Wrap" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Margin="20" FontWeight="Bold">Félicitations ! <LineBreak /> Vous venez de finir l'une des histoires porposées par le VisualNovel !</TextBlock>
+                <TextBlock  Grid.Row="0" TextWrapping="Wrap" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Margin="20" FontWeight="Bold">Félicitations ! <LineBreak /> Vous venez de finir l'une des histoires proposées par le VisualNovel !</TextBlock>
 
                 <TextBlock TextWrapping="Wrap" FontSize="18" Margin="10">Pour rejouer un épisode, sélectionnez l'un des points de sauvegarde suivants :</TextBlock>
                 <ScrollViewer Grid.Row="1" Grid.Column="1" Height="300" Margin="0 10" >
@@ -75,7 +75,7 @@
                 </ScrollViewer>
 
                 <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Click="OnClickRestore" Width="200" Margin="10">Restorer</Button>
+                    <Button Click="OnClickRestore" Width="200" Margin="10">Restaurer</Button>
                     <Button Click="onClickHome"  Width="200" Margin="10">Quitter</Button>
                 </StackPanel>
             </StackPanel>
