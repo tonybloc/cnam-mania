@@ -210,6 +210,9 @@
     <Content Include="VisualNovelGame\Resources\Pictures\6-3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="VisualNovelGame\Resources\Pictures\87-0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="VisualNovelGame\Resources\Pictures\93-0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
